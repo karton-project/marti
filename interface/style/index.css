@@ -1,0 +1,731 @@
+body {
+    background-color: #e1bee7;
+    font-family: 'Biryani', sans-serif;
+}
+
+body, input, button {
+    color: #37474F;
+}
+
+p {
+    margin: 0;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1#page_title {
+    font-family: 'Dosis', sans-serif;
+    color: #6a1b9a;
+    font-style: normal;
+    font-weight: 900;
+    margin-left: 0.5em;
+}
+
+h3 {
+    padding: 10px;
+}
+
+h3 div {
+    margin-bottom: 10px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.tagline {
+    position: relative;
+    margin-top: 0;
+}
+
+.tagline-text {
+    vertical-align: middle;
+}
+
+a {
+    font-weight: bold;
+}
+
+a, a:hover {
+    color: #ecf0f1;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+pre code {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+sub {
+    display: block;
+    text-align: right;
+    margin-top: -10px;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.collapsible-body{
+    position: relative;
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+}
+
+.parent {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.rotate {
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.rotate.down {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: #ecf0f1;
+    padding: 0.25em;
+    color: #942A57;
+    border: 0;
+    align-content: center;
+    margin: 0.25em;
+    display: block;
+    box-sizing: border-box;
+    width: 90%;
+}
+
+button {
+    background-color: #ecf0f1;
+    color: #007bff;
+    border: 0;
+    border-radius: 0.2em;
+    padding: 18px 12px;
+    margin: 0.5em;
+    margin-left: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #e74c3c;
+    color: #ecf0f1;
+}
+
+.gh-fork {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
+.block_modal {
+    display: none;
+}
+
+.saveblock_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: minmax(10%, auto);
+}
+
+.saveblock_train_container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-auto-rows: minmax(10%, auto);
+    background: #f3e5f5;
+    grid-column: 1 / 2;
+    grid-row: 1 / 10;
+}
+
+.saveblock_source_container{
+    background: #f3e5f5;
+    grid-column: 1 / 2;
+    grid-row: 1 / 10;
+}
+
+.saveblock_block_container{
+    background: #f3e5f5;
+    grid-column: 2 / 3;
+    grid-row: 1 / 10;
+}
+
+.saveblock_code_container{
+    background: #f3e5f5;
+    grid-column: 1 / 2;
+    grid-row: 1 / 10;
+}
+
+.saveblock_output_wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-auto-rows: minmax(100%, auto);
+}
+
+.saveblock_output_container{
+    background: #f3e5f5;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.saveblock_visualization_container{
+    background: #f3e5f5;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.tangible_recognizers_container {
+    background: #f3e5f5;
+    grid-column: 2 / 3;
+    grid-row: 1 / 9;
+}
+
+.saveblock_button{
+    grid-column: 2 / 3;
+    grid-row: 9 / 10;
+}
+
+.table-wrapper {
+    height: 360px;
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+}
+
+.bottom-left{
+    position: absolute;
+    right: 4px;
+}
+
+.container {
+    height: 84vh;
+    max-height: 84vh;
+    justify-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.text-container {
+    height: 28vh;
+    max-height: 28vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.out-container {
+    height: 56vh;
+    max-height: 56vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.title-grid-container {
+    display: grid;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    grid-template-columns: 7% 18% 32% 43%;
+    grid-auto-rows: minmax(4vh, auto);
+    font-size: 2vh;
+    margin-left: 0.7em
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 7% 18% 32% 43%;
+    grid-auto-rows: minmax(28vh, auto);
+}
+
+.save-tooltip-container {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-auto-rows: minmax(1.2vh, auto);
+}
+
+.source_container {
+    background: #f3e5f5;
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.block_container {
+    background: #4a148c;
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+.code_container {
+    background: #7c43bd;
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.output_container {
+    background: #7f6ec3;
+    grid-column: 4;
+    grid-row: 3 / 2;
+    color: white;
+}
+
+.visualization_container {
+    background: #9d93c4;
+    grid-column: 4;
+    grid-row: 1 / 2;
+}
+
+.float{
+    position:fixed;
+    width:50px;
+    height:50px;
+    bottom:10px;
+    right:10px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:40px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.float-top{
+    position:fixed;
+    width:60px;
+    height:60px;
+    top:20px;
+    right:20px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+.question-float{
+    font-size: 2.5em;
+    margin-top:10px;
+}
+
+
+.fullWidth {
+    margin: 0.25em;
+    width: 98%;
+}
+
+.flexArea {
+    display: flex;
+    position: absolute;
+}
+
+/*
+ * note that styling gu-mirror directly is a bad practice because it's too generic.
+ * you're better off giving the draggable elements a unique class and styling that directly!
+ */
+
+.container > div, .gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.container > div {
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.container .ex-moved {
+    background-color: #e74c3c;
+}
+
+.container.ex-over {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#left-lovehandles > div, #right-lovehandles > div {
+    cursor: initial;
+}
+
+div.icon {
+    width: 6.5vh;
+    height: 6.5vh;
+    border: 3px solid #4a148c;
+    border-radius: 0.5em;
+}
+
+img.icon {
+    width: 4vh;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+p.icon {
+    text-align: center;
+    font-size: 1.5vh;
+}
+
+p.title {
+    font-size: 2.2vh;
+    font-weight: 600;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.handle {
+    padding: 0 5px;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: move;
+}
+
+.image-thing {
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+}
+
+.codeblock {
+    border: solid white 4px;
+    margin: 4px;
+}
+
+ul.collapsible {
+    border: solid white 4px;
+    list-style-type: none;
+    padding: 0;
+    margin: 1em;
+    cursor: grab;
+}
+
+div.collapsible-header {
+    padding: 1em;
+}
+
+ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ul.tabs li {
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ul.tabs li.current {
+    background: #ededed;
+    color: #222;
+}
+
+.tab-content {
+    display: none;
+    background: #ededed;
+    padding: 15px;
+}
+
+.tab-content.current {
+    display: inherit;
+}
+
+.sensorDetail {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.bottomMenu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.step-holder {
+    margin: 0.5em;
+}
+
+.bia-holder {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-auto-rows: minmax(3vh, auto);
+    max-width: 98%;
+}
+
+.step {
+    margin: 0.25em;
+    width: 98%;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardHolder {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    cursor: pointer;
+    border-radius: 0.25em;
+    display: table-cell;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.step .subtle {
+    color: #000;
+    font-size: 0.5em;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.bg-warning {
+    background: #dd2c00;
+}
+
+.bg-gold {
+    background: #ffab00;
+}
+
+.step i {
+    font-size: 3em;
+}
+
+.bg-step0 {
+    background: #ffd600;
+}
+
+.bg-sourcetable {
+    background: rgba(255, 255, 255, 0);
+}
+
+.bg-header {
+    background: -webkit-linear-gradient(70deg, #ff6464 70%, #5ac8fa 70%);
+    background: -o-linear-gradient(70deg, #ff6464 70%, #5ac8fa 70%);
+    background: -moz-linear-gradient(70deg, #ff6464 70%, #5ac8fa 70%);
+    background: linear-gradient(70deg, #ff6464 70%, #5ac8fa 70%);
+}
+
+.card {
+    display: flex;
+    overflow-x: auto;
+}
+
+.outputArea {
+    margin: 4%;
+}
+
+.mapArea {
+    height: 360px;
+    margin: auto;
+    width: 360px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.49);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1000;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+}
+
+.tooltip .savetext {
+    visibility: hidden;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.49);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip:hover .savetext {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    cursor: s-resize;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+}
+
+td, th {
+    padding: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+
+th.des:after {
+    content: "\21E9";
+}
+
+th.aes:after {
+    content: "\21E7";
+}
+
+
+.property {
+    border: 1px bottom black;
+    display: block;
+    font-size: 14px;
+    color: #000;
+}
+
+/* SQUARED TWO */
+.matrixCell {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+
+    margin: 20px 20px;
+    position: relative;
+    float: left;
+}
+
+.matrixCell label {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+.matrixCell label:hover {
+    background-color: #ffaaaa;
+
+}
+
+.matrixCell input[type=checkbox]:checked + label {
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;*/
+    background-color: red;
+}
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.flip-horizontal-bottom {
+    -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes flip-horizontal-bottom {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+    }
+}
+
+@keyframes flip-horizontal-bottom {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+    }
+}
