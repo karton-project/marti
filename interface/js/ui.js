@@ -205,13 +205,13 @@ function changeViewForFile() {
 }
 
 function changeViewForGeneral() {
-    scrollToBlock(_newdatatype);
+    scrollToBlock(_variable);
 }
 
 function changeViewForVisual() {
     appendNewTab(_visual, function () {
         document.getElementById('visualization_' + _visual).innerHTML =
-            '<div id="chartArea"></div>';
+            '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
     });
     scrollToBlock(_printTable);
 }
@@ -328,7 +328,8 @@ function fillHTML() {
     fillHTMLText(_barchart, _barchart_lang);
     fillHTMLText(_connectdevice, _connectdevice_lang);
     fillHTMLText(_gettemperature, _gettemperature_lang);
-    fillHTMLText(_newdatatype, _newdatatype_lang);
+    fillHTMLText(_newfunction, _newfunction_lang);
+    fillHTMLText(_count, _count_lang);
 
     if (isTangibleInterface) {
         $(".collapsible").on('click', function (event) {

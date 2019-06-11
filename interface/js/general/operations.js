@@ -38,6 +38,15 @@ function compare(data1, data2, op) {
     }
 }
 
+function count(data, el){
+    let count = 0;
+    for(let i = 0; i < data.length; ++i){
+        if(_.isEqual(data[i],el))
+            count++;
+    }
+    return count;
+}
+
 // Return an array with equal size partition
 function equalSlice(data, d) {
 

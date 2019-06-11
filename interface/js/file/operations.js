@@ -28,9 +28,16 @@ function prepareDataArray(fileData, callback) {
     callback(dataArray);
 }
 
-function defineVariablesFromData() {
-    prepareDataArray(fileData, function (data) {
-        var jsonData = Object.assign({}, data);
+function defineVariablesUserTable(title, data) {
+    for(let i = 0; i < title.length; i++){
+        let col = data.map(function(value, index) { return value[i]; });
+        createCodeVariable(title[i], col);
+    }
+}
+
+function defineVariablesFromFileData() {
+    prepareDataArray(fileData, function (d) {
+        var jsonData = Object.assign({}, d);
         createCodeVariable(fileName, fileData);
         for (var key in jsonData) {
             if (jsonData.hasOwnProperty(key)) {

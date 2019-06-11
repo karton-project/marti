@@ -53,7 +53,7 @@ a {
 }
 
 a, a:hover {
-    color: #ecf0f1;
+    color: #f1905c;
 }
 
 pre {
@@ -260,6 +260,12 @@ button:hover {
     grid-auto-rows: minmax(28vh, auto);
 }
 
+.add-row-container {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-auto-rows: minmax(1.4vh, auto);
+}
+
 .save-tooltip-container {
     display: grid;
     grid-template-columns: 80% 20%;
@@ -299,28 +305,33 @@ button:hover {
 
 .float{
     position:fixed;
-    width:50px;
-    height:50px;
-    bottom:10px;
-    right:10px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:40px;
+    width:84px;
+    height:54px;
+    background-color: #aaf700;
+    color:#000;
+    border-radius:50px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;
 }
 
-.float-top{
-    position:fixed;
-    width:60px;
-    height:60px;
-    top:20px;
-    right:20px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;
+.link-detail{
+    font-size: 0.7em;
+}
+
+.top-right{
+    top:calc(0.4em + 0.4vw);
+    right:calc(0.6em + 0.4vw);
+}
+
+
+.top-right-center{
+    top:calc(0.4em + 0.4vw);
+    right:calc(0.4em + 0.4vw + 120px);
+}
+
+.top-right-left{
+    top:calc(0.4em + 0.4vw);
+    right:calc(0.4em + 0.4vw + 240px);
 }
 
 .my-float{

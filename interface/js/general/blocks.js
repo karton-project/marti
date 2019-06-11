@@ -1,5 +1,5 @@
 var applyFuncVar;
-var peakout;
+var countedvar;
 
 function addAverageBlock(varName) {
     let out = mean(getVariableValueByName(varName));
@@ -26,6 +26,11 @@ function applyFunctionBlock() {
     const func = getValueFromDomElement('applyfuncinput');
     const out = eval("arr.map(x =>" + func + ")");
     appendOutputText('The result of the function is: ', 'appfunc_text', out);
+}
+
+function countBlock() {
+    var out = count(getVariableValueByName(countedvar), getValueFromDomElement("countinput"));
+    appendOutputText('The total count of the selected variable is: ', 'cnt_text', out);
 }
 
 function findPeaksBlock(varName) {
@@ -57,7 +62,7 @@ function saveVariable() {
     }
 }
 
-function saveDataType() {
+function saveNewFunc() {
     var varName = getValueFromDomElement("varname");
     var varVal = getValueFromDomElement("varval").split(/[.,;\/ -]/).filter(function (item, idx) {
         return item.length >= 1;
@@ -66,9 +71,9 @@ function saveDataType() {
         appendWarningText('You cannot empty name or property.');
     } else {
         if (_.isEqual(varVal, getVariableValueByName(varName))) {
-            appendWarningText('A data type with same value is already created.');
+            appendWarningText('A function with same operation is already created.');
         } else {
-            createNewDataType(varName, varVal);
+            createNewFunc(varName, varVal);
             appendWarningText(varName + _issaveddatatype_lang + varVal, "variable_text_" + varName);
         }
     }

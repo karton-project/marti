@@ -58,7 +58,8 @@ const _selectMapBackground = "selectmapbackground";
 const _startwebcam = "startwebcam";
 const _printTable = "printtable";
 const _opengeojson = "opengeojson";
-const _newdatatype = "newdatatype";
+const _newfunction = "newfunction";
+const _count = "count";
 
 const _toner = "toner";
 const _terrain = "terrain";
@@ -85,12 +86,13 @@ let buttonColor = [];
 let blockMap = new Map();
 
 // general
-blockMap.set(_newdatatype, _general);
 blockMap.set(_variable, _general);
 blockMap.set(_average, _general);
+blockMap.set(_count, _general);
 blockMap.set(_max, _general);
 blockMap.set(_min, _general);
 blockMap.set(_sum, _general);
+blockMap.set(_newfunction, _general);
 blockMap.set(_applyfunc, _general);
 blockMap.set(_filter, _general);
 blockMap.set(_findpeaks, _general);

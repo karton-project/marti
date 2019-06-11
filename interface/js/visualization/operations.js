@@ -1,7 +1,6 @@
-let chart;
+let chart, fileName, xAxis_var;
 let chartisactive = false;
-let fileName;
-let xAxis_var;
+let tableRows = [];
 
 function findChartDimensions() {
     let chartAreaWidth = $("#visualization_tabcontent").width() - 10;
@@ -18,7 +17,7 @@ function printCSVFiles(file) {
                 fileData = data;
                 fileName = file.name;
                 drawTable(data);
-                defineVariablesFromData();
+                defineVariablesFromFileData();
             });
         };
         reader.readAsDataURL(file);
@@ -34,21 +33,21 @@ function printJSONFiles(file) {
                 fileData = data;
                 fileName = file.name;
                 drawTable(data);
-                defineVariablesFromData();
+                defineVariablesFromFileData();
             });
         };
         reader.readAsDataURL(file);
     }
 }
 
-function drawTable(data) {
+function drawTable(data, titles) {
     chartisactive = false;
     var sortAscending = true;
     if (document.getElementById('tableArea') !== null) {
         document.getElementById('tableArea').innerHTML = '';
     }
     var table = d3.select('#tableArea').append('table');
-    var titles = d3.keys(data[0]);
+    titles = titles || d3.keys(data[0]);
     var headers = table.append('thead').append('tr')
         .selectAll('th')
         .data(titles).enter()
@@ -74,7 +73,7 @@ function drawTable(data) {
             }
 
         });
-
+    titles = d3.keys(data[0]);
     var rows = table.append('tbody').selectAll('tr')
         .data(data).enter()
         .append('tr');
@@ -136,6 +135,13 @@ function drawChart(chartType) {
         }
     });
     chartisactive = true;
+}
+
+function createTableWithHeaders() {
+    let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
+    tableRows.push(getValueFromDomElement("rowinput" + cntrow).split(/[ ,]+/));
+    drawTable(tableRows, title);
+    defineVariablesUserTable(title, tableRows);
 }
 
 function transformChart(chartType) {

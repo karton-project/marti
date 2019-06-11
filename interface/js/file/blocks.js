@@ -54,7 +54,7 @@ function openCSVWithLink() {
     d3.csv(webLink).then(function (data) {
         fileData = data;
         drawTable(data);
-        defineVariablesFromData();
+        defineVariablesFromFileData();
         appendOutputText("CSV from weblink is opened.", "linkOpenTextDiv", "");
     });
 }
@@ -64,7 +64,7 @@ function openJSONWithLink() {
     d3.json(webLink).then(function (data) {
         fileData = data;
         drawTable(data);
-        defineVariablesFromData();
+        defineVariablesFromFileData();
         appendOutputText("JSON from weblink is opened.", "linkOpenTextDiv", "");
     });
 }

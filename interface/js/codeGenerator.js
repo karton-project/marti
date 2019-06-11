@@ -1,7 +1,7 @@
 var codeVariables = "";
 var codeRest = "";
 var variables = new Map();
-var datatypes = new Map();
+var functionDefs = new Map();
 var blocks = new Map();
 
 function mergeCode() {
@@ -28,8 +28,8 @@ function createCodeVariable(varName, varVal) {
     variables.set(varName, varVal);
 }
 
-function createNewDataType(varName, varVal){
-    datatypes.set(varName, varVal);
+function createNewFunc(varName, varVal){
+    functionDefs.set(varName, varVal);
 }
 
 function listVariableKeys() {

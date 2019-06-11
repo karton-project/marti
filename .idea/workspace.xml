@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/tutorials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/blockModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/blockModalUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/codeGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/codeGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/file/blocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/file/blocks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/file/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/file/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/general/blocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/general/blocks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/general/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/general/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/js/visualization/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface/js/visualization/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/interface/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface/style/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,39 +32,120 @@
     <session id="772042080">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="3" />
+          <entry key="css" value="2" />
+          <entry key="html" value="6" />
+          <entry key="js" value="20" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="3" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="6" />
+          <entry key="JavaScript" value="20" />
           <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2" />
+          <entry key="css" value="157" />
+          <entry key="dummy" value="33" />
+          <entry key="html" value="361" />
+          <entry key="js" value="2260" />
           <entry key="md" value="307" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2" />
+          <entry key="CSS" value="157" />
+          <entry key="HTML" value="364" />
+          <entry key="JavaScript" value="2257" />
           <entry key="Markdown" value="307" />
+          <entry key="PLAIN_TEXT" value="33" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/main/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="123" column="20" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/style/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6072">
+              <caret line="309" column="29" selection-start-line="309" selection-start-column="23" selection-end-line="309" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interface/js/visualization/operations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/js/blockModalUI.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="508" column="63" selection-start-line="508" selection-start-column="63" selection-end-line="508" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/js/file/blocks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/js/file/operations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>save</find>
+      <find>saveDa</find>
+      <find>newfunc</find>
+      <find>container</find>
+      <find>fill</find>
+      <find>save-tool</find>
+      <find>visualiz</find>
+      <find>input</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,9 +153,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/interface/main/index.html" />
         <option value="$PROJECT_DIR$/interface/blockly/blockly.html" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/interface/js/codeGenerator.js" />
+        <option value="$PROJECT_DIR$/interface/js/general/operations.js" />
+        <option value="$PROJECT_DIR$/interface/js/constants.js" />
+        <option value="$PROJECT_DIR$/interface/js/general/blocks.js" />
+        <option value="$PROJECT_DIR$/interface/js/tr.js" />
+        <option value="$PROJECT_DIR$/interface/js/en.js" />
+        <option value="$PROJECT_DIR$/interface/js/ui.js" />
+        <option value="$PROJECT_DIR$/tutorials/tutorials.html" />
+        <option value="$PROJECT_DIR$/tutorials/style.css" />
+        <option value="$PROJECT_DIR$/interface/main/index.html" />
+        <option value="$PROJECT_DIR$/interface/style/index.css" />
+        <option value="$PROJECT_DIR$/interface/js/blockModalUI.js" />
+        <option value="$PROJECT_DIR$/interface/js/file/operations.js" />
+        <option value="$PROJECT_DIR$/interface/js/visualization/operations.js" />
       </list>
     </option>
   </component>
@@ -89,6 +197,30 @@
               <item name="marti" type="b2602c69:ProjectViewProjectNode" />
               <item name="marti" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="marti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marti" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="marti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marti" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="marti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marti" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="visualization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="marti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marti" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -102,6 +234,9 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asabuncuoglu13\Desktop\marti\interface\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\asabuncuoglu13\Desktop\marti\interface\media" />
     </key>
@@ -129,22 +264,25 @@
       <option name="presentableId" value="Default" />
       <updated>1559641606993</updated>
       <workItem from="1559641608717" duration="990000" />
+      <workItem from="1559669482910" duration="823000" />
+      <workItem from="1559766064765" duration="1696000" />
+      <workItem from="1559769825816" duration="598000" />
+      <workItem from="1560002897285" duration="362000" />
+      <workItem from="1560254515466" duration="8504000" />
+      <workItem from="1560269760513" duration="5778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="990000" />
+    <option name="totallyTimeSpent" value="18751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="85" y="-8" width="1843" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2498615" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18836565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -152,6 +290,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -188,10 +330,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/codeGenerator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/general/operations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/visualization/blocks.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="96" column="56" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4439">
+          <caret line="193" column="33" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/tr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2530">
+          <caret line="110" column="30" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/general/blocks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorials/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-406">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorials/tutorials.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/test/basics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/test/test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/interface/main/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="133" column="28" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
+        <state relative-caret-position="-15">
+          <caret line="123" column="20" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/style/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6072">
+          <caret line="309" column="29" selection-start-line="309" selection-start-column="23" selection-end-line="309" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/blockModalUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="508" column="63" selection-start-line="508" selection-start-column="63" selection-end-line="508" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/file/blocks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/file/operations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/js/visualization/operations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,9 @@ var varVal = ["valVal"];
 var selectedSource = "";
 var sliderMax = 100, sliderMin = 50;
 let blockDiv;
+let tableDiv;
 let blockTitle;
+let cntrow = 0;
 
 function openBlockDetails(blockId) {
     prepareBlocks(blockId);
@@ -12,11 +14,12 @@ function openBlockDetails(blockId) {
 function appendOutputText(line, id, val, print) {
     print = (typeof print === 'undefined') ? true : print;
     val = (typeof val === 'undefined') ? "" : val;
+    val = (val.constructor === Array) ? val : [val];
     var $row = $('<tr />'),
         rowText = $('<td />', {id: id + cnt, text: line + (print ? val : "")}),
         rowSave = $('<td />', {id: id + cnt + "_savebuttondiv"});
     $('#outputTable').prepend($row.append(rowText, rowSave));
-    if (typeof val !== "undefined" && val.length > 0) {
+    if (typeof val !== "undefined") {
         appendExpandableSaveField($('#' + id + cnt + "_savebuttondiv"), id + cnt, val);
     }
     cnt++;
@@ -74,8 +77,8 @@ function prepareBlocks(blockId) {
         // General Operations
 
         // new data type
-        if (blockId.includes(_newdatatype)) {
-            prepareVariableModal(blockDiv, _newdatatype_text_lang, "saveDataType()");
+        if (blockId.includes(_newfunction)) {
+            prepareVariableModal(blockDiv, _newfunction_text_lang, "saveNewFunc()");
         }
 
         // define variable
@@ -89,6 +92,21 @@ function prepareBlocks(blockId) {
                 prepareSelectVariableModal(_average_lang + '<br>' + _selectvar_text_lang, function (value) {
                     addAverageBlock(value);
                 });
+            });
+        }
+
+        // average
+        if (blockId.includes(_count)) {
+            $(function () {
+                prepareSelectVariableModal(_count_lang + '<br>' + _count_text_lang, function (value) {
+                    countedvar = value;
+                });
+                var $countDiv =
+                    $('<input type="text" id="countinput" name="countinput" placeholder="' + _count_lang + '">' +
+                        '<button onclick="countBlock()">' + _applybutton_lang + '</button>');
+                $countDiv.appendTo(blockDiv);
+
+
             });
         }
 
@@ -159,6 +177,19 @@ function prepareBlocks(blockId) {
         }
 
         // Chart Operations
+
+        // create line chart
+        if (blockId.includes(_printTable)) {
+            $(function () {
+                tableDiv = $('<span class="add-row-container">' +
+                    '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + '">' +
+                    '<i onclick="addRow()" class="fas fa-plus"></i>' +
+                    '</span>');
+                blockDiv.append('<input type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
+                blockDiv.append(tableDiv);
+                blockDiv.append('<button onclick="createTableWithHeaders()">' + _applybutton_lang + '</button>');
+            })
+        }
 
         // create line chart
         if (blockId.includes(_linechart)) {
@@ -472,6 +503,18 @@ function prepareSelectOptionModal(modalDefinition, options, callback, divID) {
         });
 
     })
+}
+
+function addRow() {
+    let curr_row = getValueFromDomElement("rowinput" + cntrow);
+    if (curr_row.length > 0) {
+        cntrow += 1;
+        tableDiv.append('<span class="add-row-container">' +
+            '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + '">' +
+            '<i onclick="addRow()" class="fas fa-plus"></i>' +
+            '</span>');
+        tableRows.push(curr_row.split(/[ ,]+/));
+    }
 }
 
 function prepareSelectVariableModal(modalDef, callback, divID) {
