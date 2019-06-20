@@ -26,7 +26,7 @@ function appendOutputText(line, id, val, print) {
 }
 
 function appendOutputHTML(code) {
-    $('#outputText').append(code);
+    $('#outputText').prepend(code);
 }
 
 function appendWarningText(text) {
@@ -275,7 +275,7 @@ function prepareBlocks(blockId) {
 
         // select a column from open file
         if (blockId.includes(_selectcolumn)) {
-            prepareSelectVariableModal(_selectvar_text_lang, function (value) {
+            prepareSelectFileModal(_selectvar_text_lang, function (value) {
                 selectedDataForColumn = value;
             }, 'selectedColumnDiv');
             blockDiv.append('<label for="selectedColumnInput">' + _selectcolumn_text_lang + '</label>\n' +
@@ -286,7 +286,7 @@ function prepareBlocks(blockId) {
         // filter with the selected variable with comparison func
         if (blockId.includes(_filtertable)) {
             prepareSelectFileModal(_filtertable_detail_lang, function (value) {
-                fileData = getFileValueByName(value);
+                fileData = getVariableValueByName(value);
             }, 'selFileDiv');
             blockDiv.append('<p>' + _definecomparisonfunction_lang + '</p>');
             blockDiv.append(
@@ -303,7 +303,7 @@ function prepareBlocks(blockId) {
         if (blockId.includes(_listheaders)) {
             $(function () {
                 prepareSelectFileModal(_listheaders_text_lang, function (value) {
-                    fileData = getFileValueByName(value);
+                    fileData = getVariableValueByName(value);
                 }, 'listHeadDiv');
                 var $listHeaderDiv = $(
                     '<button onclick="listHeaderBlock()"> OK </button>'

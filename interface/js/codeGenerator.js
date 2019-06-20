@@ -34,40 +34,41 @@ function createFileVariable(varName, varVal) {
 }
 
 
-function createNewFunc(varName, varVal){
+function createNewFunc(varName, varVal) {
     functionDefs.set(varName, varVal);
 }
 
 function listVariableKeys() {
-    return Array.from(variables.keys());
+    return Array.from(variables.keys()).concat(Array.from(files.keys()));
 }
 
-function listFileKeys(){
-    return Array.from(files.keys());
+function listFileKeys() {
+    return Array.from(files.keys()).concat(Array.from(variables.keys()));
 }
 
 function listVariablesAsArray() {
     return Array.from(variables);
 }
+
 function listVariableKeysAsBlocklyDropdown() {
     var variableKeys = Array.from(variables.keys());
     var out = [];
-    for(var i = 0; i<variableKeys.length; i++){
+    for (var i = 0; i < variableKeys.length; i++) {
         out.push([variableKeys[i], variableKeys[i]]);
     }
     return out;
 }
 
 function getVariableValueByName(varName) {
-    if(_.contains(variables.get(varName).map(Number), NaN)){
-        return variables.get(varName);
-    }else{
-        return variables.get(varName).map(Number);
-    }
-}
-
-function getFileValueByName(varName) {
+    if (typeof files.get(varName) === "undefined") {
+        if (_.contains(variables.get(varName).map(Number), NaN)) {
+            return variables.get(varName);
+        } else {
+            return variables.get(varName).map(Number);
+        }
+    } else {
         return files.get(varName);
+    }
 }
 
 function createCodeBlocks(blockID, blockCode) {
