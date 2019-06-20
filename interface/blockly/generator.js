@@ -136,6 +136,19 @@ Blockly.JavaScript['open_file_weblink'] = function (block) {
     return code;
 };
 
+Blockly.Blocks['create_table'] = {
+    init: function() {
+        this.appendStatementInput("createtable")
+            .setCheck(null)
+            .appendField("Create Table");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 Blockly.Blocks['print_table'] = {
     init: function () {
         this.appendDummyInput()
@@ -146,6 +159,33 @@ Blockly.Blocks['print_table'] = {
         this.setTooltip("");
         this.setHelpUrl("");
     }
+};
+
+Blockly.JavaScript['create_table'] = function(block) {
+    var statements_createtable = Blockly.JavaScript.statementToCode(block, 'createtable');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+};
+
+Blockly.Blocks['create_table_row'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("New Table Row:")
+            .appendField(new Blockly.FieldTextInput("element1, element2, ..."), "elements");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.JavaScript['create_table_row'] = function(block) {
+    var text_elements = block.getFieldValue('elements');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
 };
 
 Blockly.JavaScript['print_table'] = function (block) {

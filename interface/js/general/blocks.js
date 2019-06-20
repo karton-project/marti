@@ -1,5 +1,4 @@
-var applyFuncVar;
-var countedvar;
+var applyFuncVar, countedvar, scaledVariable;
 
 function addAverageBlock(varName) {
     let out = mean(getVariableValueByName(varName));
@@ -28,6 +27,22 @@ function applyFunctionBlock() {
     appendOutputText('The result of the function is: ', 'appfunc_text', out);
 }
 
+function addFilterCode() {
+    let comparedValue = getValueFromDomElement('comparedValue');
+    let data = getVariableValueByName(variableValue);
+    let output = filter(data, comparedValue, operation);
+    appendOutputText('Filtered variable is printed', "filterVarResultDiv", output, true);
+}
+
+function applyScale() {
+    let scaleRange = getValueFromDomElement("applyscaleinput").split(/[.,;\/ -]/).filter(function (item, idx) {
+        return item.length >= 1;
+    });
+    scaleRange = scaleRange.map(Number);
+    let out = scale(getVariableValueByName(scaledVariable), scaleRange);
+    appendOutputText('The result of the scaling is: ', 'scale_text', out);
+}
+
 function countBlock() {
     var out = count(getVariableValueByName(countedvar), getValueFromDomElement("countinput"));
     appendOutputText('The total count of the selected variable is: ', 'cnt_text', out);
@@ -40,7 +55,7 @@ function findPeaksBlock(varName) {
         .gapThreshold(1)
         .minLineLength(2)
         .minSNR(1.0)
-        .widths([1,2,3]);
+        .widths([1, 2, 3]);
     const out = mapData(findPeaks(getVariableValueByName(varName)), "index");
     appendOutputText('The indices of the peak values: ', 'findpeaks_text', out);
 }
@@ -53,7 +68,7 @@ function saveVariable() {
     if (varName.length <= 0 || varVal.length <= 0) {
         appendWarningText('You cannot empty name or value.');
     } else {
-        if (_.isEqual(varVal, getVariableValueByName(varName))) {
+        if (_.isEqual(varVal, variables.get(varName))) {
             appendWarningText('A variable with same value is already created.');
         } else {
             createCodeVariable(varName, varVal);
@@ -70,7 +85,7 @@ function saveNewFunc() {
     if (varName.length <= 0 || varVal.length <= 0) {
         appendWarningText('You cannot empty name or property.');
     } else {
-        if (_.isEqual(varVal, getVariableValueByName(varName))) {
+        if (_.isEqual(varVal, variables.get(varName))) {
             appendWarningText('A function with same operation is already created.');
         } else {
             createNewFunc(varName, varVal);
@@ -81,10 +96,11 @@ function saveNewFunc() {
 
 function saveVariableFromFunction(id, varVal) {
     var varName = getValueFromDomElement(id + "_savevarname");
+    varVal = JSON.parse(varVal);
     if (varName.length <= 0) {
         appendWarningText('You cannot empty name or value.');
     } else {
-        if (_.isEqual(varVal, getVariableValueByName(varName))) {
+        if (_.isEqual(varVal, variables.get(varName))) {
             appendWarningText('A variable with same value is already created.');
         } else {
             createCodeVariable(varName, varVal);

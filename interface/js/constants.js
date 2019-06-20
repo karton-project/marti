@@ -32,6 +32,8 @@ const _linechart = "line";
 const _piechart = "pie";
 const _barchart = "bar";
 const _histogram = "histogram";
+const _drawchart = "drawchart";
+const _chartTypes = [_linechart, _piechart, _barchart];
 
 // Blocks for Generral
 const _average = "average";
@@ -60,6 +62,7 @@ const _printTable = "printtable";
 const _opengeojson = "opengeojson";
 const _newfunction = "newfunction";
 const _count = "count";
+const _filtertable = "filtable";
 
 const _toner = "toner";
 const _terrain = "terrain";
@@ -100,9 +103,7 @@ blockMap.set(_uniquevals, _general);
 blockMap.set(_scale, _general);
 // visual
 blockMap.set(_printtable, _visual);
-blockMap.set(_piechart, _visual);
-blockMap.set(_linechart, _visual);
-blockMap.set(_barchart, _visual);
+blockMap.set(_drawchart, _visual);
 blockMap.set(_histogram, _visual);
 // file
 blockMap.set(_opencsvfromcomputer, _file);
@@ -110,6 +111,7 @@ blockMap.set(_opencsvfromlink, _file);
 blockMap.set(_openjsonfromcomputer, _file);
 blockMap.set(_openjsonfromlink, _file);
 blockMap.set(_selectcolumn, _file);
+blockMap.set(_filtertable, _file);
 blockMap.set(_listheaders, _file);
 // microbit
 blockMap.set(_connectdevice, _microbit);

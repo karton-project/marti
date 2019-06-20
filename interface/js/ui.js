@@ -315,8 +315,7 @@ function fillHTML() {
     fillHTMLText(_openpicture, _openpicture_lang);
     fillHTMLText(_averagepic, _averagepic_lang);
     fillHTMLText(_selectcolumn, _select_column_lang);
-    fillHTMLText(_piechart, _piechart_lang);
-    fillHTMLText(_linechart, _linechart_lang);
+    fillHTMLText(_drawchart, _drawchart_lang);
     fillHTMLText(_startwebcam, _start_webcam_lang);
     fillHTMLText(_histogram, _histogram_lang);
     fillHTMLText(_selectMapBackground, _select_mapbg_lang);
@@ -325,11 +324,11 @@ function fillHTML() {
     fillHTMLText(_sum, _sum_lang);
     fillHTMLText(_openjsonfromcomputer, _openjsonfromcomputer_lang);
     fillHTMLText(_openjsonfromlink, _openjsonfromlink_lang);
-    fillHTMLText(_barchart, _barchart_lang);
     fillHTMLText(_connectdevice, _connectdevice_lang);
     fillHTMLText(_gettemperature, _gettemperature_lang);
     fillHTMLText(_newfunction, _newfunction_lang);
     fillHTMLText(_count, _count_lang);
+    fillHTMLText(_filtertable, _filtertable_lang);
 
     if (isTangibleInterface) {
         $(".collapsible").on('click', function (event) {

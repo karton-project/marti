@@ -1,0 +1,33 @@
+==================================================
+Genel Bloklar
+==================================================
+
+Genel Bloklar, bir veri setini incelerken kullanacağımız en temel operasyonları içerir.
+
+Tüm Genel Blokların listesi:
+============================
+1. `Değişken Tanımla`_
+2. `Ortalama`_
+
+
+Değişken Tanımla
+================
+
+Değişken tanımlarken iki girdi bekler: *İsim* ve *Değer*.
+
+Değişkeninize istediğiniz ismi verebilirsiniz. Verdiğiniz isimdeki boşluk, virgül, nokta gibi alfanumerik olmayan değerleri otomatik olarak silecektir.
+
+Değer olarak numara, yazı veya liste alır. Liste yaratmak istediğinizde, girdiğiniz verileri virgülle ayırarak yazmanız gerekmektedir.
+
+Örnek değişkenler:
+
+**İsim**: Favori Renk, **Değer**: Mavi
+**İsim**: Favori Renkler, **Değer**: Mavi, Kırmızı, Yeşil
+
+
+Ortalama
+========
+
+
+**Challenges**
+

@@ -109,17 +109,16 @@ sub {
 input {
     border: none;
     outline: none;
+    display: inline-block;
     background-color: #ecf0f1;
     padding: 0.25em;
     color: #942A57;
     border: 0;
-    align-content: center;
+    font-size: 1rem;
     margin: 0.25em;
-    display: block;
-    box-sizing: border-box;
     width: 90%;
+    box-sizing: border-box;
 }
-
 button {
     background-color: #ecf0f1;
     color: #007bff;
@@ -262,8 +261,18 @@ button:hover {
 
 .add-row-container {
     display: grid;
+    align-items: center;
     grid-template-columns: 90% 10%;
     grid-auto-rows: minmax(1.4vh, auto);
+}
+
+.add-input{
+    grid-column: 1;
+}
+
+.add-button{
+    cursor: pointer;
+    grid-column: 2;
 }
 
 .save-tooltip-container {

@@ -13,7 +13,7 @@ function openBlockDetails(blockId) {
 
 function appendOutputText(line, id, val, print) {
     print = (typeof print === 'undefined') ? true : print;
-    val = (typeof val === 'undefined') ? "" : val;
+    val = (typeof val === 'undefined') ? "" : JSON.stringify(val, undefined, 2);
     val = (val.constructor === Array) ? val : [val];
     var $row = $('<tr />'),
         rowText = $('<td />', {id: id + cnt, text: line + (print ? val : "")}),
@@ -176,34 +176,52 @@ function prepareBlocks(blockId) {
             blockDiv.append('<button onclick="addUniqueValuesCode()"> OK </button>');
         }
 
+        // scale the given variable
+        if (blockId.includes(_scale)) {
+            prepareSelectVariableModal(_scale_lang, function (value) {
+                scaledVariable = value;
+            }, "scaleop");
+            var $applyScaleDiv = $('<p>' + _applyfunc_text_lang + '</p>\n' +
+                '<input type="text" id="applyscaleinput" name="applyscaleinput" placeholder="' + _scale_lang + '">' +
+                '<button onclick="applyScale()">' + _applybutton_lang + '</button>');
+            $applyScaleDiv.appendTo(blockDiv);
+        }
+
         // Chart Operations
 
         // create line chart
         if (blockId.includes(_printTable)) {
             $(function () {
-                tableDiv = $('<span class="add-row-container">' +
-                    '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + '">' +
-                    '<i onclick="addRow()" class="fas fa-plus"></i>' +
-                    '</span>');
+                tableDiv = $(
+                    '<div style="display: block" class="add-row-container">' +
+                    '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
+                    '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
+                    '</div>');
                 blockDiv.append('<input type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
                 blockDiv.append(tableDiv);
-                blockDiv.append('<button onclick="createTableWithHeaders()">' + _applybutton_lang + '</button>');
+                blockDiv.append('<button onclick="createTableWithHeaders()">' + _show_button_lang + '</button>');
+                blockDiv.append('<button onclick="saveTable()">' + _savebutton_lang + '</button>');
             })
         }
 
         // create line chart
-        if (blockId.includes(_linechart)) {
+        if (blockId.includes(_drawchart)) {
             $(function () {
                 prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
                     xAxis_var = value;
                 }, 'xAxisChooseDiv');
-                var $chartDiv = $(
-                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
-                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+
+                prepareChartListModal(_select_chart_type_lang, function (value) {
+                    chartTypeSel = value;
+                    transformChart(value);
+                }, 'chartTypeChooseDiv');
+
+                blockDiv.append(
                     '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
                     '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
-                    '<button onclick="drawChart(_linechart)">' + _applybutton_lang + '</button>');
-                $chartDiv.appendTo(blockDiv);
+                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
+                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<button onclick="drawChart()">' + _applybutton_lang + '</button>');
             })
         }
 
@@ -265,11 +283,29 @@ function prepareBlocks(blockId) {
             blockDiv.append('<button onclick="selectColumnBlock()"> OK </button>');
         }
 
+        // filter with the selected variable with comparison func
+        if (blockId.includes(_filtertable)) {
+            prepareSelectFileModal(_filtertable_detail_lang, function (value) {
+                fileData = getFileValueByName(value);
+            }, 'selFileDiv');
+            blockDiv.append('<p>' + _definecomparisonfunction_lang + '</p>');
+            blockDiv.append(
+                '<div class="bia-holder">' +
+                '<input type="text" id="variableValue" name="variablevalue" placeholder="' + _varname_lang + '"></div>\n' +
+                '<select id="comparisonOperation">' +
+                '<option id="selectVar">' + _operation_lang + '</option></select>' +
+                '<input type="text" id="comparedValue" name="comparedvalue" placeholder="' + _varval_lang + '"></div>\n');
+            blockDiv.append('<button onclick="addFilterTableCode()"> ' + _applybutton_lang + ' </button>');
+            createComparisonSelection();
+        }
+
         // get list of headers
         if (blockId.includes(_listheaders)) {
             $(function () {
+                prepareSelectFileModal(_listheaders_text_lang, function (value) {
+                    fileData = getFileValueByName(value);
+                }, 'listHeadDiv');
                 var $listHeaderDiv = $(
-                    '<p id="listHeadersText">' + _listheaders_text_lang + '</p>\n' +
                     '<button onclick="listHeaderBlock()"> OK </button>'
                 );
                 $listHeaderDiv.appendTo(blockDiv);
@@ -509,16 +545,24 @@ function addRow() {
     let curr_row = getValueFromDomElement("rowinput" + cntrow);
     if (curr_row.length > 0) {
         cntrow += 1;
-        tableDiv.append('<span class="add-row-container">' +
-            '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + '">' +
-            '<i onclick="addRow()" class="fas fa-plus"></i>' +
-            '</span>');
-        tableRows.push(curr_row.split(/[ ,]+/));
+        tableDiv.append(
+            '<div style="display: block" class="add-row-container">' +
+            '<input type="text" class="add-input" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
+            '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
+            '</div>');
     }
 }
 
 function prepareSelectVariableModal(modalDef, callback, divID) {
     prepareSelectOptionModal(modalDef, listVariableKeys(), callback, divID);
+}
+
+function prepareSelectFileModal(modalDef, callback, divID) {
+    prepareSelectOptionModal(modalDef, listFileKeys(), callback, divID);
+}
+
+function prepareChartListModal(modalDef, callback, divID) {
+    prepareSelectOptionModal(modalDef, _chartTypes, callback, divID);
 }
 
 function setupCurrentBlock(blockID) {

@@ -1,8 +1,7 @@
-let fileData;
-let jsonData;
+let fileData, jsonData;
 let dataArray = [];
 
-function filter(data, variableValue, comparedValue, operation) {
+function filterTable(data, variableValue, comparedValue, operation) {
     let output = data.filter(d => {
         return compare(d[variableValue], comparedValue, operation);
     });
@@ -38,7 +37,7 @@ function defineVariablesUserTable(title, data) {
 function defineVariablesFromFileData() {
     prepareDataArray(fileData, function (d) {
         var jsonData = Object.assign({}, d);
-        createCodeVariable(fileName, fileData);
+        createFileVariable(fileName, fileData);
         for (var key in jsonData) {
             if (jsonData.hasOwnProperty(key)) {
                 createCodeVariable(jsonData[key][0], jsonData[key].slice(1, jsonData[0].length));

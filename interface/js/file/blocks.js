@@ -1,4 +1,4 @@
-let comparedValue, operation, variableValue, listHeaders, selectedColumn, selectedDataForColumn, webLink,
+let operation, variableValue, listHeaders, selectedColumn, selectedDataForColumn, webLink,
     uniqueValuesVariable = "";
 
 function activateCSVInput() {
@@ -19,9 +19,10 @@ function activateJSONInput() {
     });
 }
 
-function addFilterCode() {
-    comparedValue = getValueFromDomElement('comparedValue');
-    let output = filter(fileData, variableValue, comparedValue, operation);
+function addFilterTableCode() {
+    let comparedValue = getValueFromDomElement('comparedValue');
+    let variableValue = getValueFromDomElement('variableValue');
+    let output = filterTable(fileData, variableValue, comparedValue, operation);
     appendOutputText('Filtered table is printed', "filterResultDiv", output, false);
     drawTable(output);
 }

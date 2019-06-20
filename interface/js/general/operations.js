@@ -22,6 +22,12 @@ function closestNumber(data, num) {
 // compare two values
 function compare(data1, data2, op) {
     op = op || 'default';
+    if(!_.isEqual(parseFloat(data1), NaN)){
+        data1 = parseFloat(data1);
+    }
+    if(!_.isEqual(parseFloat(data2), NaN)){
+        data2 = parseFloat(data2);
+    }
     switch (op) {
         case _less:
             return data1 < data2;
@@ -40,11 +46,22 @@ function compare(data1, data2, op) {
 
 function count(data, el){
     let count = 0;
-    for(let i = 0; i < data.length; ++i){
-        if(_.isEqual(data[i],el))
-            count++;
+    if (el.length > 0){
+        for(let i = 0; i < data.length; ++i){
+            if(_.isEqual(data[i],el)){
+                count++;
+            }
+        }
+        return count;
+    }else{
+        var result = { };
+        for(var i = 0; i < data.length; ++i) {
+            if(!result[data[i]])
+                result[data[i]] = 0;
+            ++result[data[i]];
+        }
+        return result;
     }
-    return count;
 }
 
 // Return an array with equal size partition
@@ -69,6 +86,13 @@ function equalSlice(data, d) {
     }
 
     return returnArr;
+}
+
+function filter(data, comparedValue, operation) {
+    let output = data.filter(d => {
+        return compare(d, comparedValue, operation);
+    });
+    return output;
 }
 
 function findLocalPeaks(data) {
@@ -99,6 +123,9 @@ function map(data, callee) {
 // Finds the maximum value from a json object if key is provided, else returns the maximum value from array
 function max(data, key) {
     key = key || 0;
+    if (typeof data === "object"){
+        data = Object.keys( data ).map(function ( key ) { return data[key]; });
+    }
     let output = (key === 0) ? d3.max(data) : d3.max(data, function (d) {
         return d[key]
     });
@@ -108,6 +135,9 @@ function max(data, key) {
 // Finds the minimum value from a json object if key is provided, else returns the maximum value from array
 function min(data, key) {
     key = key || 0;
+    if (typeof data === "object"){
+        data = Object.keys( data ).map(function ( key ) { return data[key]; });
+    }
     let output = (key === 0) ? d3.min(data) : d3.min(data, function (d) {
         return d[key]
     });
@@ -115,6 +145,9 @@ function min(data, key) {
 }
 
 function sum(data) {
+    if (typeof data === "object"){
+        data = Object.keys( data ).map(function ( key ) { return data[key]; });
+    }
     return data.reduce((a,b) => parseFloat(a) + parseFloat(b), 0);
 }
 

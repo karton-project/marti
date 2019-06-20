@@ -1,6 +1,7 @@
 var codeVariables = "";
 var codeRest = "";
 var variables = new Map();
+var files = new Map();
 var functionDefs = new Map();
 var blocks = new Map();
 
@@ -28,12 +29,21 @@ function createCodeVariable(varName, varVal) {
     variables.set(varName, varVal);
 }
 
+function createFileVariable(varName, varVal) {
+    files.set(varName, varVal);
+}
+
+
 function createNewFunc(varName, varVal){
     functionDefs.set(varName, varVal);
 }
 
 function listVariableKeys() {
     return Array.from(variables.keys());
+}
+
+function listFileKeys(){
+    return Array.from(files.keys());
 }
 
 function listVariablesAsArray() {
@@ -49,7 +59,15 @@ function listVariableKeysAsBlocklyDropdown() {
 }
 
 function getVariableValueByName(varName) {
-    return variables.get(varName);
+    if(_.contains(variables.get(varName).map(Number), NaN)){
+        return variables.get(varName);
+    }else{
+        return variables.get(varName).map(Number);
+    }
+}
+
+function getFileValueByName(varName) {
+        return files.get(varName);
 }
 
 function createCodeBlocks(blockID, blockCode) {

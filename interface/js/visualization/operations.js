@@ -1,6 +1,5 @@
-let chart, fileName, xAxis_var;
+let chart, fileName, xAxis_var, chartTypeSel;
 let chartisactive = false;
-let tableRows = [];
 
 function findChartDimensions() {
     let chartAreaWidth = $("#visualization_tabcontent").width() - 10;
@@ -93,16 +92,19 @@ function drawTable(data, titles) {
 }
 
 function drawChart(chartType) {
+    chartType = chartType || chartTypeSel;
     let dataArray = [];
-    let values = xAxis_var + ", ";
+    let x_cats = getVariableValueByName(xAxis_var);
     let charttitle = getValueFromDomElement('setChartTitle');
     let dim = findChartDimensions();
-    values += getValueFromDomElement('chooseYaxis');
-    let valArr = values.split(', ').filter(Boolean).map(function (item) {
+    let y_values = getValueFromDomElement('chooseYaxis');
+    let valArr = y_values.split(', ').filter(Boolean).map(function (item) {
         return item.trim();
     });
     for (let val of valArr) {
-        dataArray.push(getVariableValueByName(val));
+        let y_val = getVariableValueByName(val);
+        y_val.unshift(val);
+        dataArray.push(y_val);
     }
     chart = c3.generate({
         bindto: '#chartArea',
@@ -124,7 +126,7 @@ function drawChart(chartType) {
                     rotate: -45,
                     multiline: false
                 },
-                categories: valArr
+                categories: x_cats
             },
             y: {
                 label: { // ADD
@@ -139,9 +141,16 @@ function drawChart(chartType) {
 
 function createTableWithHeaders() {
     let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
-    tableRows.push(getValueFromDomElement("rowinput" + cntrow).split(/[ ,]+/));
+    let tableRows = [];
+    for (let i = 0; i <= cntrow; i++) {
+        tableRows.push(getValueFromDomElement("rowinput" + i).split(/[ ,]+/));
+    }
     drawTable(tableRows, title);
     defineVariablesUserTable(title, tableRows);
+}
+
+function saveTable() {
+
 }
 
 function transformChart(chartType) {
