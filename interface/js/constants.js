@@ -10,6 +10,7 @@ const _picture = "picture";
 const _sound = "sound";
 const _visual = "visualization";
 const _microbit = "microbit";
+const _p5 = "pfive";
 
 // Color
 const _visual_color = "#c62828";

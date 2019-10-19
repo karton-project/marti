@@ -29,6 +29,7 @@
     <script src="../js/en.js"></script>
     <script defer src="../../libraries/tracking/tracking-min.js"></script>
     <script defer src="../test/basics.js"></script>
+    <script defer src="../../libraries/p5.js/p5.min.js"></script>
     <script defer src="../js/camera/operations.js"></script>
     <script defer src="../js/camera/blocks.js"></script>
     <script defer src="../js/file/operations.js"></script>
@@ -93,22 +94,6 @@
         <ul id="tab_list" class="tabs"></ul>
     </div>
 </div>
-
-<script>
-
-    var mouseX;
-    var mouseY;
-    var box = document.querySelector("#blocklyDiv");
-
-    function updateDisplay(event) {
-        mouseX = event.pageX;
-        mouseY = event.pageY;
-    }
-
-    box.addEventListener("mousemove", updateDisplay, false);
-    box.addEventListener("mouseenter", updateDisplay, false);
-    box.addEventListener("mouseleave", updateDisplay, false);
-</script>
 
 <xml id="toolbox" style="display: none">
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
@@ -240,6 +225,25 @@
         <block type="maximum"></block>
         <block type="minimum"></block>
         <block type="average"></block>
+    </category>
+    <category name="p5.js" colour="#ED225D">
+        <category name="Structure" colour="#F47A9E">
+            <block type="createcanvas"></block>
+            <block type="setup"></block>
+            <block type="draw"></block>
+        </category>
+        <category name="Shape" colour="#F47A9E">
+            <block type="ellipse"></block>
+            <block type="rect"></block>
+        </category>
+        <category name="Events" colour="#F47A9E">
+            <block type="mousex"></block>
+            <block type="mousey"></block>
+        </category>
+        <category name="Color" colour="#F47A9E">
+            <block type="fill"></block>
+            <block type="background"></block>
+        </category>
     </category>
     <category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
         <block type="text"></block>
@@ -435,10 +439,77 @@
     </category>
 </xml>
 
+<xml id="startBlocks" style="display: none">
+    <block type="setup">
+        <statement name="do">
+            <block type="createcanvas">
+                <value name="width">
+                    <block type="math_number">
+                        <field name="NUM">500</field>
+                    </block>
+                </value>
+                <value name="height">
+                    <block type="math_number">
+                        <field name="NUM">500</field>
+                    </block>
+                </value>
+                <value name="canvas">
+                    <block type="text">
+                        <field name="TEXT">myContainer</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="fill">
+                        <value name="NAME">
+                            <block type="math_number">
+                                <field name="NUM">255</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <next>
+            <block type="draw">
+                <statement name="do">
+                    <block type="background">
+                        <value name="NAME">
+                            <block type="math_number">
+                                <field name="NUM">200</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="ellipse">
+                                <value name="x">
+                                    <block type="mousey"></block>
+                                </value>
+                                <value name="y">
+                                    <block type="mousex"></block>
+                                </value>
+                                <value name="width">
+                                    <block type="math_number">
+                                        <field name="NUM">50</field>
+                                    </block>
+                                </value>
+                                <value name="height">
+                                    <block type="math_number">
+                                        <field name="NUM">50</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+</xml>
+
 <script>
     window.onload = function () {
         setTimeout(function () {
             prepareTabList();
+            changeViewForP5();
         }, 0);
     };
 

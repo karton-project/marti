@@ -56,12 +56,22 @@ function changeViewForMap() {
     openMap(1);
 }
 
-function changeViewForMicrophone() {
-
-}
-
 function changeViewForPicture() {
     appendNewTab(_picture);
     document.getElementById('visualization_' + _picture).innerHTML =
         '<canvas id="source-canvas" width="600"></canvas>';
+}
+
+function changeViewForVisual() {
+    appendNewTab(_visual, function () {
+        document.getElementById('visualization_' + _visual).innerHTML =
+            '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
+    });
+}
+
+function changeViewForP5() {
+    appendNewTab(_p5, function () {
+        document.getElementById('visualization_' + _p5).innerHTML =
+            '<div id="p5Container" width="500px" height="500px"></div>';
+    });
 }

@@ -189,7 +189,7 @@ function prepareBlocks(blockId) {
 
         // Chart Operations
 
-        // create line chart
+        // create new table
         if (blockId.includes(_printTable)) {
             $(function () {
                 tableDiv = $(

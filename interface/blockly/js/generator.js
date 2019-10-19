@@ -42,30 +42,7 @@ function getVariableValueByNameFromBlockly(varName) {
     return variablesForBlockly.get(varName);
 }
 
-Blockly.Blocks['play_sound'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField(Blockly.Msg.PLAY)
-            .appendField(new Blockly.FieldDropdown([["C4", "js/blockly/sounds/c4.m4a"],
-                ["D4", "js/blockly/sounds/d4.m4a"],
-                ["E4", "js/blockly/sounds/e4.m4a"],
-                ["F4", "js/blockly/sounds/f4.m4a"],
-                ["G4", "js/blockly/sounds/g4.m4a"],
-                ["A5", "js/blockly/sounds/a5.m4a"],
-                ["B5", "js/blockly/sounds/b5.m4a"],
-                ["C5", "js/blockly/sounds/c5.m4a"]]), "sound_value");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(Blockly.Msg.SOUND_HUE);
-        this.setTooltip(Blockly.Msg.PLAY_TOOLTIP);
-        this.setHelpUrl("");
-    }
-};
-
-Blockly.JavaScript['play_sound'] = function (block) {
-    var value = '\'' + block.getFieldValue('sound_value') + '\'';
-    return 'MusicMaker.queueSound(' + value + ');\n';
-};
+// Math Operations
 
 Blockly.Blocks['filter'] = {
     init: function () {
@@ -94,19 +71,176 @@ Blockly.JavaScript['filter'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-Blockly.Blocks['mouse_x'] = {
+// Sound Blocks
+
+Blockly.Blocks['play_sound'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("mouse x");
-        this.setOutput(true, "Number");
-        this.setColour(230);
-        this.setTooltip("");
+            .appendField(Blockly.Msg.PLAY)
+            .appendField(new Blockly.FieldDropdown([["C4", "sounds/c4.m4a"],
+                ["D4", "sounds/d4.m4a"],
+                ["E4", "sounds/e4.m4a"],
+                ["F4", "sounds/f4.m4a"],
+                ["G4", "sounds/g4.m4a"],
+                ["A5", "sounds/a5.m4a"],
+                ["B5", "sounds/b5.m4a"],
+                ["C5", "sounds/c5.m4a"]]), "sound_value");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(Blockly.Msg.SOUND_HUE);
+        this.setTooltip(Blockly.Msg.PLAY_TOOLTIP);
         this.setHelpUrl("");
     }
 };
 
-Blockly.JavaScript['mouse_x'] = function (block) {
-    return [mouseX, Blockly.JavaScript.ORDER_ATOMIC];
+Blockly.JavaScript['play_sound'] = function (block) {
+    var value = '\'' + block.getFieldValue('sound_value') + '\'';
+    return 'MusicMaker.queueSound(' + value + ');\n';
+};
+
+//  p5.js
+
+Blockly.Blocks['background'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("background");
+        this.appendValueInput("NAME")
+            .setCheck("Number")
+            .appendField("color");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(0);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};Blockly.Blocks['createcanvas'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("createCanvas");
+        this.appendValueInput("width")
+            .setCheck("Number")
+            .appendField("width");
+        this.appendValueInput("height")
+            .setCheck("Number")
+            .appendField("height");
+        this.appendValueInput("canvas")
+            .setCheck("String")
+            .appendField("canvas");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};Blockly.Blocks['draw'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("draw");
+        this.appendStatementInput("do")
+            .setCheck(null)
+            .appendField("do");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};Blockly.Blocks['ellipse'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("ellipse");
+        this.appendValueInput("x")
+            .setCheck("Number")
+            .appendField("x");
+        this.appendValueInput("y")
+            .setCheck("Number")
+            .appendField("y");
+        this.appendValueInput("width")
+            .setCheck("Number")
+            .appendField("w");
+        this.appendValueInput("height")
+            .setCheck("Number")
+            .appendField("h");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(165);
+        this.setTooltip('Draws an ellipse to the screen. ');
+        this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
+    }
+};Blockly.Blocks['fill'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("fill");
+        this.appendValueInput("NAME")
+            .setCheck("Number")
+            .appendField("color");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(0);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};Blockly.Blocks['mousex'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("mouseX");
+        this.setOutput(true, null);
+        this.setColour(290);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+Blockly.Blocks['mousey'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("mouseY");
+        this.setOutput(true, "Number");
+        this.setColour(290);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+Blockly.Blocks['rect'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("rect");
+        this.appendValueInput("x")
+            .setCheck("Number")
+            .appendField("x");
+        this.appendValueInput("y")
+            .setCheck("Number")
+            .appendField("y");
+        this.appendValueInput("width")
+            .setCheck("Number")
+            .appendField("w");
+        this.appendValueInput("height")
+            .setCheck("Number")
+            .appendField("h");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(165);
+        this.setTooltip('');
+        this.setHelpUrl('');
+    }
+};
+Blockly.Blocks['setup'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("setup");
+        this.appendStatementInput("do")
+            .setCheck(null)
+            .appendField("do");
+        this.setInputsInline(false);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip('The setup() function is called once when the program starts.');
+        this.setHelpUrl('https://p5js.org/reference/#/p5/setup');
+    }
 };
 
 Blockly.Blocks['open_file_weblink'] = {
@@ -123,6 +257,69 @@ Blockly.Blocks['open_file_weblink'] = {
     }
 };
 
+Blockly.JavaScript['background'] = function(block) {
+    var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'background(' + value_name + ');\n';
+    return code;
+};
+Blockly.JavaScript['createcanvas'] = function(block) {
+    var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_canvas = Blockly.JavaScript.valueToCode(block, 'canvas', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'var myCanvas = createCanvas(' + value_width + ',' + value_height +');\n' + 'myCanvas.parent(' + value_canvas + ');\n';
+    return code;
+};
+Blockly.JavaScript['draw'] = function(block) {
+    var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'draw = function() {\n' + statements_do + '};\n';
+    return code;
+};
+Blockly.JavaScript['ellipse'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_h = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'ellipse(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
+    return code;
+};
+Blockly.JavaScript['fill'] = function(block) {
+    var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'fill(' + value_name + ');\n';
+    return code;
+};
+Blockly.JavaScript['mousex'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'mouseX';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code];
+};
+Blockly.JavaScript['mousey'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'mouseY';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code];
+};
+Blockly.JavaScript['rect'] = function(block) {
+    var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_h = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'rect(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
+    return code;
+};
+Blockly.JavaScript['setup'] = function(block) {
+    var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'setup = function() {\n' + statements_do + '};\n';
+    return code;
+};
+
 Blockly.JavaScript['open_file_weblink'] = function (block) {
     var text_link = block.getFieldValue('link');
     var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
@@ -134,19 +331,6 @@ Blockly.JavaScript['open_file_weblink'] = function (block) {
         statements_name +
         '});\n';
     return code;
-};
-
-Blockly.Blocks['create_table'] = {
-    init: function() {
-        this.appendStatementInput("createtable")
-            .setCheck(null)
-            .appendField("Create Table");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
 };
 
 Blockly.Blocks['print_table'] = {
@@ -161,32 +345,50 @@ Blockly.Blocks['print_table'] = {
     }
 };
 
-Blockly.JavaScript['create_table'] = function(block) {
-    var statements_createtable = Blockly.JavaScript.statementToCode(block, 'createtable');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
-    return code;
-};
-
-Blockly.Blocks['create_table_row'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("New Table Row:")
-            .appendField(new Blockly.FieldTextInput("element1, element2, ..."), "elements");
+Blockly.Blocks['create_table'] = {
+    init: function () {
+        this.appendValueInput("header")
+            .setCheck(null)
+            .appendField("define header and");
+        this.appendStatementInput("create_table")
+            .setCheck("create_table_row")
+            .appendField("create new table with rows");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip("Use add new row block to create table.");
         this.setHelpUrl("");
     }
 };
 
-Blockly.JavaScript['create_table_row'] = function(block) {
-    var text_elements = block.getFieldValue('elements');
+Blockly.JavaScript['create_table'] = function (block) {
+    var value_header = Blockly.JavaScript.valueToCode(block, 'header', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_create_table = Blockly.JavaScript.statementToCode(block, 'create_table');
+    statements_create_table = statements_create_table.substring(0, statements_create_table.length - 1);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code =
+        'changeViewForVisual();\n' +
+        'drawTable([' + statements_create_table + '], ' + value_header + ');\n';
     return code;
 };
+
+Blockly.Blocks['create_table_row'] = {
+    init: function () {
+        this.appendValueInput("new_row_array")
+            .setCheck("Array")
+            .appendField("add new row ");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("Takes a list input, and adds it to table");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.JavaScript['create_table_row'] = function (block) {
+    return Blockly.JavaScript.valueToCode(block, 'new_row_array', Blockly.JavaScript.ORDER_ATOMIC) + ',';
+};
+
 
 Blockly.JavaScript['print_table'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
