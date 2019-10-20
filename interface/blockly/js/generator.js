@@ -71,6 +71,31 @@ Blockly.JavaScript['filter'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.Blocks['slice'] = {
+    init: function () {
+        this.appendValueInput("data")
+            .setCheck(null)
+            .appendField("slice the");
+        this.appendDummyInput()
+            .appendField("to")
+            .appendField(new Blockly.FieldNumber(0, -Infinity, Infinity, 1), "slice")
+            .appendField("pieces");
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.JavaScript['slice'] = function (block) {
+    var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+    var number_slice = block.getFieldValue('slice');
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'equalSlice(' + value_data + ', ' + number_slice + ')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 // Sound Blocks
 
 Blockly.Blocks['play_sound'] = {
@@ -101,7 +126,7 @@ Blockly.JavaScript['play_sound'] = function (block) {
 //  p5.js
 
 Blockly.Blocks['background'] = {
-    init: function() {
+    init: function () {
         this.appendDummyInput()
             .appendField("background");
         this.appendValueInput("NAME")
@@ -114,8 +139,9 @@ Blockly.Blocks['background'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     }
-};Blockly.Blocks['createcanvas'] = {
-    init: function() {
+};
+Blockly.Blocks['createcanvas'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("createCanvas");
         this.appendValueInput("width")
@@ -133,8 +159,9 @@ Blockly.Blocks['background'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     }
-};Blockly.Blocks['draw'] = {
-    init: function() {
+};
+Blockly.Blocks['draw'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("draw");
         this.appendStatementInput("do")
@@ -146,8 +173,9 @@ Blockly.Blocks['background'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     }
-};Blockly.Blocks['ellipse'] = {
-    init: function() {
+};
+Blockly.Blocks['ellipse'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("ellipse");
         this.appendValueInput("x")
@@ -169,8 +197,9 @@ Blockly.Blocks['background'] = {
         this.setTooltip('Draws an ellipse to the screen. ');
         this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
     }
-};Blockly.Blocks['fill'] = {
-    init: function() {
+};
+Blockly.Blocks['fill'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("fill");
         this.appendValueInput("NAME")
@@ -183,8 +212,9 @@ Blockly.Blocks['background'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     }
-};Blockly.Blocks['mousex'] = {
-    init: function() {
+};
+Blockly.Blocks['mousex'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("mouseX");
         this.setOutput(true, null);
@@ -194,7 +224,7 @@ Blockly.Blocks['background'] = {
     }
 };
 Blockly.Blocks['mousey'] = {
-    init: function() {
+    init: function () {
         this.appendDummyInput()
             .appendField("mouseY");
         this.setOutput(true, "Number");
@@ -204,7 +234,7 @@ Blockly.Blocks['mousey'] = {
     }
 };
 Blockly.Blocks['rect'] = {
-    init: function() {
+    init: function () {
         this.appendDummyInput()
             .appendField("rect");
         this.appendValueInput("x")
@@ -228,7 +258,7 @@ Blockly.Blocks['rect'] = {
     }
 };
 Blockly.Blocks['setup'] = {
-    init: function() {
+    init: function () {
         this.appendDummyInput()
             .appendField("setup");
         this.appendStatementInput("do")
@@ -257,27 +287,27 @@ Blockly.Blocks['open_file_weblink'] = {
     }
 };
 
-Blockly.JavaScript['background'] = function(block) {
+Blockly.JavaScript['background'] = function (block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = 'background(' + value_name + ');\n';
     return code;
 };
-Blockly.JavaScript['createcanvas'] = function(block) {
+Blockly.JavaScript['createcanvas'] = function (block) {
     var value_width = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
     var value_height = Blockly.JavaScript.valueToCode(block, 'height', Blockly.JavaScript.ORDER_ATOMIC);
     var value_canvas = Blockly.JavaScript.valueToCode(block, 'canvas', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = 'var myCanvas = createCanvas(' + value_width + ',' + value_height +');\n' + 'myCanvas.parent(' + value_canvas + ');\n';
+    var code = 'var myCanvas = createCanvas(' + value_width + ',' + value_height + ');\n' + 'myCanvas.parent(' + value_canvas + ');\n';
     return code;
 };
-Blockly.JavaScript['draw'] = function(block) {
+Blockly.JavaScript['draw'] = function (block) {
     var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
     // TODO: Assemble JavaScript into code variable.
     var code = 'draw = function() {\n' + statements_do + '};\n';
     return code;
 };
-Blockly.JavaScript['ellipse'] = function(block) {
+Blockly.JavaScript['ellipse'] = function (block) {
     var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
     var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
     var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
@@ -286,25 +316,25 @@ Blockly.JavaScript['ellipse'] = function(block) {
     var code = 'ellipse(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
     return code;
 };
-Blockly.JavaScript['fill'] = function(block) {
+Blockly.JavaScript['fill'] = function (block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = 'fill(' + value_name + ');\n';
     return code;
 };
-Blockly.JavaScript['mousex'] = function(block) {
+Blockly.JavaScript['mousex'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = 'mouseX';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code];
 };
-Blockly.JavaScript['mousey'] = function(block) {
+Blockly.JavaScript['mousey'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = 'mouseY';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code];
 };
-Blockly.JavaScript['rect'] = function(block) {
+Blockly.JavaScript['rect'] = function (block) {
     var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
     var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
     var value_w = Blockly.JavaScript.valueToCode(block, 'width', Blockly.JavaScript.ORDER_ATOMIC);
@@ -313,7 +343,7 @@ Blockly.JavaScript['rect'] = function(block) {
     var code = 'rect(' + value_x + ',' + value_y + ',' + value_w + ',' + value_h + ');\n';
     return code;
 };
-Blockly.JavaScript['setup'] = function(block) {
+Blockly.JavaScript['setup'] = function (block) {
     var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
     // TODO: Assemble JavaScript into code variable.
     var code = 'setup = function() {\n' + statements_do + '};\n';
