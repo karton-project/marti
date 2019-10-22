@@ -30,6 +30,7 @@
     <script defer src="../../libraries/tracking/tracking-min.js"></script>
     <script defer src="../test/basics.js"></script>
     <script defer src="../../libraries/p5.js/p5.min.js"></script>
+    <script defer src="../../libraries/p5.js/p5.dom.min.js"></script>
     <script defer src="../js/camera/operations.js"></script>
     <script defer src="../js/camera/blocks.js"></script>
     <script defer src="../js/file/operations.js"></script>
@@ -62,7 +63,7 @@
     <script defer src="../../libraries/geocoder/geocoder.js"></script>
     <script defer src="../../libraries/speech/annyang.min.js"></script>
     <script defer src="../../libraries/speech/speechkitt.min.js"></script>
-    <script defer src="../tangible/classifier.js"></script>
+    <script defer src="js/p5_maker.js"></script>
     <script defer src="js/output.js"></script>
     <style>
         body {
@@ -456,7 +457,7 @@
                 </value>
                 <value name="canvas">
                     <block type="text">
-                        <field name="TEXT">myContainer</field>
+                        <field name="TEXT">visualization_pfive</field>
                     </block>
                 </value>
                 <next>
@@ -482,10 +483,14 @@
                         <next>
                             <block type="ellipse">
                                 <value name="x">
-                                    <block type="mousey"></block>
+                                    <block type="math_number">
+                                        <field name="NUM">200</field>
+                                    </block>
                                 </value>
                                 <value name="y">
-                                    <block type="mousex"></block>
+                                    <block type="math_number">
+                                        <field name="NUM">200</field>
+                                    </block>
                                 </value>
                                 <value name="width">
                                     <block type="math_number">
@@ -533,8 +538,10 @@
         code += 'MusicMaker.play();';
         Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
         try {
-            eval(code);
-            // TODO: Add run p5 code
+            //eval(code);
+            document.getElementById("visualization_pfive").innerHTML = "";
+            let blockp5 = new Blockp5(code);
+            blockp5.runCode();
         } catch (e) {
             alert(e);
         }
