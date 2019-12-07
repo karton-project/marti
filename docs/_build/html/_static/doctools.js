@@ -1,5 +1,5 @@
 /*
- * doctools.js
+ * doctools.ui
  * ~~~~~~~~~~~
  *
  * Sphinx JavaScript utilities for all documentation.

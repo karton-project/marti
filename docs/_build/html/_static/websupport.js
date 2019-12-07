@@ -1,5 +1,5 @@
 /*
- * websupport.js
+ * websupport.ui
  * ~~~~~~~~~~~~~
  *
  * sphinx.websupport utilities for all documentation.
