@@ -19,17 +19,12 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="libs/jquery-ui-touch-punch.min.js"></script>
-    <script src="libs/blockly/blockly_compressed.js"></script>
-    <script src="libs/blockly/blocks_compressed.js"></script>
-    <script src="libs/blockly/javascript_compressed.js"></script>
-    <script src="libs/blockly/msg/js/en.js"></script>
     <script src="libs/underscore.min.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/tr.js"></script>
     <script src="libs/selectize.js"></script>
     <script defer src="libs/tracking/tracking-min.js"></script>
-    <script defer src="libs/microbit/microBit.js"></script>
     <script defer src="test/basics.js"></script>
     <script defer src="js/camera/operations.js"></script>
     <script defer src="js/camera/blocks.js"></script>
@@ -66,89 +61,83 @@
     <script defer src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
     <script defer src="libs/geocoder/Control.OSMGeocoder.js"></script>
     <script defer src="libs/geocoder/geocoder.js"></script>
-    <script defer src="js/microbit/sketch.js"></script>
+    <script defer src="tangible/classifier.js"></script>
     <title>Code Editor</title>
 </head>
 
-<body style="margin: 0">
+<body>
+<p id="saveblock_title"><strong>Save Paper Blocks</strong></p>
+<p id="createprogram_title" style="display: none"><strong>Create Program w/Paper Blocks</strong></p>
 <input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"></input>
 <input type="file" id="csvFile" accept=".csv" style="display:none"></input>
 <input type="file" id="jsonFile" accept=".json" style="display:none"></input>
 <input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"></input>
-<h1 id="page_title"><strong>Veri Programlama</strong></h1>
-<div class="title-grid-container">
-    <div class="tooltip">
-        <p id="_cat" class="title">Kategori</p>
-        <span class="tooltiptext">
-            Kategori alanındaki kutuların üzerine basarak blokları görebilirsin.
-        </span>
+<div class="saveblock_container">
+    <div id="train_container" class="saveblock_train_container">
+        <div id="dataSourceTable" class="container saveblock_source_container"></div>
+        <div id='left-copy-1tomany' class="container saveblock_block_container"></div>
     </div>
-    <div class="tooltip">
-        <p id="_blocks" class="title">Bloklar</p>
-        <span class="tooltiptext">
-            Blokları kodlama üzerine sürükleyerek programlamaya başlayabilirsin.
-        </span>
-    </div>
-    <div class="tooltip">
-        <p id="_coding" class="title">Kodlama</p>
-        <span class="tooltiptext">
-            Kodlama alanındaki bloklara basınca, detaylar çıkacak.
-         </span>
-    </div>
-    <div class="tooltip">
-        <p id="_output" class="title">Çıktı</p>
-        <span class="tooltiptext">
-            Oluşturduğun her program bloğu, burada çıktıya dönüşür.
-             </span>
+    <div id='right-copy-1tomany' class="container saveblock_code_container" style="display: none;"></div>
+    <div id="train_coding_cards" class="tangible_recognizers_container">
+        <video autoplay playsinline muted id="cardClassifierCam" width="224" height="224"></video>
+        <div id="trained_card_info"></div>
     </div>
 
+    <button id="learn" class="saveblock_button">Learn</button>
+    <button id="label" class="saveblock_button" style="display:none">Add</button>
 </div>
-<div class="grid-container">
-    <div id="dataSourceTable" class="container source_container"></div>
-    <div id='left-copy-1tomany' class="container block_container"></div>
-    <div id='right-copy-1tomany' class="container code_container"></div>
-    <div id="outputText" class="text-container output_container">
-        <table id="outputTable">
-        </table>
-    </div>
-    <div id="visualContainer" class="out-container visualization_container">
+
+<p id="output_title" style="display: none"><strong>Program Output</strong></p>
+<div id="output_container" class="saveblock_output_wrapper" style="display:none">
+    <div id="visualContainer" class="container saveblock_visualization_container">
         <ul id="tab_list" class="tabs"></ul>
+    </div>
+    <div id="outputText" class="container saveblock_output_container">
+        <table id="outputTable"></table>
     </div>
 </div>
 <div id="snackbar"></div>
-<a href="docs/_build/html/index.html" target="_blank" class="float top-right">
-    <i class="far fa-question-circle question-float"></i>
-    <p class="link-detail">Foksiyon Tanımları</p>
+<a href="#" class="float" onclick="showTangibleCoding()">
+    <i class="fas fa-code my-float"></i>
 </a>
-<a href="dataset/List-of-Datasets/index.html" target="_blank" class="float top-right-center">
-    <i class="fas fa-table question-float"></i>
-    <p class="link-detail">Veri Setleri</p>
-</a>
-<a href="tutorials/index.html" target="_blank" class="float top-right-left">
-    <i class="far fa-file-alt question-float"></i>
-    <p class="link-detail">Kılavuz ve Aktiviteler</p>
-</a>
+
 <script>
-    if (screen.width <= 699) {
-        document.location = "../tangible/tangible.html";
-    }
-    var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-    console.log(isChrome);
-    if (!isChrome) {
-        console.log("It looks like you are not displaying this page with Chrome. If you will work with sensors, you need Chrome Browser.");
-    } else {
-        console.log("Enable generic sensors API from chrome://flags/#enable-generic-sensor to see all available sensors");
-    }
-    $('#selectSensor').change(function () {
-        selectedSource = $(this).val();
-    });
+    let isCodingScreen = false;
+
     window.onload = function () {
         setTimeout(function () {
+            isTangibleInterface = true;
             createSourceTable();
+            startClassifier();
             fillHTML();
             prepareTabList();
-
         }, 0);
     };
+
+    function showTangibleCoding() {
+        if (!isCodingScreen) {
+            document.getElementById("saveblock_title").style.display = "none";
+            document.getElementById("train_container").style.display = "none";
+            document.getElementById("learn").style.display = "none";
+            document.getElementById("trained_card_info").style.display = "none";
+            document.getElementById("createprogram_title").style.display = "";
+            document.getElementById("output_title").style.display = "";
+            document.getElementById("right-copy-1tomany").style.display = "";
+            document.getElementById("label").style.display = "";
+            document.getElementById("output_container").style.display = "";
+        } else {
+            document.getElementById("saveblock_title").style.display = "";
+            document.getElementById("train_container").style.display = "";
+            document.getElementById("learn").style.display = "";
+            document.getElementById("trained_card_info").style.display = "";
+            document.getElementById("createprogram_title").style.display = "none";
+            document.getElementById("output_title").style.display = "none";
+            document.getElementById("right-copy-1tomany").style.display = "none";
+            document.getElementById("label").style.display = "none";
+            document.getElementById("output_container").style.display = "none";
+        }
+        isCodingScreen = !isCodingScreen;
+    }
+
 </script>
 </body>
