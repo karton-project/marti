@@ -159,31 +159,31 @@ button:hover {
     grid-auto-rows: minmax(10%, auto);
     background: #f3e5f5;
     grid-column: 1 / 2;
-    grid-row: 1 / 10;
+    grid-row: 1 / 9;
 }
 
 .saveblock_source_container{
     background: #f3e5f5;
     grid-column: 1 / 2;
-    grid-row: 1 / 10;
+    grid-row: 1 / 9;
 }
 
 .saveblock_block_container{
     background: #f3e5f5;
     grid-column: 2 / 3;
-    grid-row: 1 / 10;
+    grid-row: 1 / 9;
 }
 
 .saveblock_code_container{
     background: #f3e5f5;
     grid-column: 1 / 2;
-    grid-row: 1 / 10;
+    grid-row: 1 / 9;
 }
 
 .saveblock_output_wrapper {
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-auto-rows: minmax(100%, auto);
+    grid-auto-rows: minmax(90%, auto);
 }
 
 .saveblock_output_container{
@@ -201,12 +201,13 @@ button:hover {
 .tangible_recognizers_container {
     background: #f3e5f5;
     grid-column: 2 / 3;
-    grid-row: 1 / 9;
+    grid-row: 1 / 8;
+    align-content: center;
 }
 
 .saveblock_button{
     grid-column: 2 / 3;
-    grid-row: 9 / 10;
+    grid-row: 8 / 9;
 }
 
 .table-wrapper {
@@ -312,13 +313,30 @@ button:hover {
     grid-row: 1 / 2;
 }
 
-.float{
-    position:fixed;
-    width:84px;
-    height:54px;
+.float_top_right{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
     background-color: #aaf700;
     color:#000;
     border-radius:50px;
+    padding: 4px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+.float_bottom{
+    position:absolute;
+    bottom: 25%;
+    right: 10px;
+    margin: auto;
+    width: auto;
+    height: auto;
+    background-color: #aaf700;
+    color:#000;
+    border-radius:50px;
+    padding: 4px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;
 }

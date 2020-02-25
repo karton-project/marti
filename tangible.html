@@ -63,15 +63,22 @@
     <script defer src="libs/geocoder/geocoder.js"></script>
     <script defer src="tangible/classifier.js"></script>
     <title>Code Editor</title>
+
+    <style>
+        #cardClassifierCam {
+            justify-self: center;
+            align-self: center;
+        }
+    </style>
 </head>
 
 <body>
 <p id="saveblock_title"><strong>Save Paper Blocks</strong></p>
 <p id="createprogram_title" style="display: none"><strong>Create Program w/Paper Blocks</strong></p>
-<input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"></input>
-<input type="file" id="csvFile" accept=".csv" style="display:none"></input>
-<input type="file" id="jsonFile" accept=".json" style="display:none"></input>
-<input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"></input>
+<input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"/>
+<input type="file" id="csvFile" accept=".csv" style="display:none"/>
+<input type="file" id="jsonFile" accept=".json" style="display:none"/>
+<input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"/>
 <div class="saveblock_container">
     <div id="train_container" class="saveblock_train_container">
         <div id="dataSourceTable" class="container saveblock_source_container"></div>
@@ -83,8 +90,8 @@
         <div id="trained_card_info"></div>
     </div>
 
-    <button id="learn" class="saveblock_button">Learn</button>
-    <button id="label" class="saveblock_button" style="display:none">Add</button>
+    <button id="learn" class="saveblock_button">Add New Instance</button>
+    <button id="label" class="saveblock_button" style="display:none">Add Code Block</button>
 </div>
 
 <p id="output_title" style="display: none"><strong>Program Output</strong></p>
@@ -97,9 +104,9 @@
     </div>
 </div>
 <div id="snackbar"></div>
-<a href="#" class="float" onclick="showTangibleCoding()">
-    <i class="fas fa-code my-float"></i>
-</a>
+<a href="#" id="start_coding" class="float_top_right" onclick="showTangibleCoding()">Start Coding ➡️</a>
+<a href="#output_title" id="see_output" class="float_bottom" hidden>See Output ⬇️</a>
+<a href="#output_title" id="back_coding" class="float_upper" hidden>Back to Coding ⬆️</a>
 
 <script>
     let isCodingScreen = false;
@@ -116,6 +123,7 @@
 
     function showTangibleCoding() {
         if (!isCodingScreen) {
+            document.getElementById("start_coding").innerHTML = "⬅️Train Model";
             document.getElementById("saveblock_title").style.display = "none";
             document.getElementById("train_container").style.display = "none";
             document.getElementById("learn").style.display = "none";
@@ -125,7 +133,9 @@
             document.getElementById("right-copy-1tomany").style.display = "";
             document.getElementById("label").style.display = "";
             document.getElementById("output_container").style.display = "";
+            document.getElementById("see_output").hidden = false;
         } else {
+            document.getElementById("start_coding").innerHTML = "Start Coding ➡️";
             document.getElementById("saveblock_title").style.display = "";
             document.getElementById("train_container").style.display = "";
             document.getElementById("learn").style.display = "";
@@ -135,6 +145,7 @@
             document.getElementById("right-copy-1tomany").style.display = "none";
             document.getElementById("label").style.display = "none";
             document.getElementById("output_container").style.display = "none";
+            document.getElementById("see_output").hidden = true;
         }
         isCodingScreen = !isCodingScreen;
     }
