@@ -7,12 +7,13 @@ function imcrementBlockCounter() {
 }
 
 function createSourceTable() {
-    var table = $('#dataSourceTable');
-    var sources = [_general, _visual, _file, _microbit, _camera, _map, _microphone, _picture, _sound];
-    var source_names = [_general_lang, _visual_lang, _file_lang, _microbit_lang, _camera_lang, _map_lang, _microphone_lang, _picture_lang, _sound_lang];
+    const table = $('#dataSourceTable');
+    const sources = [_general, _visual, _file, _map, _picture, _microbit];
+    const source_names = [_general_lang, _visual_lang, _file_lang, _map_lang, _picture_lang, _microbit_lang];
+    const source_colors = [_general_color, _visual_color, _file_color, _map_color, _picture_color, _microbit_color];
     for (let i = 0; i < sources.length; i++) {
         table.append(
-            '<div class="icon" id="' + sources[i] + '">' +
+            '<div class="icon" style="background:' + source_colors[i] + '" id="' + sources[i] + '">' +
             '<img class="icon" src="./media/type_icons/' + sources[i] + '.png">' +
             '<p id="' + sources[i] + '_icon" class="icon">' + source_names[i] + '</p>' +
             '</div>');
@@ -23,6 +24,7 @@ function createSourceTable() {
     })
 }
 
+
 function addBlock(blockID, source) {
     appendBlockToHolder(blockID);
     let currentBlock = $('#' + blockID);
@@ -30,12 +32,6 @@ function addBlock(blockID, source) {
         case _visual:
             currentBlock.css({
                 'background-color': _visual_color,
-                'color': 'white'
-            });
-            break;
-        case _camera:
-            currentBlock.css({
-                'background-color': _camera_color,
                 'color': 'white'
             });
             break;
@@ -63,21 +59,9 @@ function addBlock(blockID, source) {
                 'color': 'white'
             });
             break;
-        case _microphone:
-            currentBlock.css({
-                'background-color': _microphone_color,
-                'color': 'white'
-            });
-            break;
         case _picture:
             currentBlock.css({
                 'background-color': _picture_color,
-                'color': 'white'
-            });
-            break;
-        case _sound:
-            currentBlock.css({
-                'background-color': _sound_color,
                 'color': 'white'
             });
             break;
@@ -147,11 +131,6 @@ function scrollToBlock(blockID) {
 
 function addSourceClickFunctions() {
 
-    $('#' + _camera).click(function () {
-        selectedSource = _camera;
-        changeViewForCamera();
-    });
-
     $('#' + _file).click(function () {
         selectedSource = _file;
         changeViewForFile();
@@ -172,11 +151,6 @@ function addSourceClickFunctions() {
         changeViewForMicrobit();
     });
 
-    $('#' + _microphone).click(function () {
-        selectedSource = _microphone;
-        changeViewForMicrophone();
-    });
-
     $('#' + _picture).click(function () {
         selectedSource = _picture;
         changeViewForPicture();
@@ -188,16 +162,8 @@ function addSourceClickFunctions() {
     });
 }
 
-function changeViewForCamera() {
-    appendNewTab(_camera, function () {
-        document.getElementById('visualization_' + _camera).innerHTML =
-            '<video id="video" width="600" height="450" preload autoplay loop muted controls></video>';
-    });
-    scrollToBlock(_startwebcam);
-}
-
 function changeViewForFile() {
-    appendNewTab(_file, function(){
+    appendNewTab(_file, function () {
         document.getElementById('visualization_' + _file).innerHTML =
             '<div id="tableArea"></div>';
     });
@@ -270,7 +236,7 @@ function changeViewForMicrobit() {
             '\n' +
             '\n' +
             '        <br/>\n' +
-            '      </div>'+
+            '      </div>' +
             '</div>';
     });
     scrollToBlock(_connectdevice);

@@ -1,25 +1,18 @@
 // Sources
-const _camera = "camera";
-const _csv = "csv";
 const _file = "file";
-const _general = "general";
-const _json = "json";
+const _general = "math";
 const _map = "map";
-const _microphone = "microphone";
 const _picture = "picture";
-const _sound = "sound";
 const _visual = "visualization";
 const _microbit = "microbit";
 
 // Color
-const _visual_color = "#c62828";
-const _camera_color = "#ad1457";
-const _file_color = "#1f635b";
 const _general_color = "#ef6c00";
+const _visual_color = "#c62828";
+const _file_color = "#1f635b";
 const _map_color = "#558b2f";
-const _microbit_color = "#0277bd";
-const _microphone_color = "#6a1b9a";
 const _picture_color = "#283593";
+const _microbit_color = "#0277bd";
 
 // Blocks for CSV
 const _opencsvfromcomputer = "opencsvfromcomputer";
@@ -44,7 +37,6 @@ const _applyfunc = "applyfunc";
 const _applythreshold = "threshold";
 const _findpeaks = "findpeaks";
 const _trackcolor = "trackcolor";
-const _colorpicker = "colorpicker";
 const _filter = "filter";
 const _findposition = "findposition";
 const _pointerevent = "pointerevent";
@@ -116,9 +108,6 @@ blockMap.set(_listheaders, _file);
 // microbit
 blockMap.set(_connectdevice, _microbit);
 blockMap.set(_gettemperature, _microbit);
-// camera
-blockMap.set(_startwebcam, _camera);
-blockMap.set(_trackcolor, _camera);
 // map
 blockMap.set(_opengeojson, _map);
 blockMap.set(_addgeojson, _map);

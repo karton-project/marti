@@ -59,9 +59,33 @@ async function startClassifier() {
     document.getElementById('label').addEventListener('click', () => getClassLabel());
 
     window.addEventListener("beforeunload", function (e) {
-        model.save('localstorage://mymodel');
+        classifier.save('localstorage://marti');
     }, false);
 
+}
+
+async function save() {
+    let dataset = classifier.getClassifierDataset();
+    let datasetObj = {};
+    Object.keys(dataset).forEach((key) => {
+        let data = dataset[key].dataSync();
+        // use Array.from() so when JSON.stringify() it covert to an array string e.g [0.1,-0.2...]
+        // instead of object e.g {0:"0.1", 1:"-0.2"...}
+        datasetObj[key] = Array.from(data);
+    });
+    let jsonStr = JSON.stringify(datasetObj);
+    console.log(jsonStr);
+    localStorage.setItem("martiData", jsonStr);
+}
+
+async function load() {
+    let dataset = localStorage.getItem("martiData");
+    let tensorObj = JSON.parse(dataset);
+    //covert back to tensor
+    Object.keys(tensorObj).forEach((key) => {
+        tensorObj[key] = tf.tensor(tensorObj[key], [tensorObj[key].length / 1024, 1024])
+    });
+    classifier.setClassifierDataset(tensorObj);
 }
 
 async function getClassLabel() {

@@ -3,8 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/camera/blocks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/camera/operations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/accelerometer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/camera.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/camera.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/file.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/general.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/map.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/microbit.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/microbit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/microphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/picture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/sound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/visualization.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/visualization.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tangible.html" beforeDir="false" afterPath="$PROJECT_DIR$/tangible.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tangible/classifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/tangible/classifier.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +49,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kart-on-activities" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -95,7 +113,18 @@
       <workItem from="1579443748843" duration="22000" />
       <workItem from="1579443901584" duration="88000" />
       <workItem from="1582280209406" duration="318000" />
-      <workItem from="1582612997465" duration="8294000" />
+      <workItem from="1582612997465" duration="8591000" />
+      <workItem from="1582651572772" duration="5223000" />
+      <workItem from="1583309922353" duration="33000" />
+      <workItem from="1587023210855" duration="661000" />
+      <workItem from="1587038785723" duration="2653000" />
+      <workItem from="1587132313700" duration="16000" />
+      <workItem from="1587300377193" duration="3048000" />
+      <workItem from="1587485026123" duration="20000" />
+      <workItem from="1589186475007" duration="2474000" />
+      <workItem from="1589286365090" duration="615000" />
+      <workItem from="1589300263646" duration="1050000" />
+      <workItem from="1589377995249" duration="1466000" />
     </task>
     <servers />
   </component>
@@ -103,9 +132,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="786" y="295" key="FileChooserDialogImpl" timestamp="1583309953547">
+      <screen x="93" y="0" width="1827" height="1080" />
+    </state>
+    <state x="786" y="295" key="FileChooserDialogImpl/93.0.1827.1080/1920.0.1536.834@93.0.1827.1080" timestamp="1583309953547" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1582655964461">
+      <screen x="93" y="0" width="1827" height="1080" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/93.0.1827.1080@93.0.1827.1080" timestamp="1582655964461" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1582616751905">
       <screen x="93" y="0" width="1827" height="1080" />
     </state>
     <state width="600" height="440" key="javadoc.popup/93.0.1827.1080/1920.0.1536.834@93.0.1827.1080" timestamp="1582616751905" />
+    <state x="663" y="250" key="run.anything.popup" timestamp="1582652491064">
+      <screen x="93" y="0" width="1827" height="1080" />
+    </state>
+    <state x="663" y="250" key="run.anything.popup/93.0.1827.1080@93.0.1827.1080" timestamp="1582652491064" />
   </component>
 </project>

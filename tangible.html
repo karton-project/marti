@@ -106,7 +106,9 @@
 <div id="snackbar"></div>
 <a href="#" id="start_coding" class="float_top_right" onclick="showTangibleCoding()">Start Coding ➡️</a>
 <a href="#output_title" id="see_output" class="float_bottom" hidden>See Output ⬇️</a>
-<a href="#output_title" id="back_coding" class="float_upper" hidden>Back to Coding ⬆️</a>
+<a href="#output_title" id="back_coding" class="float_top_left" hidden>Back to Coding ⬆️</a>
+<a href="#" id="save_model" class="float_bottom" onclick="save()">Save Model</a>
+<a href="#" id="load_model" class="float_top_right" onclick="load()" hidden>Load Model</a>
 
 <script>
     let isCodingScreen = false;
@@ -134,6 +136,8 @@
             document.getElementById("label").style.display = "";
             document.getElementById("output_container").style.display = "";
             document.getElementById("see_output").hidden = false;
+            document.getElementById("save_model").hidden = true;
+            document.getElementById("load_model").hidden = false;
         } else {
             document.getElementById("start_coding").innerHTML = "Start Coding ➡️";
             document.getElementById("saveblock_title").style.display = "";
@@ -146,6 +150,8 @@
             document.getElementById("label").style.display = "none";
             document.getElementById("output_container").style.display = "none";
             document.getElementById("see_output").hidden = true;
+            document.getElementById("save_model").hidden = false;
+            document.getElementById("load_model").hidden = true;
         }
         isCodingScreen = !isCodingScreen;
     }
