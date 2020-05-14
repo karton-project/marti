@@ -69,7 +69,10 @@
     <title>Code Editor</title>
     <script>
         let queries = window.location.href.split("#");
-        let currentDetail = queries[1].split("-");
+        if (queries !== undefined) {
+
+            let currentDetail = queries[1].split("-");
+        }
     </script>
 </head>
 
@@ -78,7 +81,9 @@
 <input type="file" id="csvFile" accept=".csv" style="display:none"></input>
 <input type="file" id="jsonFile" accept=".json" style="display:none"></input>
 <input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"></input>
-<h1 id="page_title"><strong>Veri Programlama</strong></h1>
+
+<img id="back_button" class="left" src="media/ui/Back-Button.png">
+<img class="center" src="media/ui/budgie.png">
 <div class="title-grid-container">
     <div class="tooltip">
         <p id="_cat" class="title">Kategori</p>
@@ -145,6 +150,7 @@
     $('#selectSensor').change(function () {
         selectedSource = $(this).val();
     });
+    $("#back_button").click(() => window.history.back());
     window.onload = function () {
         setTimeout(function () {
             createSourceTable();

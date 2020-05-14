@@ -30,14 +30,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-h1#page_title {
-    font-family: 'Dosis', sans-serif;
-    color: var(--text);
-    font-style: normal;
-    font-weight: 900;
-    margin-left: 0.5em;
-}
-
 i {
     color: var(--text-dark);
 }
@@ -84,6 +76,21 @@ sub {
     margin-top: -10px;
     font-size: 11px;
     font-style: italic;
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    margin: auto;
+}
+
+.left {
+    height: 6vh;
+    width: auto;
+    cursor: pointer;
+    margin-top:calc(0.4em + 0.4vw);
 }
 
 .collapsible-body{
@@ -353,7 +360,7 @@ button:hover {
 
 .top-right-left{
     top:calc(0.4em + 0.4vw);
-    right:calc(0.4em + 0.4vw + 240px);
+    right:calc(0.4em + 0.4vw + 200px);
 }
 
 .my-float{
