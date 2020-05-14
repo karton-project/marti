@@ -3,26 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/camera/blocks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/camera/operations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/accelerometer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/camera.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/camera.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/file.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/general.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/microbit.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/microbit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/microphone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/picture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/sound.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/type_icons/visualization.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/visualization.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tangible.html" beforeDir="false" afterPath="$PROJECT_DIR$/tangible.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tangible/classifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/tangible/classifier.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../kart-on-activities" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -124,7 +111,9 @@
       <workItem from="1589186475007" duration="2474000" />
       <workItem from="1589286365090" duration="615000" />
       <workItem from="1589300263646" duration="1050000" />
-      <workItem from="1589377995249" duration="1466000" />
+      <workItem from="1589377995249" duration="4499000" />
+      <workItem from="1589442198011" duration="1574000" />
+      <workItem from="1589468223755" duration="2547000" />
     </task>
     <servers />
   </component>

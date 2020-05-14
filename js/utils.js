@@ -85,6 +85,6 @@ function rgbaTextToHslText(rgb) {
 function rgbaTextToHslLightText(rgb) {
     let rgbArray = rgbTextToNumber(rgb);
     let hsl = rgbToHsl(rgbArray[0], rgbArray[1], rgbArray[2]);
-    let out = "hsl(" + hsl[0] + "," + hsl[1] + "%," + (hsl[2] + 30) + "%)";
+    let out = "hsl(" + hsl[0] + "," + hsl[1] + "%," + (hsl[2] - 20) + "%)";
     return out;
 }

@@ -67,6 +67,10 @@
     <script defer src="libs/geocoder/geocoder.js"></script>
     <script defer src="js/microbit/sketch.js"></script>
     <title>Code Editor</title>
+    <script>
+        let queries = window.location.href.split("#");
+        let currentDetail = queries[1].split("-");
+    </script>
 </head>
 
 <body style="margin: 0">
