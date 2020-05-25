@@ -108,3 +108,6 @@ const _filtertable_lang = "Tabloyu Filtrele";
 const _filtertable_detail_lang = "Seçtiğiniz dosyanın sahip olduğu bir sütun seçin, sütun için bir karşılaştırma fonksiyonu oluşturun.";
 const _drawchart_lang = "Grafik Çiz";
 const _select_chart_type_lang = "Çizmek istediğin grafik tipini seç";
+const _function_defs = "Fonksiyon Tanımları";
+const _tuts = "Kılavuz ve Aktiviteler";
+const _datasets = "Veri Setleri";

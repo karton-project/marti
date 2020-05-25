@@ -14,10 +14,6 @@ body {
     font-family: 'Biryani', sans-serif;
 }
 
-body, input, button {
-    color: #37474F;
-}
-
 p {
     color: var(--text);
     margin: 0;
@@ -87,10 +83,10 @@ sub {
 }
 
 .left {
-    height: 6vh;
+    height: 3vh;
     width: auto;
     cursor: pointer;
-    margin-top:calc(0.4em + 0.4vw);
+    margin:calc(0.4em + 0.4vw);
 }
 
 .collapsible-body{
@@ -638,6 +634,7 @@ td, th {
     padding: 6px;
     cursor: pointer;
     text-align: left;
+    color: var(--text);
 }
 
 th.des:after {

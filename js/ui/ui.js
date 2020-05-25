@@ -253,11 +253,13 @@ function changeViewForPicture() {
 
 function fillHTML() {
     // Translate index.html
-    fillHTMLText('page_title', page_title_lang);
     fillHTMLText('_cat', _cat_lang);
     fillHTMLText('_blocks', _blocks_lang);
     fillHTMLText('_output', _output_lang);
     fillHTMLText('_coding', _coding_lang);
+    fillHTMLText('_func_def', _function_defs);
+    fillHTMLText('_tuts', _tuts);
+    fillHTMLText('_data_sets', _datasets);
 
     // Translate Block Titles
     fillHTMLText(_variable, _var_lang);

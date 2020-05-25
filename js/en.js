@@ -108,3 +108,6 @@ const _filtertable_lang = "Filter Table";
 const _filtertable_detail_lang = "Select a file, then choose a column to apply a comparison function.";
 const _drawchart_lang = "Draw Chart";
 const _select_chart_type_lang = "Select the type of chart you want to use";
+const _function_defs = "Function Definitions";
+const _tuts = "Tutorials and Activities";
+const _datasets = "Datasets";
