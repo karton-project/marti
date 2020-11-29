@@ -2,12 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/social/data/tr-cities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/data/unesco-2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/blockModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/blockModalUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/codeGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/codeGenerator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/blockly/blockly_compressed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/blockly/blocks_compressed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/blockly/javascript_compressed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/blockly/msg/js/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/blockly/msg/js/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/1x1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/click.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/click.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/click.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/delete.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/delete.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/delete.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/disconnect.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/disconnect.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/disconnect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/handclosed.cur" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/handdelete.cur" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/handopen.cur" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/quote0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/quote1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/sprites.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/blockly/sprites.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tangible.html" beforeDir="false" afterPath="$PROJECT_DIR$/tangible.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tangible/classifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/tangible/classifier.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -25,17 +56,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Y74H8EzPePlEjYyPf1KCUHIDhF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kart-on-activities" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,17 +79,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\asabuncuoglu13\Desktop\marti\interface\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti" />
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\interface" />
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\interface\js" />
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\interface\blockly\js" />
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\interface\main\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\social" />
+      <recent name="C:\Users\asabuncuoglu13\Desktop\marti\interface\js" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -113,29 +150,41 @@
       <workItem from="1589377995249" duration="4499000" />
       <workItem from="1589442198011" duration="1574000" />
       <workItem from="1589468223755" duration="9241000" />
-      <workItem from="1590403433312" duration="1854000" />
+      <workItem from="1590403433312" duration="1880000" />
+      <workItem from="1599055611885" duration="2641000" />
+      <workItem from="1599303839133" duration="78000" />
+      <workItem from="1600188090553" duration="8985000" />
+      <workItem from="1600550666498" duration="617000" />
+      <workItem from="1600616742245" duration="6393000" />
+      <workItem from="1601218418967" duration="1407000" />
+      <workItem from="1601294302059" duration="2527000" />
+      <workItem from="1601386668057" duration="3741000" />
+      <workItem from="1602062890662" duration="879000" />
+      <workItem from="1606557636785" duration="10606000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/datasets" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="786" y="295" key="FileChooserDialogImpl" timestamp="1583309953547">
+    <state x="786" y="296" key="FileChooserDialogImpl" timestamp="1599303916629">
       <screen x="93" y="0" width="1827" height="1080" />
     </state>
-    <state x="786" y="295" key="FileChooserDialogImpl/93.0.1827.1080/1920.0.1536.834@93.0.1827.1080" timestamp="1583309953547" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1582655964461">
+    <state x="786" y="296" key="FileChooserDialogImpl/93.0.1827.1080@93.0.1827.1080" timestamp="1599303916629" />
+    <state x="507" y="183" key="SettingsEditor" timestamp="1600188336882">
       <screen x="93" y="0" width="1827" height="1080" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/93.0.1827.1080@93.0.1827.1080" timestamp="1582655964461" />
-    <state width="600" height="440" key="javadoc.popup" timestamp="1582616751905">
+    <state x="507" y="183" key="SettingsEditor/93.0.1827.1080@93.0.1827.1080" timestamp="1600188336882" />
+    <state x="669" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1600255081185">
       <screen x="93" y="0" width="1827" height="1080" />
     </state>
-    <state width="600" height="440" key="javadoc.popup/93.0.1827.1080/1920.0.1536.834@93.0.1827.1080" timestamp="1582616751905" />
-    <state x="663" y="250" key="run.anything.popup" timestamp="1582652491064">
-      <screen x="93" y="0" width="1827" height="1080" />
-    </state>
-    <state x="663" y="250" key="run.anything.popup/93.0.1827.1080@93.0.1827.1080" timestamp="1582652491064" />
+    <state x="669" y="235" width="672" height="678" key="search.everywhere.popup/93.0.1827.1080@93.0.1827.1080" timestamp="1600255081185" />
   </component>
 </project>

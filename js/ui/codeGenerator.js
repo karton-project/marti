@@ -5,26 +5,6 @@ var files = new Map();
 var functionDefs = new Map();
 var blocks = new Map();
 
-function mergeCode() {
-    workspaceToCode();
-    appendVariablesToCode();
-    appendBlocksToCode();
-    return codeVariables + codeRest;
-}
-
-function workspaceToCode() {
-    if (_.isEqual(selectedSource, _picture)) {
-        for (var blockID of containerBlockIds) {
-            if (_.isEqual(blockID, _average + "_block")) {
-                pictureAverage();
-            }
-            if (_.isEqual(blockID, _threshold + "_block")) {
-                pictureApplyThreshold();
-            }
-        }
-    }
-}
-
 function createCodeVariable(varName, varVal) {
     variables.set(varName, varVal);
 }
@@ -93,24 +73,6 @@ function appendVariablesToCode() {
     }
 }
 
-function appendToCodingArea(blockID) {
-    if (!_.isEqual(blockID, undefined)) {
-        $('#right-copy-1tomany').append('<div class="codeblock ex-moved" id="' + blockID + '">' + blockID + '</div>');
-    }
-}
-
 function clearOutputArea() {
     document.getElementById('outputText').innerHTML = '';
-}
-
-function runCode() {
-    window.LoopTrap = 1000;
-    Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-    Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-    var code = mergeCode();
-    try {
-        eval(code);
-    } catch (e) {
-        alert(e);
-    }
 }

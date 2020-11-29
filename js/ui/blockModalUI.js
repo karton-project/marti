@@ -1,5 +1,3 @@
-var varName = "varName";
-var varVal = ["valVal"];
 var selectedSource = "";
 var sliderMax = 100, sliderMin = 50;
 let blockDiv;
@@ -73,6 +71,7 @@ function prepareVariableModal(blockDiv, title, onclickfun) {
 function prepareBlocks(blockId) {
     // select the block in coding areas
     blockDiv = $("#right-copy-1tomany > ul > li > #" + blockId + "_modal");
+    if (isTangibleInterface) blockDiv = $("div#" + blockId + "_modal");
     if (blockDiv.is(':empty')) {
         // General Operations
 
@@ -337,31 +336,6 @@ function prepareBlocks(blockId) {
             })
         }
 
-        // Camera Operations
-
-        // start device camera
-        if (blockId.includes(_startwebcam)) {
-            $(function () {
-                var $startCamDiv = $(
-                    '<p>' + _start_webcam_text_lang + '</p>' +
-                    '<button onclick="startWebcam()">' + _start_lang + '</button>'
-                );
-                $startCamDiv.appendTo(blockDiv);
-            })
-        }
-
-        // track selected color from webcam
-        if (blockId.includes(_trackcolor)) {
-            $(function () {
-                var $rgbSlider = $(
-                    '<p id="value-color-picker"></p>' +
-                    '<div id="slider-color-picker"></div>'
-                );
-                $rgbSlider.appendTo(blockDiv);
-                generateRGBSlider();
-            })
-        }
-
         // Map Operations
 
         // open GEOJSON file
@@ -475,12 +449,14 @@ function prepareBlocks(blockId) {
 
         // Fill the title, background and collapsible areas
         blockTitle = $("#right-copy-1tomany > ul > li > #" + blockId);
+        if (isTangibleInterface) blockTitle = $("div#" + blockId);
         blockTitle.append('<div class="fa fa-chevron-up rotate"</div>');
 
         blockDiv.css({
             'background-color': rgbaTextToHslLightText(blockTitle.css("background-color")),
             'display': "block"
         });
+
         blockTitle.on('click', function () {
             if (document.getElementById(blockId + "_modal").style.display === "none") {
                 document.getElementById(blockId + "_modal").style.display = "block";

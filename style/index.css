@@ -160,7 +160,7 @@ button:hover {
 
 .saveblock_container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     grid-auto-rows: minmax(10%, auto);
 }
 
@@ -185,16 +185,10 @@ button:hover {
     grid-row: 1 / 9;
 }
 
-.saveblock_code_container{
+.saveblock_output_wrapper{
     background: #f3e5f5;
     grid-column: 1 / 2;
     grid-row: 1 / 9;
-}
-
-.saveblock_output_wrapper {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-auto-rows: minmax(90%, auto);
 }
 
 .saveblock_output_container{
@@ -500,6 +494,7 @@ ul.tabs li.current {
     display: none;
     background: var(--bg-light);
     padding: 15px;
+    overflow: scroll;
 }
 
 .tab-content.current {

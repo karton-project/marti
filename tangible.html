@@ -22,12 +22,10 @@
     <script src="libs/underscore.min.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/utils.js"></script>
-    <script src="js/tr.js"></script>
+    <script src="js/en.js"></script>
     <script src="libs/selectize.js"></script>
     <script defer src="libs/tracking/tracking-min.js"></script>
     <script defer src="test/basics.js"></script>
-    <script defer src="js/camera/operations.js"></script>
-    <script defer src="js/camera/blocks.js"></script>
     <script defer src="js/visualization/operations.js"></script>
     <script defer src="js/visualization/blocks.js"></script>
     <script defer src="js/file/operations.js"></script>
@@ -50,10 +48,6 @@
     <script defer src="libs/Pizzicato.min.js"></script>
     <script defer src="libs/wavesurfer.min.js"></script>
     <script defer src="js/ui/codeGenerator.js"></script>
-    <script defer src="js/ui/blockModalUI.js"></script>
-    <script defer src='js/ui/dragula.js'></script>
-    <script defer src='js/ui/index.js'></script>
-    <script defer src="js/ui/ui.js"></script>
     <script defer src="libs/leaflet/leaflet.js"></script>
     <script defer src="libs/leaflet/tile.stamen.js"></script>
     <script defer src="https://unpkg.com/@tensorflow/tfjs"></script>
@@ -61,7 +55,8 @@
     <script defer src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
     <script defer src="libs/geocoder/Control.OSMGeocoder.js"></script>
     <script defer src="libs/geocoder/geocoder.js"></script>
-    <script defer src="tangible/classifier.js"></script>
+    <script defer src="js/ui/blockModalUI.js"></script>
+    <script defer src="js/ui/ui.js"></script>
     <title>Code Editor</title>
 
     <style>
@@ -74,7 +69,7 @@
 
 <body>
 <p id="saveblock_title"><strong>Save Paper Blocks</strong></p>
-<p id="createprogram_title" style="display: none"><strong>Create Program w/Paper Blocks</strong></p>
+<p id="output_title" style="display: none"><strong>Program Output</strong></p>
 <input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"/>
 <input type="file" id="csvFile" accept=".csv" style="display:none"/>
 <input type="file" id="jsonFile" accept=".json" style="display:none"/>
@@ -84,7 +79,14 @@
         <div id="dataSourceTable" class="container saveblock_source_container"></div>
         <div id='left-copy-1tomany' class="container saveblock_block_container"></div>
     </div>
-    <div id='right-copy-1tomany' class="container saveblock_code_container" style="display: none;"></div>
+    <div id="output_container" class="container saveblock_output_wrapper" style="display:none">
+        <div id="visualContainer" class="container saveblock_visualization_container">
+            <ul id="tab_list" class="tabs"></ul>
+        </div>
+        <div id="outputText" class="container saveblock_output_container">
+            <table id="outputTable"></table>
+        </div>
+    </div>
     <div id="train_coding_cards" class="tangible_recognizers_container">
         <video autoplay playsinline muted id="cardClassifierCam" width="224" height="224"></video>
         <div id="trained_card_info"></div>
@@ -94,18 +96,8 @@
     <button id="label" class="saveblock_button" style="display:none">Add Code Block</button>
 </div>
 
-<p id="output_title" style="display: none"><strong>Program Output</strong></p>
-<div id="output_container" class="saveblock_output_wrapper" style="display:none">
-    <div id="visualContainer" class="container saveblock_visualization_container">
-        <ul id="tab_list" class="tabs"></ul>
-    </div>
-    <div id="outputText" class="container saveblock_output_container">
-        <table id="outputTable"></table>
-    </div>
-</div>
 <div id="snackbar"></div>
 <a href="#" id="start_coding" class="float_top_right" onclick="showTangibleCoding()">Start Coding ➡️</a>
-<a href="#output_title" id="see_output" class="float_bottom" hidden>See Output ⬇️</a>
 <a href="#output_title" id="back_coding" class="float_top_left" hidden>Back to Coding ⬆️</a>
 <a href="#" id="save_model" class="float_bottom" onclick="save()">Save Model</a>
 <a href="#" id="load_model" class="float_top_right" onclick="load()" hidden>Load Model</a>
@@ -130,12 +122,9 @@
             document.getElementById("train_container").style.display = "none";
             document.getElementById("learn").style.display = "none";
             document.getElementById("trained_card_info").style.display = "none";
-            document.getElementById("createprogram_title").style.display = "";
             document.getElementById("output_title").style.display = "";
-            document.getElementById("right-copy-1tomany").style.display = "";
             document.getElementById("label").style.display = "";
             document.getElementById("output_container").style.display = "";
-            document.getElementById("see_output").hidden = false;
             document.getElementById("save_model").hidden = true;
             document.getElementById("load_model").hidden = false;
         } else {
@@ -144,12 +133,9 @@
             document.getElementById("train_container").style.display = "";
             document.getElementById("learn").style.display = "";
             document.getElementById("trained_card_info").style.display = "";
-            document.getElementById("createprogram_title").style.display = "none";
             document.getElementById("output_title").style.display = "none";
-            document.getElementById("right-copy-1tomany").style.display = "none";
             document.getElementById("label").style.display = "none";
             document.getElementById("output_container").style.display = "none";
-            document.getElementById("see_output").hidden = true;
             document.getElementById("save_model").hidden = false;
             document.getElementById("load_model").hidden = true;
         }
@@ -157,4 +143,5 @@
     }
 
 </script>
+<script defer src="tangible/classifier.js"></script>
 </body>
