@@ -21,8 +21,19 @@ function createSourceTable() {
         addSourceClickFunctions(sources[i]);
     }
     blockMap.forEach(function (val, key) {
-        appendBlockToHolder(key, val);
+        isTangibleInterface ? appendBlockToTangible(key, val) : appendBlockToHolder(key, val);
     })
+}
+
+function appendBlockToTangible(blockID, source) {
+    $('#left-copy-1tomany').append(
+        '<ul class="collapsible" id="' + blockID + '_block">' +
+        '    <li>' +
+        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
+        '    </li>' +
+        '</ul>'
+    );
+    giveBackgroundColor($('#' + blockID), source);
 }
 
 function appendBlockToHolder(blockID, source) {
@@ -40,11 +51,10 @@ function appendBlockToHolder(blockID, source) {
 function showBlockDialog(blockID, source, callback) {
     $('<ul class="collapsible" id="' + blockID + '_block">' +
         '    <li>' +
-        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
         '      <div class="collapsible-body" id="' + blockID + '_modal"></div>' +
         '    </li>' +
         '</ul>').dialog();
-    giveBackgroundColor($('#div' + blockID), source);
+    giveBackgroundColor($('div#' + blockID + "_modal"), source);
     callback();
 }
 

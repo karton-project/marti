@@ -15,7 +15,7 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="libs/geocoder/Control.OSMGeocoder.css" rel="stylesheet">
     <link href="style/selectize.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="libs/jquery-ui-touch-punch.min.js"></script>
@@ -79,21 +79,19 @@
         <div id="dataSourceTable" class="container saveblock_source_container"></div>
         <div id='left-copy-1tomany' class="container saveblock_block_container"></div>
     </div>
-    <div id="output_container" class="container saveblock_output_wrapper" style="display:none">
-        <div id="visualContainer" class="container saveblock_visualization_container">
-            <ul id="tab_list" class="tabs"></ul>
-        </div>
-        <div id="outputText" class="container saveblock_output_container">
-            <table id="outputTable"></table>
-        </div>
+    <div id="visualContainer" class="saveblock_visualization_container" style="display:none">
+        <ul id="tab_list" class="tabs"></ul>
+    </div>
+    <div id="outputText" class="saveblock_output_container" style="display:none">
+        <table id="outputTable"></table>
     </div>
     <div id="train_coding_cards" class="tangible_recognizers_container">
         <video autoplay playsinline muted id="cardClassifierCam" width="224" height="224"></video>
-        <div id="trained_card_info"></div>
+        <div id="trained_card_info" style="color: white"></div>
     </div>
 
-    <button id="learn" class="saveblock_button">Add New Instance</button>
-    <button id="label" class="saveblock_button" style="display:none">Add Code Block</button>
+    <button id="learn" class="button saveblock_button">Add New Instance</button>
+    <button id="label" class="button saveblock_button" style="display:none">Add Code Block</button>
 </div>
 
 <div id="snackbar"></div>
@@ -124,7 +122,8 @@
             document.getElementById("trained_card_info").style.display = "none";
             document.getElementById("output_title").style.display = "";
             document.getElementById("label").style.display = "";
-            document.getElementById("output_container").style.display = "";
+            document.getElementById("visualContainer").style.display = "";
+            document.getElementById("outputText").style.display = "";
             document.getElementById("save_model").hidden = true;
             document.getElementById("load_model").hidden = false;
         } else {
@@ -135,7 +134,8 @@
             document.getElementById("trained_card_info").style.display = "";
             document.getElementById("output_title").style.display = "none";
             document.getElementById("label").style.display = "none";
-            document.getElementById("output_container").style.display = "none";
+            document.getElementById("outputText").style.display = "none";
+            document.getElementById("visualContainer").style.display = "none";
             document.getElementById("save_model").hidden = false;
             document.getElementById("load_model").hidden = true;
         }

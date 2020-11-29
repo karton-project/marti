@@ -70,8 +70,8 @@ function prepareVariableModal(blockDiv, title, onclickfun) {
 
 function prepareBlocks(blockId) {
     // select the block in coding areas
-    blockDiv = $("#right-copy-1tomany > ul > li > #" + blockId + "_modal");
     if (isTangibleInterface) blockDiv = $("div#" + blockId + "_modal");
+    else blockDiv = $("#right-copy-1tomany > ul > li > #" + blockId + "_modal");
     if (blockDiv.is(':empty')) {
         // General Operations
 
@@ -448,23 +448,22 @@ function prepareBlocks(blockId) {
         }
 
         // Fill the title, background and collapsible areas
-        blockTitle = $("#right-copy-1tomany > ul > li > #" + blockId);
-        if (isTangibleInterface) blockTitle = $("div#" + blockId);
-        blockTitle.append('<div class="fa fa-chevron-up rotate"</div>');
-
-        blockDiv.css({
-            'background-color': rgbaTextToHslLightText(blockTitle.css("background-color")),
-            'display': "block"
-        });
-
-        blockTitle.on('click', function () {
-            if (document.getElementById(blockId + "_modal").style.display === "none") {
-                document.getElementById(blockId + "_modal").style.display = "block";
-            } else {
-                document.getElementById(blockId + "_modal").style.display = "none";
-            }
-            blockTitle.find(".rotate").toggleClass("down");
-        });
+        if (!isTangibleInterface) {
+            blockTitle = $("#right-copy-1tomany > ul > li > #" + blockId);
+            blockTitle.append('<div class="fa fa-chevron-up rotate"</div>');
+            blockTitle.on('click', function () {
+                if (document.getElementById(blockId + "_modal").style.display === "none") {
+                    document.getElementById(blockId + "_modal").style.display = "block";
+                } else {
+                    document.getElementById(blockId + "_modal").style.display = "none";
+                }
+                blockTitle.find(".rotate").toggleClass("down");
+            });
+            blockDiv.css({
+                'background-color': rgbaTextToHslLightText(blockTitle.css("background-color")),
+                'display': "block"
+            });
+        }
     }
 }
 
