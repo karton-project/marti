@@ -1,7 +1,7 @@
 var placesList;
 
 function addGEOJsonCode() {
-    addGEOJSON();
+    openGEOJSON();
     appendOutputText('Added the selected geojson file to map.');
 }
 
