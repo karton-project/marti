@@ -11,16 +11,12 @@ var rowToHtml = function (row) {
 };
 
 function getValueFromDomElement(id) {
-    if (document.getElementById(id)) {
-        if (typeof document.getElementById(id).value !== 'undefined') {
-            return document.getElementById(id).value;
-        }
-    }
+    if (document.getElementById(id)) return $("#" + id).val();
 }
 
-function rgbToHsl(r,g,b) {
-    let cmin = Math.min(r,g,b),
-        cmax = Math.max(r,g,b),
+function rgbToHsl(r, g, b) {
+    let cmin = Math.min(r, g, b),
+        cmax = Math.max(r, g, b),
         delta = cmax - cmin,
         h = 0,
         s = 0,
@@ -64,7 +60,7 @@ function rgbTextToNumber(rgb) {
     for (let R in rgb) {
         let r = rgb[R];
         if (r.indexOf("%") > -1)
-            rgb[R] = Math.round(r.substr(0,r.length - 1) / 100 * 255);
+            rgb[R] = Math.round(r.substr(0, r.length - 1) / 100 * 255);
     }
 
     // Make r, g, and b fractions of 1
@@ -72,7 +68,7 @@ function rgbTextToNumber(rgb) {
         g = rgb[1] / 255,
         b = rgb[2] / 255;
 
-    return [r,g,b];
+    return [r, g, b];
 }
 
 function rgbaTextToHslText(rgb) {

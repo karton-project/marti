@@ -74,6 +74,12 @@ sub {
     font-style: italic;
 }
 
+ul.ui-dialog-content.ui-widget-content {
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+}
+
 .center {
     position: absolute;
     left: 0;
@@ -86,10 +92,10 @@ sub {
     height: 3vh;
     width: auto;
     cursor: pointer;
-    margin:calc(0.4em + 0.4vw);
+    margin: calc(0.4em + 0.4vw);
 }
 
-.collapsible-body{
+.collapsible-body {
     position: relative;
     padding-right: 0.25em;
     padding-left: 0.25em;
@@ -130,7 +136,7 @@ input {
     box-sizing: border-box;
 }
 
-button {
+.button {
     background-color: #ecf0f1;
     color: #007bff;
     border: 0;
@@ -142,7 +148,7 @@ button {
     outline: none;
 }
 
-button:hover {
+.button:hover {
     background-color: #e74c3c;
     color: #ecf0f1;
 }
@@ -160,63 +166,50 @@ button:hover {
 
 .saveblock_container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     grid-auto-rows: minmax(10%, auto);
 }
 
-.saveblock_train_container{
+.saveblock_train_container {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-auto-rows: minmax(10%, auto);
-    background: #f3e5f5;
+    background: var(--bg-dark);
     grid-column: 1 / 2;
     grid-row: 1 / 9;
 }
 
-.saveblock_source_container{
-    background: #f3e5f5;
+.saveblock_source_container {
+    background: var(--bg-dark);
     grid-column: 1 / 2;
     grid-row: 1 / 9;
 }
 
-.saveblock_block_container{
-    background: #f3e5f5;
-    grid-column: 2 / 3;
-    grid-row: 1 / 9;
-}
-
-.saveblock_code_container{
-    background: #f3e5f5;
+.saveblock_output_container {
+    background: var(--bg-dark);
     grid-column: 1 / 2;
-    grid-row: 1 / 9;
+    grid-row: 8/ 9;
 }
 
-.saveblock_output_wrapper {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-auto-rows: minmax(90%, auto);
-}
-
-.saveblock_output_container{
-    background: #f3e5f5;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.saveblock_visualization_container{
-    background: #f3e5f5;
+.saveblock_visualization_container {
+    height: 72vh;
+    max-height: 72vh;
+    justify-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--bg-dark);
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-row: 1 / 8;
 }
 
 .tangible_recognizers_container {
-    background: #f3e5f5;
+    background: var(--bg-dark);
     grid-column: 2 / 3;
     grid-row: 1 / 8;
     align-content: center;
 }
 
-.saveblock_button{
+.saveblock_button {
     grid-column: 2 / 3;
     grid-row: 8 / 9;
 }
@@ -228,10 +221,11 @@ button:hover {
     overflow: auto;
 }
 
-.bottom-left{
+.bottom-left {
     position: absolute;
     right: 4px;
 }
+
 .container {
     height: 84vh;
     max-height: 84vh;
@@ -277,11 +271,11 @@ button:hover {
     grid-auto-rows: minmax(1.4vh, auto);
 }
 
-.add-input{
+.add-input {
     grid-column: 1;
 }
 
-.add-button{
+.add-button {
     cursor: pointer;
     grid-column: 2;
 }
@@ -331,41 +325,41 @@ button:hover {
 
 
 .float {
-    position:absolute;
+    position: absolute;
     top: 10px;
     font-size: small;
-    color:#000;
+    color: #000;
     padding: 10px;
-    text-align:center;
+    text-align: center;
 }
 
-.link-detail{
+.link-detail {
     font-size: 0.7em;
 }
 
-.top-right{
-    top:calc(0.4em + 0.4vw);
-    right:calc(0.6em + 0.4vw);
+.top-right {
+    top: calc(0.4em + 0.4vw);
+    right: calc(0.6em + 0.4vw);
 }
 
 
-.top-right-center{
-    top:calc(0.4em + 0.4vw);
-    right:calc(0.4em + 0.4vw + 120px);
+.top-right-center {
+    top: calc(0.4em + 0.4vw);
+    right: calc(0.4em + 0.4vw + 120px);
 }
 
-.top-right-left{
-    top:calc(0.4em + 0.4vw);
-    right:calc(0.4em + 0.4vw + 200px);
+.top-right-left {
+    top: calc(0.4em + 0.4vw);
+    right: calc(0.4em + 0.4vw + 200px);
 }
 
-.my-float{
-    margin-top:16px;
+.my-float {
+    margin-top: 16px;
 }
 
-.question-float{
+.question-float {
     font-size: 2.5em;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 
@@ -500,6 +494,7 @@ ul.tabs li.current {
     display: none;
     background: var(--bg-light);
     padding: 15px;
+    overflow: scroll;
 }
 
 .tab-content.current {
@@ -612,6 +607,7 @@ ul.tabs li.current {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
 .tooltip:hover .savetext {
     visibility: visible;
 }

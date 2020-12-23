@@ -1,6 +1,7 @@
 var containerBlockIds = [];
 var selectedSource = 'default';
 var cnt = 0;
+var isTangibleInterface = false;
 
 function imcrementBlockCounter() {
     cnt += 1;
@@ -17,17 +18,47 @@ function createSourceTable() {
             '<img class="icon" src="./media/type_icons/' + sources[i] + '.png">' +
             '<p id="' + sources[i] + '_icon" class="icon">' + source_names[i] + '</p>' +
             '</div>');
+        addSourceClickFunctions(sources[i]);
     }
-    addSourceClickFunctions();
     blockMap.forEach(function (val, key) {
-        addBlock(key, val);
+        isTangibleInterface ? appendBlockToTangible(key, val) : appendBlockToHolder(key, val);
     })
 }
 
+function appendBlockToTangible(blockID, source) {
+    $('#left-copy-1tomany').append(
+        '<ul class="collapsible" id="' + blockID + '_block">' +
+        '    <li>' +
+        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
+        '    </li>' +
+        '</ul>'
+    );
+    giveBackgroundColor($('#' + blockID), source);
+}
 
-function addBlock(blockID, source) {
-    appendBlockToHolder(blockID);
-    let currentBlock = $('#' + blockID);
+function appendBlockToHolder(blockID, source) {
+    $('#left-copy-1tomany').append(
+        '<ul class="collapsible" id="' + blockID + '_block">' +
+        '    <li>' +
+        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
+        '      <div class="collapsible-body" id="' + blockID + '_modal"></div>' +
+        '    </li>' +
+        '</ul>'
+    );
+    giveBackgroundColor($('#' + blockID), source);
+}
+
+function showBlockDialog(blockID, source, callback) {
+    $('<ul class="collapsible" id="' + blockID + '_block">' +
+        '    <li>' +
+        '      <div class="collapsible-body" id="' + blockID + '_modal"></div>' +
+        '    </li>' +
+        '</ul>').dialog();
+    giveBackgroundColor($('div#' + blockID + "_modal"), source);
+    callback();
+}
+
+function giveBackgroundColor(currentBlock, source) {
     switch (source) {
         case _visual:
             currentBlock.css({
@@ -70,29 +101,6 @@ function addBlock(blockID, source) {
     }
 }
 
-function appendBlockToHolder(blockID) {
-    $('#left-copy-1tomany').append(
-        '<ul class="collapsible" id="' + blockID + '_block">' +
-        '    <li>' +
-        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
-        '      <div class="collapsible-body" id="' + blockID + '_modal"></div>' +
-        '    </li>' +
-        '</ul>'
-    );
-}
-
-function appendBlockToCodingHolder(blockID, callback) {
-    $('#right-copy-1tomany').append(
-        '<ul class="collapsible" id="' + blockID + '_block">' +
-        '    <li>' +
-        '      <div class="collapsible-header" id="' + blockID + '"></div>' +
-        '      <div class="collapsible-body" id="' + blockID + '_modal"></div>' +
-        '    </li>' +
-        '</ul>'
-    );
-    callback();
-}
-
 function closeTab(tabID) {
     $("#" + tabID + "_key").remove();
     $("#" + tabID + "_tabcontent").remove();
@@ -129,37 +137,26 @@ function scrollToBlock(blockID) {
     elmnt.scrollIntoView();
 }
 
-function addSourceClickFunctions() {
+function addSourceClickFunctions(source) {
+    $('#' + source).click(function () {
+        selectedSource = source;
+        changeSourceView(source);
+    });
+}
 
-    $('#' + _file).click(function () {
-        selectedSource = _file;
+function changeSourceView(source) {
+    if (source === _file)
         changeViewForFile();
-    });
-
-    $('#' + _general).click(function () {
-        selectedSource = _general;
+    else if (source === _general)
         changeViewForGeneral();
-    });
-
-    $('#' + _map).click(function () {
-        selectedSource = _map;
+    else if (source === _map)
         changeViewForMap();
-    });
-
-    $('#' + _microbit).click(function () {
-        selectedSource = _microbit;
+    else if (source === _microbit)
         changeViewForMicrobit();
-    });
-
-    $('#' + _picture).click(function () {
-        selectedSource = _picture;
+    else if (source === _picture)
         changeViewForPicture();
-    });
-
-    $('#' + _visual).click(function () {
-        selectedSource = _visual;
+    else if (source === _visual)
         changeViewForVisual();
-    });
 }
 
 function changeViewForFile() {

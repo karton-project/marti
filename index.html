@@ -19,10 +19,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="libs/jquery-ui-touch-punch.min.js"></script>
-    <script src="libs/blockly/blockly_compressed.js"></script>
-    <script src="libs/blockly/blocks_compressed.js"></script>
-    <script src="libs/blockly/javascript_compressed.js"></script>
-    <script src="libs/blockly/msg/js/en.js"></script>
     <script src="libs/underscore.min.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/utils.js"></script>
@@ -140,13 +136,6 @@
 <script>
     if (screen.width <= 699) {
         document.location = "../tangible/tangible.html";
-    }
-    var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-    console.log(isChrome);
-    if (!isChrome) {
-        console.log("It looks like you are not displaying this page with Chrome. If you will work with sensors, you need Chrome Browser.");
-    } else {
-        console.log("Enable generic sensors API from chrome://flags/#enable-generic-sensor to see all available sensors");
     }
     $('#selectSensor').change(function () {
         selectedSource = $(this).val();

@@ -1,0 +1,37 @@
+Country,Latitude,Longitude,Challenges,Zorluklar
+Australia,-25.274398,133.775136,"- Teacher training has not been planned,
+- Teachers cannot find enough time to learn new content and technologies although new content is produced,
+- Lack of access to realiable equipment","- Öğretmen eğitimi henüz planlanmadı,
+- Yeni içerik üretildiği halde, öğretmenler bu içeriği ve teknolojileri öğrenmek için yeterli zaman bulamıyor,
+- Güvenilir bir ekipman altyapısına erişim yok"
+Brazil,-14.235004,-51.92528,"- ICT has not gain the core-subject statue yet,
+- Teachers and policy-makers need evidence about learning-outcomes
+- There is no quality content on teacher's professional education","- BİT, henüz temel bir konu olarak görülmüyor
+- Öğretmenler ve politika-yapıcılar öğrenim kazanımları hakkında yeterli konut olduğuna inanmıyor
+- Öğretmenin mesleki eğitimi üzerine kaliteli içerik bulunmamaktadır"
+Cyprus,35.126413,33.429859,"- Training teachers on computers and society
+- Access to realiable infrastructure","- Öğretmenlerin mesleki eğitimlerinde, bilgisayar bilimi ve toplum konusunda içerik eksiği,
+- Güvenilir bir ekipman altyapısına erişim yok"
+Denmark,56.26392,9.501785,"- No descriptive analysis of ""Technology Comprehension""
+- More training is needed for ""Adult Education""","- ""Teknolojiyi Anlama"" konusunda daha tanımlayıcı olmak gerekiyor
+- Halkın teknoloji konusunda eğitim alması gerekiyor"
+England,52.3555177,-1.1743197,"- Teachers from other subject areas had no technical experience,
+- The continuing impact of ICT education on tertiary education is not high","- Diğer alanlardan mezun olan öğretmenlerin teknik deneyimi oldukça eksik,
+- İlk ve ortaokuldaki BİT eğitimininin yükseköğrenime etkisi fazla değil"
+Germany,51.165691,10.451526,"- The subject is in curriculum for decades, so the structure is relatively solid,
+- Better communication between academics and policy-makers can be provided","- Bu konu yıllardır müfredatta olduğu için temel sağlam,
+- Akademisyenler ve politika üreticiler arasında daha iyi iletişim sağlanabilir"
+Israel,31.046051,34.851612,"- The subject is in curriculum for decades, so the structure is relatively solid, but integrating CT into curriculm is new","- Bu konu yıllardır müfredatta olduğu için temeli sağlam,
+- Programların içine bilgi-işlemsel düşünme yeni yerleştirildiği için öğretmenler zorluk çekebiliyor"
+Italy,41.87194,12.56738,"- Solid definition of computational thinking and teacher training on this skill is needed,
+- Better communication between school leaders and policy-makers","- Bilgi-işlemsel düşünmenin ne demek olduğunu daha iyi tanımlamak gerekiyor
+- Okul liderleri ve politika yapıcılar arasında daha sağlıklı iletişim"
+Morocco,31.791702,-7.09262,"- ICT is still not an individual subject for most of the education policy-makers
+- CT is not a structured curricula, but more about hackathons or competitions
+- Infrastructure and teacher training should be developed","- BİT hala eğitim politikası üretenlerin çoğu için tek başına yeterli bir konu değil,
+- BİT konuları daha çok hackathon veya yarışmalar ile ilişkilendirilmiş,
+- Altyapı ve öğretmen eğitimi geliştirilmelidir"
+New Zealand,-40.900557,174.885971,"- Lack of clear understanding on CT and teacher professiona development
+- More teachers are needed with 'deep' knowledge","- BİT müfredatında ""bilgiişlemsel düşünme""nin ne olduğunu daha iyi açıklamak gerekir
+- 'Derin' bilgiye sahip olan daha çok öğretmene ihtiyaç var"
+Poland,51.919438,19.145136,- Informatics education is widely adopted but programming education is relatively not enough,- Enformatik eğitim yaygın olarak kabul edilmiş ama programlama eğitimi istenilen seviyede değil

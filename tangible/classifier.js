@@ -90,13 +90,12 @@ async function load() {
 
 async function getClassLabel() {
     if (classifier.getNumClasses() > 0) {
-        // Get the activation from mobilenet from the webcam.
         const activation = net.infer(webcamElement, 'conv_preds');
-        // Get the most likely class and confidences from the classifier module.
         const result = await classifier.predictClass(activation);
-
-        appendBlockToCodingHolder(classes[result.classIndex],function(){
-            openBlockDetails(classes[result.classIndex]);
+        let key = classes[result.classIndex];
+        showBlockDialog(key, blockMap.get(key), function(){
+            openBlockDetails(key);
+            changeSourceView(key);
         });
     }
 
