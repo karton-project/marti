@@ -20,43 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataset/csv/bike.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv/football.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv/forest.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv/global-plastics-production.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv/population.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/geojson/countries.geo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/csv/fall.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/csv/research.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Forests/forest-area-as-share-of-land-area.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/media/footballdata.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/media/footballdata.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/media/forest.png" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/media/forest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/media/observatory.png" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/media/observatory.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/List-of-Datasets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Other/PlayerData.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Other/countries.geo.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/coastal-population-vs-mismanaged-plastic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/cumulative-global-plastics.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/global-plastic-fate.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/global-plastics-production.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/inadequately-managed-plastic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/mismanaged-plastic-waste-by-region-2010.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/mismanaged-waste-global-total.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/per-capita-mismanaged-plastic-waste-vs-gdp-per-capita.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/per-capita-plastic-waste-vs-gdp-per-capita.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/plastic-production-by-sector.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/plastic-top-20-rivers.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/plastic-waste-by-sector.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/plastic-waste-generation-total.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/plastic-waste-per-capita.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/river-plastics-by-region.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/share-mismanaged-waste-in-2025.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Plastic Pollution/surface-plastic-mass-by-ocean.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/Renewable-Energies/renewable_energy_worldwide.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/type_icons/picture.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/type_icons/media.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +146,9 @@
       <workItem from="1591097137640" duration="1356000" />
       <workItem from="1608369218758" duration="3383000" />
       <workItem from="1608741041745" duration="5204000" />
-      <workItem from="1608904165117" duration="438000" />
+      <workItem from="1608904165117" duration="1307000" />
+      <workItem from="1609143023819" duration="2220000" />
+      <workItem from="1609158955909" duration="4663000" />
     </task>
     <servers />
   </component>
@@ -198,17 +174,9 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="786" y="296" key="FileChooserDialogImpl" timestamp="1599303916629">
-      <screen x="93" y="0" width="1827" height="1080" />
+    <state x="625" y="255" key="run.anything.popup" timestamp="1609177585957">
+      <screen x="0" y="23" width="1920" height="1002" />
     </state>
-    <state x="786" y="296" key="FileChooserDialogImpl/93.0.1827.1080@93.0.1827.1080" timestamp="1599303916629" />
-    <state x="507" y="183" key="SettingsEditor" timestamp="1600188336882">
-      <screen x="93" y="0" width="1827" height="1080" />
-    </state>
-    <state x="507" y="183" key="SettingsEditor/93.0.1827.1080@93.0.1827.1080" timestamp="1600188336882" />
-    <state x="669" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1600255081185">
-      <screen x="93" y="0" width="1827" height="1080" />
-    </state>
-    <state x="669" y="235" width="672" height="678" key="search.everywhere.popup/93.0.1827.1080@93.0.1827.1080" timestamp="1600255081185" />
+    <state x="625" y="255" key="run.anything.popup/0.23.1920.1002@0.23.1920.1002" timestamp="1609177585957" />
   </component>
 </project>
