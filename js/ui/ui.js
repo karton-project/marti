@@ -3,14 +3,14 @@ var selectedSource = 'default';
 var cnt = 0;
 var isTangibleInterface = false;
 
-function imcrementBlockCounter() {
+function incrementBlockCounter() {
     cnt += 1;
 }
 
 function createSourceTable() {
     const table = $('#dataSourceTable');
-    const sources = [_general, _visual, _file, _map, _picture, _microbit];
-    const source_names = [_general_lang, _visual_lang, _file_lang, _map_lang, _picture_lang, _microbit_lang];
+    const sources = [_general, _visual, _file, _map, _media, _microbit];
+    const source_names = [_general_lang, _visual_lang, _file_lang, _map_lang, _media_lang, _microbit_lang];
     const source_colors = [_general_color, _visual_color, _file_color, _map_color, _picture_color, _microbit_color];
     for (let i = 0; i < sources.length; i++) {
         table.append(
@@ -90,7 +90,7 @@ function giveBackgroundColor(currentBlock, source) {
                 'color': 'white'
             });
             break;
-        case _picture:
+        case _media:
             currentBlock.css({
                 'background-color': _picture_color,
                 'color': 'white'
@@ -153,7 +153,7 @@ function changeSourceView(source) {
         changeViewForMap();
     else if (source === _microbit)
         changeViewForMicrobit();
-    else if (source === _picture)
+    else if (source === _media)
         changeViewForPicture();
     else if (source === _visual)
         changeViewForVisual();
@@ -240,9 +240,9 @@ function changeViewForMicrobit() {
 }
 
 function changeViewForPicture() {
-    appendNewTab(_picture, function () {
+    appendNewTab(_media, function () {
         document.getElementById("imageFile").addEventListener("change", handleImageFiles);
-        document.getElementById('visualization_' + _picture).innerHTML =
+        document.getElementById('visualization_' + _media).innerHTML =
             '<canvas id="source-canvas" width="600"></canvas>';
     });
     scrollToBlock(_openpicture);

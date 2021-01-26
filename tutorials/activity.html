@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marti - Aktivite</title>
+    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link href='activity.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+<div class='parent'>
+    <label for='hy'>Hangi oyuncular Arjantin kökenlidir?</label>
+    <div class='wrapper'>
+        <div id='left-copy-1tomany' class='container container-left'>
+            <div id="add"><img src="../media/cards/add.jpg" alt="mathematical addition card"></div>
+            <div id="addmarker"><img src="../media/cards/addmarker.jpg" alt="add marker on map"></div>
+        </div>
+        <div id='right-copy-1tomany' class='container container-right'>
+        </div>
+    </div>
+    <p id="console" style="cursor: pointer" onclick="copyElementText()"></p>
+</div>
+<script src='../js/ui/dragula.js'></script>
+<script src="drag.js"></script>
+<script>
+    function copyElementText() {
+        var text = document.getElementById("console").innerText;
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    }
+</script>
+</body>
+</html>

@@ -277,7 +277,7 @@ function prepareBlocks(blockId) {
             prepareSelectFileModal(_selectvar_text_lang, function (value) {
                 selectedDataForColumn = value;
             }, 'selectedColumnDiv');
-            blockDiv.append('<label for="selectedColumnInput">' + _selectcolumn_text_lang + '</label>\n' +
+            blockDiv.append('<p for="selectedColumnInput">' + _selectcolumn_text_lang + '</p>\n' +
                 '<input type="text" id="selectedColumnInput" name="selectedColumnInput">');
             blockDiv.append('<button onclick="selectColumnBlock()"> OK </button>');
         }

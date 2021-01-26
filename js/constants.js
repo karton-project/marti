@@ -2,7 +2,7 @@
 const _file = "file";
 const _general = "math";
 const _map = "map";
-const _picture = "picture";
+const _media = "media";
 const _visual = "visualization";
 const _microbit = "microbit";
 
@@ -115,7 +115,7 @@ blockMap.set(_findposition, _map);
 blockMap.set(_addmarker, _map);
 blockMap.set(_selectMapBackground, _map);
 // picture
-blockMap.set(_openpicture, _picture);
-blockMap.set(_averagepic, _picture);
-blockMap.set(_applythreshold, _picture);
-blockMap.set(_pointerevent, _picture);
+blockMap.set(_openpicture, _media);
+blockMap.set(_averagepic, _media);
+blockMap.set(_applythreshold, _media);
+blockMap.set(_pointerevent, _media);

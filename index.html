@@ -51,11 +51,11 @@
     <script defer src="libs/wavesurfer.min.js"></script>
     <script defer src="js/ui/codeGenerator.js"></script>
     <script defer src="js/ui/blockModalUI.js"></script>
-    <script defer src='js/ui/dragula.js'></script>
     <script defer src='js/ui/index.js'></script>
     <script defer src="js/ui/ui.js"></script>
     <script defer src="libs/leaflet/leaflet.js"></script>
     <script defer src="libs/leaflet/tile.stamen.js"></script>
+    <script defer src="libs/leaflet/shp.js"></script>
     <script defer src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script defer src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
     <script defer src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
@@ -73,10 +73,11 @@
 </head>
 
 <body style="margin: 0">
+<script src='js/ui/dragula.js'></script>
 <input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"></input>
 <input type="file" id="csvFile" accept=".csv" style="display:none"></input>
 <input type="file" id="jsonFile" accept=".json" style="display:none"></input>
-<input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"></input>
+<input type="file" id="geoJSONFile" style="display:none"></input>
 
 <img id="back_button" class="left" src="media/ui/Back-Button.png">
 <img class="center" src="media/ui/budgie.png">
@@ -101,7 +102,7 @@
     </div>
     <div class="tooltip">
         <p id="_output" class="title">Çıktı</p>
-        <span class="tooltiptext">
+        <span id="_output_tiptext" class="tooltiptext">
             Oluşturduğun her program bloğu, burada çıktıya dönüşür.
              </span>
     </div>
@@ -124,7 +125,7 @@
     <i class="far fa-question-circle question-float"></i>
     <p id="_func_def" class="link-detail">Foksiyon Tanımları</p>
 </a>
-<a href="./dataset/List-of-Datasets/index.html" target="_blank" class="float top-right-center">
+<a href="dataset/index.html" target="_blank" class="float top-right-center">
     <i class="fas fa-table question-float"></i>
     <p id="_data_sets" class="link-detail">Veri Setleri</p>
 </a>

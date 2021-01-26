@@ -46,7 +46,7 @@
 
                 el.id = el.id.substring(0, el.id.length - 6) + cnt + "_block";
 
-                imcrementBlockCounter();
+                incrementBlockCounter();
                 el.querySelector('#' + el.id.substring(0, el.id.length - 6)).click();
                 console.log(containerBlockIds);
             });
