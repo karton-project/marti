@@ -353,6 +353,11 @@ input {
     right: calc(0.4em + 0.4vw + 200px);
 }
 
+.top-left-left {
+    top: calc(0.4em + 0.4vw);
+    right: calc(0.4em + 0.4vw + 320px);
+}
+
 .my-float {
     margin-top: 16px;
 }
