@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/file/blocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/file/blocks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/file/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/file/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/blockModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/blockModalUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/visualization/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kart-on-activities" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,6 +71,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -77,6 +86,17 @@
       <recent name="C:\Users\asabuncuoglu13\Desktop\education-repo\marti\interface\blockly\js" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/marti/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -153,11 +173,13 @@
       <workItem from="1611386576254" duration="619000" />
       <workItem from="1611393933511" duration="2851000" />
       <workItem from="1611725767716" duration="2038000" />
+      <workItem from="1612200583157" duration="31000" />
+      <workItem from="1612200626442" duration="5737000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -176,11 +198,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/datasets" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="625" y="255" key="run.anything.popup" timestamp="1609177585957">
-      <screen x="0" y="23" width="1920" height="1002" />
-    </state>
-    <state x="625" y="255" key="run.anything.popup/0.23.1920.1002@0.23.1920.1002" timestamp="1609177585957" />
   </component>
 </project>

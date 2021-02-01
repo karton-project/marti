@@ -46,17 +46,6 @@ function defineVariablesFromFileData() {
     })
 }
 
-function defineVariablesFromDataForBlockly() {
-    prepareDataArray(fileData, function (data) {
-        var jsonData = Object.assign({}, data);
-        for (var key in jsonData) {
-            if (jsonData.hasOwnProperty(key)) {
-                createCodeVariableForBlockly(jsonData[key][0], jsonData[key].slice(1, jsonData[0].length));
-            }
-        }
-    })
-}
-
 function uniqueValues(data) {
     var output = data.filter(onlyUnique);
     return output;

@@ -199,28 +199,21 @@ function prepareBlocks(blockId) {
                 blockDiv.append('<input type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
                 blockDiv.append(tableDiv);
                 blockDiv.append('<button onclick="createTableWithHeaders()">' + _show_button_lang + '</button>');
-                blockDiv.append('<button onclick="saveTable()">' + _savebutton_lang + '</button>');
             })
         }
 
         // create line chart
         if (blockId.includes(_drawchart)) {
             $(function () {
-                prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
-                    xAxis_var = value;
-                }, 'xAxisChooseDiv');
-
                 prepareChartListModal(_select_chart_type_lang, function (value) {
                     chartTypeSel = value;
                     transformChart(value);
                 }, 'chartTypeChooseDiv');
 
                 blockDiv.append(
-                    '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
-                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="drawChart()">' + _applybutton_lang + '</button>');
+                    '<button onclick="google.charts.setOnLoadCallback(drawCharts())">' + _applybutton_lang + '</button>');
             })
         }
 
@@ -264,7 +257,7 @@ function prepareBlocks(blockId) {
         if (blockId.includes(_openjsonfromlink)) {
             $(function () {
                 var $openJSON = $(
-                    '<label for="openJSONLink">' + _opencsv_link_lang + '</label>\n' +
+                    '<label for="openJSONLink">' + _openjsonfromlink_lang + '</label>\n' +
                     '<input type="text" id="openJSONLinkInput" name="openJSONLink" placeholder="' + _web_link_lang + '">' +
                     '<button onclick="openJSONWithLink()">' + _applybutton_lang + '</button>'
                 );

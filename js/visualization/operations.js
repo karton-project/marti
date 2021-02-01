@@ -1,5 +1,6 @@
 let chart, fileName, xAxis_var, chartTypeSel;
 let chartisactive = false;
+let tableArray = [];
 
 function findChartDimensions() {
     let chartAreaWidth = $("#visualization_tabcontent").width() - 10;
@@ -91,7 +92,33 @@ function drawTable(data, titles) {
         });
 }
 
-function drawChart(chartType) {
+function drawCharts(chartType) {
+    chartType = chartType || chartTypeSel;
+
+    let charttitle = getValueFromDomElement('setChartTitle');
+    var data = google.visualization.arrayToDataTable(tableArray);
+    var options = {
+        title: charttitle
+    };
+
+    switch (chartType) {
+        case _linechart:
+            var chart = new google.visualization.LineChart(document.getElementById('chartArea'));
+            break;
+        case _piechart:
+            var chart = new google.visualization.PieChart(document.getElementById('chartArea'));
+            break;
+        case _barchart:
+            var chart = new google.visualization.BarChart(document.getElementById("chartArea"));
+            break;
+        default:
+            break;
+    }
+
+    chart.draw(data, options);
+}
+
+/*function drawChart(chartType) {
     chartType = chartType || chartTypeSel;
     let dataArray = [];
     let x_cats = getVariableValueByName(xAxis_var);
@@ -137,20 +164,19 @@ function drawChart(chartType) {
         }
     });
     chartisactive = true;
-}
+}*/
 
 function createTableWithHeaders() {
     let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
+    tableArray.push(title);
     let tableRows = [];
     for (let i = 0; i <= cntrow; i++) {
-        tableRows.push(getValueFromDomElement("rowinput" + i).split(/[ ,]+/));
+        let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
+        tableRows.push(rowInput);
+        tableArray.push([rowInput[0], parseInt(rowInput[1])]);
     }
     drawTable(tableRows, title);
     defineVariablesUserTable(title, tableRows);
-}
-
-function saveTable() {
- //TODO: Implement save table method
 }
 
 function transformChart(chartType) {

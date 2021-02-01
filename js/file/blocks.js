@@ -23,14 +23,14 @@ function addFilterTableCode() {
     let comparedValue = getValueFromDomElement('comparedValue');
     let variableValue = getValueFromDomElement('variableValue');
     let output = filterTable(fileData, variableValue, comparedValue, operation);
-    appendOutputText('Filtered table is printed', "filterResultDiv", output, false);
+    appendOutputText(_filter_Table_output_text, "filterResultDiv", output, false);
     drawTable(output);
 }
 
 function addUniqueValuesCode() {
     if (uniqueValuesVariable.length > 0) {
         let result = uniqueValues(getVariableValueByName(uniqueValuesVariable));
-        appendOutputText('Unique values are mapped from ' + uniqueValuesVariable + 'and the result is: ', "uniqueValTextDiv", result);
+        appendOutputText(_uniquevals_output.format(uniqueValuesVariable), "uniqueValTextDiv", result);
     } else {
         appendWarningText('You need to select a variable.');
         console.log("Hello");
@@ -56,7 +56,7 @@ function openCSVWithLink() {
         fileData = data;
         drawTable(data);
         defineVariablesFromFileData();
-        appendOutputText("CSV from weblink is opened.", "linkOpenTextDiv", "");
+        appendOutputText(_open_link_output, "linkOpenTextDiv", "");
     });
 }
 
@@ -66,6 +66,6 @@ function openJSONWithLink() {
         fileData = data;
         drawTable(data);
         defineVariablesFromFileData();
-        appendOutputText("JSON from weblink is opened.", "linkOpenTextDiv", "");
+        appendOutputText(_open_link_output, "linkOpenTextDiv", "");
     });
 }

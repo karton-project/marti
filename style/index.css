@@ -62,6 +62,7 @@ pre code {
 }
 
 label {
+    color: var(--text);
     display: block;
     margin-bottom: 15px;
 }
