@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataset/csv-tr/bike.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv-tr/forest.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv-tr/global-plastics-production.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv-tr/population.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/csv-tr/research.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/csv-tr/football.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/csv-tr/football.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +165,7 @@
       <workItem from="1611393933511" duration="2851000" />
       <workItem from="1611725767716" duration="2038000" />
       <workItem from="1612200583157" duration="31000" />
-      <workItem from="1612200626442" duration="15773000" />
+      <workItem from="1612200626442" duration="16427000" />
     </task>
     <servers />
   </component>
