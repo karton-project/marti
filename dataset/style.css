@@ -22,14 +22,18 @@ a{
     font-family: 'Montserrat', sans-serif;
 }
 /* Create two equal columns that floats next to each other */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+}
+
 .card {
-    float: left;
-    width: 30%;
+    width: 100%;
     padding: 10px;
+    margin: 10px;
     border-radius: 2px;
-    align-items: center;
     background: #f1f1f1;
-    margin: 0.4em;
 }
 
 .card-up {
@@ -66,25 +70,17 @@ a{
 }
 
 @media (max-width: 720px) {
-    .card {
-        float: left;
-        width: 45%;
-        padding: 10px;
-        border-radius: 2px;
-        align-items: center;
-        background: #f1f1f1;
-        margin: 0.4em;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
     }
 }
 
-
 @media (max-width: 480px) {
-    .card {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
         width: 90%;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 2px;
-        align-items: center;
-        background: #f1f1f1;
     }
 }

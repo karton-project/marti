@@ -21,36 +21,41 @@
 <body>
 <h2>Aktivite Veri Setleri</h2>
 <br>
-<div id="marti_cards" class="row"></div>
-<div id="plastic_pollution" class="row"></div>
+<div id="marti_cards" class="wrapper"></div>
 <h2>Dış Veri Kaynakları</h2>
 <p>Kendi aktivitelerimizde bulunmayan, ama sizin yaratacağınız aktiviteler için mükemmel kaynaklar olabilecek verileri
     sizin için derledik.</p>
-<div id="third-party" class="row"></div>
+<div id="third-party" class="wrapper"></div>
 <script>
     addDataCard("marti_cards",
         "./media/footballdata.jpg",
         "FIFA 18 Futbolcuları",
         "Bu veri setinde, FIFA ilk 100'deki oyuncuların isim, yaş, ülke, skor gibi bilgilerini bulabilirsin.",
-        "./csv/football.csv"
+        "./csv-tr/football.csv"
     );
     addDataCard("marti_cards",
         "./media/forest.png",
         "Ormanlık Alanlar",
         "Bu veri setinde, 1990-2018 yılları arasında ülkelerin ormanlık alanlarının yüzölçümlerine oranı verilmiştir.",
-        "./csv/forest.csv"
+        "./csv-tr/forest.csv"
     );
     addDataCard("marti_cards",
         "./media/forest.png",
         "Şehir Bisikletleri",
         "Bu veri setinde, dört durak arasındaki bisiklet kullanımının süre verisi bulunmaktadır.",
-        "./csv/bike.csv"
+        "./csv-tr/bike.csv"
     );
     addDataCard("marti_cards",
         "./media/forest.png",
         "Araştırma Bütçeleri",
         "Bu veri setinde, ülkelerin araştırmaya harcadıkları veriler bulunmaktadır.",
-        "./csv/research.csv"
+        "./csv-tr/research.csv"
+    );
+    addDataCard("marti_cards",
+        "./media/forest.png",
+        "Plastik Üretimi",
+        "Bu veri setinde, yıllara göre dünya genelinde plastik üretim verilerini bulacaksın.",
+        "./csv-tr/global-plastic-production.csv"
     );
     addDataCard("third-party",
         "./media/observatory.png",
