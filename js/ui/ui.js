@@ -108,14 +108,17 @@ function closeTab(tabID) {
 
 function appendNewTab(tabID, callback) {
     if ($("#" + tabID + "_tabcontent").length <= 0) {
-        $("#tab_list").append('<li id="' + tabID + '_key" class="tab-link" data-tab="' + tabID + '_tabcontent">' + tabID + '\t<i id="' + tabID + '_closebutton" class="fa fa-times" aria-hidden="true"></i></li>');
+        $("#tab_list").append(
+            '<li id="' + tabID + '_key" class="tab-link" data-tab="' + tabID + '_tabcontent">' + tabID +
+            //'<i id="' + tabID + '_closebutton" class="fa fa-times" aria-hidden="true"></i>' +
+            '</li>');
         $("#visualContainer").append(
             '<div id="' + tabID + '_tabcontent" class="tab-content">' +
             '   <div id="visualization_' + tabID + '"> </div>' +
             '</div>');
-        document.getElementById(tabID + "_closebutton").addEventListener('click', function () {
+        /*document.getElementById(tabID + "_closebutton").addEventListener('click', function () {
             closeTab(tabID);
-        });
+        });*/
         prepareTabList();
         callback();
     }
@@ -157,6 +160,22 @@ function changeSourceView(source) {
         changeViewForPicture();
     else if (source === _visual)
         changeViewForVisual();
+}
+
+function startOutputTabs() {
+    appendNewTab(_file, function () {
+        document.getElementById('visualization_' + _file).innerHTML =
+            '<div id="tableArea"></div>';
+    });
+    appendNewTab(_visual, function () {
+        document.getElementById('visualization_' + _visual).innerHTML =
+            '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
+    });
+    appendNewTab(_map, function () {
+        document.getElementById('visualization_' + _map).innerHTML =
+            '<div id="mapArea"></div>';
+        openMap();
+    });
 }
 
 function changeViewForFile() {
@@ -281,6 +300,7 @@ function fillHTML() {
     fillHTMLText(_averagepic, _averagepic_lang);
     fillHTMLText(_selectcolumn, _select_column_lang);
     fillHTMLText(_drawchart, _drawchart_lang);
+    fillHTMLText(_drawchartwithvariable, _drawchartwithvariable_lang);
     fillHTMLText(_startwebcam, _start_webcam_lang);
     fillHTMLText(_histogram, _histogram_lang);
     fillHTMLText(_selectMapBackground, _select_mapbg_lang);

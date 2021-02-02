@@ -23,7 +23,8 @@ function listVariableKeys() {
 }
 
 function listFileKeys() {
-    return Array.from(files.keys()).concat(Array.from(variables.keys()));
+    //return Array.from(files.keys()).concat(Array.from(variables.keys()));
+    return Array.from(files.keys());
 }
 
 function listVariablesAsArray() {

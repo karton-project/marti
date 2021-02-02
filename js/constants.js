@@ -26,6 +26,7 @@ const _piechart = "pie";
 const _barchart = "bar";
 const _histogram = "histogram";
 const _drawchart = "drawchart";
+const _drawchartwithvariable = "chartwvar";
 const _chartTypes = [_linechart, _piechart, _barchart];
 
 // Blocks for Generral
@@ -65,13 +66,6 @@ const _recorddatawithtime = "mrecordtime";
 const _recorddatawithclick = "mrecordclick";
 const _gettemperature = "mtemp";
 
-// Comparison Operations
-const _greater = "greater than";
-const _less = "less than";
-const _equal = "equal to";
-const _lesseq = "less than or equal to";
-const _greateq = "greater than or eqaul to";
-
 // Blocks For Picture
 const _openpicture = "openpicture";
 
@@ -96,6 +90,7 @@ blockMap.set(_scale, _general);
 // visual
 blockMap.set(_printtable, _visual);
 blockMap.set(_drawchart, _visual);
+blockMap.set(_drawchartwithvariable, _visual);
 blockMap.set(_histogram, _visual);
 // file
 blockMap.set(_opencsvfromcomputer, _file);

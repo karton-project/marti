@@ -118,7 +118,7 @@ function drawCharts(chartType) {
     chart.draw(data, options);
 }
 
-/*function drawChart(chartType) {
+function drawChartWithXY(chartType) {
     chartType = chartType || chartTypeSel;
     let dataArray = [];
     let x_cats = getVariableValueByName(xAxis_var);
@@ -164,7 +164,7 @@ function drawCharts(chartType) {
         }
     });
     chartisactive = true;
-}*/
+}
 
 function createTableWithHeaders() {
     let title = getValueFromDomElement("headerinput").split(/[ ,]+/);

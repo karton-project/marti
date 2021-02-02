@@ -20,16 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/csv/research.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/csv/research.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/file/blocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/file/blocks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/file/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/file/operations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ui/blockModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/blockModalUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/codeGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/codeGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/visualization/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization/operations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -174,7 +177,7 @@
       <workItem from="1611393933511" duration="2851000" />
       <workItem from="1611725767716" duration="2038000" />
       <workItem from="1612200583157" duration="31000" />
-      <workItem from="1612200626442" duration="5737000" />
+      <workItem from="1612200626442" duration="13841000" />
     </task>
     <servers />
   </component>

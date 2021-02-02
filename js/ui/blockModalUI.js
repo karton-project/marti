@@ -202,7 +202,6 @@ function prepareBlocks(blockId) {
             })
         }
 
-        // create line chart
         if (blockId.includes(_drawchart)) {
             $(function () {
                 prepareChartListModal(_select_chart_type_lang, function (value) {
@@ -214,6 +213,27 @@ function prepareBlocks(blockId) {
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
                     '<button onclick="google.charts.setOnLoadCallback(drawCharts())">' + _applybutton_lang + '</button>');
+            })
+        }
+
+        // create line chart
+        if (blockId.includes(_drawchartwithvariable)) {
+            $(function () {
+                prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
+                    xAxis_var = value;
+                }, 'xAxisChooseDiv');
+
+                prepareChartListModal(_select_chart_type_lang, function (value) {
+                    chartTypeSel = value;
+                    transformChart(value);
+                }, 'chartTypeXYChooseDiv');
+
+                blockDiv.append(
+                    '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
+                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
+                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<button onclick="drawChartWithXY()">' + _applybutton_lang + '</button>');
             })
         }
 
@@ -280,8 +300,8 @@ function prepareBlocks(blockId) {
             prepareSelectFileModal(_filtertable_detail_lang, function (value) {
                 fileData = getVariableValueByName(value);
             }, 'selFileDiv');
-            blockDiv.append('<p>' + _definecomparisonfunction_lang + '</p>');
             blockDiv.append(
+                '<p>' + _create_comparison + '</p>\n' +
                 '<div class="bia-holder">' +
                 '<input type="text" id="variableValue" name="variablevalue" placeholder="' + _varname_lang + '"></div>\n' +
                 '<select id="comparisonOperation">' +

@@ -34,9 +34,10 @@ function defineVariablesUserTable(title, data) {
     }
 }
 
-function defineVariablesFromFileData() {
+function defineVariablesFromFileData(link) {
     prepareDataArray(fileData, function (d) {
         var jsonData = Object.assign({}, d);
+        if (link) fileName = webLink.split('/').pop();
         createFileVariable(fileName, fileData);
         for (var key in jsonData) {
             if (jsonData.hasOwnProperty(key)) {

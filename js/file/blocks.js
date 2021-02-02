@@ -55,7 +55,7 @@ function openCSVWithLink() {
     d3.csv(webLink).then(function (data) {
         fileData = data;
         drawTable(data);
-        defineVariablesFromFileData();
+        defineVariablesFromFileData(webLink);
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
     });
 }

@@ -1,92 +1,92 @@
-Country,"Expenditures (billions of US$, PPP),",% of GDP PPP,Expenditures on R&D per capita
- Israel,18.6,4.90%,"1,973.00"
- South Korea,91.6,4.29%,"1,518.47"
- Finland,7.2,3.17%,"1,318.00"
- Sweden,14.2,3.16%,"1,468.10"
- Japan,165.7,3.15%,"1,297.39"
- Taiwan,33.7,3.10%,"1,383.84"
- Austria,11.9,3.10%,"1,416.14"
- Denmark,8.2,3.09%,"1,450.20"
-  Switzerland,13.1,2.97%,"1,647.90"
- Germany,118.8,2.94%,"1,450.17"
- United States,511.1,2.74%,"1,586.35"
- Belgium,12.4,2.47%,"1,102.90"
- Slovenia,1.5,2.39%,712.63
- France,60,2.26%,905.8
- China,553.4,2.19%,388
- Singapore,10,2.19%,"1,831.70"
- Australia,23.3,2.12%,986.86
- Czech Republic,6.3,2.00%,600.04
- Netherlands,16.3,1.97%,967.8
- Iceland,0.27,1.89%,831.2
- Norway,5.8,1.71%,"1,123.90"
- United Kingdom,44.8,1.70%,692.9
- European Union*,379,1.64%,658.94
- Canada,25.7,1.61%,723.5
- Ireland,3.6,1.52%,779.4
- Hungary,3.4,1.37%,343.01
- Malaysia,10.6,1.30%,344.3
- Estonia,0.344,1.29%,264.62
- Italy,27.4,1.29%,452.14
- Portugal,3.6,1.29%,347.84
- Luxembourg,0.7,1.26%,"1,252.70"
- Spain,19.2,1.22%,413.46
- Russia,42.6,1.19%,290.21
- New Zealand,1.8,1.17%,400.99
- Brazil,38.4,1.17%,177.89
- Turkey,15.3,1.01%,198.36
- Greece,2.4,1.01%,216.72
- Mexico,9,0.94%,237.57
- Poland,11.6,0.94%,301.06
- Slovakia,1.4,0.89%,250.55
- Lithuania,0.76,0.88%,245.36
- India,66.5,0.85%,39.37
- Malta,0.11,0.85%,270.78
- Croatia,0.7,0.81%,166.75
- Ukraine,3,0.76%,73.7
- South Africa,4.8,0.73%,92.25
- Hong Kong,2.7,0.73%,373.09
- Morocco,1.5,0.73%,47.59
- Serbia,0.7,0.73%,97.86
- United Arab Emirates,4.28,0.70%,470.7
- Egypt,6.2,0.68%,73.18
- Tunisia,0.78,0.68%,72.83
- Belarus,1.12,0.67%,118.44
- Bulgaria,0.81,0.65%,112.15
- Ethiopia,0.79,0.61%,9.08
- Argentina,5,0.59%,129.09
- Latvia,0.28,0.51%,136.8
- Uganda,0.28,0.48%,8.27
- Cyprus,0.13,0.48%,150.82
- Qatar,1.3,0.47%,698.5
- Costa Rica,0.28,0.47%,61.55
- Ecuador,0.8,0.44%,49.9
- North Macedonia,0.12,0.44%,55.99
- Thailand,3.6,0.39%,52.67
- Romania,1.5,0.38%,75.62
- Chile,1.54,0.38%,87.39
- Montenegro,0.03,0.38%,55.75
- Moldova,0.06,0.35%,16.44
- Uruguay,0.24,0.34%,69.88
- Bosnia and Herzegovina,0.12,0.33%,31.73
- Kuwait,0.83,0.30%,214.16
- Pakistan,2.4,0.29%,13.29
- Saudi Arabia,1.8,0.25%,60.01
- Botswana,0.07,0.25%,37.01
- Colombia,1.6,0.24%,31
- Sudan,0.18,0.23%,4.74
- Oman,0.07,0.23%,25.4
- Vietnam,0.87,0.21%,9.91
- Azerbaijan,0.33,0.21%,35.98
- Kazakhstan,0.67,0.17%,39.24
- Mongolia,0.26,0.17%,73.66
- Georgia,0.05,0.16%,14.73
- Bolivia,0.08,0.15%,7.29
- Paraguay,0.06,0.13%,9.13
- Iran,0.7,0.12%,9.08
- Peru,0.4,0.12%,12.94
- Philippines,0.48,0.11%,5.4
- Bahrain,0.06,0.10%,45.2
- Macau,0.07,0.09%,122.2
- Indonesia,2,0.08%,8.09
- Algeria,0.16,0.07%,4.13
+Ulke,Harcama(B$),GDP-Yuzde,Insan-Basina-Harcama($)
+Israel,18.6,4.90%,"1,973.00"
+South Korea,91.6,4.29%,"1,518.47"
+Finland,7.2,3.17%,"1,318.00"
+Sweden,14.2,3.16%,"1,468.10"
+Japan,165.7,3.15%,"1,297.39"
+Taiwan,33.7,3.10%,"1,383.84"
+Austria,11.9,3.10%,"1,416.14"
+Denmark,8.2,3.09%,"1,450.20"
+Switzerland,13.1,2.97%,"1,647.90"
+Germany,118.8,2.94%,"1,450.17"
+United States,511.1,2.74%,"1,586.35"
+Belgium,12.4,2.47%,"1,102.90"
+Slovenia,1.5,2.39%,712.63
+France,60,2.26%,905.8
+China,553.4,2.19%,388
+Singapore,10,2.19%,"1,831.70"
+Australia,23.3,2.12%,986.86
+Czech Republic,6.3,2.00%,600.04
+Netherlands,16.3,1.97%,967.8
+Iceland,0.27,1.89%,831.2
+Norway,5.8,1.71%,"1,123.90"
+United Kingdom,44.8,1.70%,692.9
+European Union*,379,1.64%,658.94
+Canada,25.7,1.61%,723.5
+Ireland,3.6,1.52%,779.4
+Hungary,3.4,1.37%,343.01
+Malaysia,10.6,1.30%,344.3
+Estonia,0.344,1.29%,264.62
+Italy,27.4,1.29%,452.14
+Portugal,3.6,1.29%,347.84
+Luxembourg,0.7,1.26%,"1,252.70"
+Spain,19.2,1.22%,413.46
+Russia,42.6,1.19%,290.21
+New Zealand,1.8,1.17%,400.99
+Brazil,38.4,1.17%,177.89
+Turkey,15.3,1.01%,198.36
+Greece,2.4,1.01%,216.72
+Mexico,9,0.94%,237.57
+Poland,11.6,0.94%,301.06
+Slovakia,1.4,0.89%,250.55
+Lithuania,0.76,0.88%,245.36
+India,66.5,0.85%,39.37
+Malta,0.11,0.85%,270.78
+Croatia,0.7,0.81%,166.75
+Ukraine,3,0.76%,73.7
+South Africa,4.8,0.73%,92.25
+Hong Kong,2.7,0.73%,373.09
+Morocco,1.5,0.73%,47.59
+Serbia,0.7,0.73%,97.86
+United Arab Emirates,4.28,0.70%,470.7
+Egypt,6.2,0.68%,73.18
+Tunisia,0.78,0.68%,72.83
+Belarus,1.12,0.67%,118.44
+Bulgaria,0.81,0.65%,112.15
+Ethiopia,0.79,0.61%,9.08
+Argentina,5,0.59%,129.09
+Latvia,0.28,0.51%,136.8
+Uganda,0.28,0.48%,8.27
+Cyprus,0.13,0.48%,150.82
+Qatar,1.3,0.47%,698.5
+Costa Rica,0.28,0.47%,61.55
+Ecuador,0.8,0.44%,49.9
+North Macedonia,0.12,0.44%,55.99
+Thailand,3.6,0.39%,52.67
+Romania,1.5,0.38%,75.62
+Chile,1.54,0.38%,87.39
+Montenegro,0.03,0.38%,55.75
+Moldova,0.06,0.35%,16.44
+Uruguay,0.24,0.34%,69.88
+Bosnia and Herzegovina,0.12,0.33%,31.73
+Kuwait,0.83,0.30%,214.16
+Pakistan,2.4,0.29%,13.29
+Saudi Arabia,1.8,0.25%,60.01
+Botswana,0.07,0.25%,37.01
+Colombia,1.6,0.24%,31
+Sudan,0.18,0.23%,4.74
+Oman,0.07,0.23%,25.4
+Vietnam,0.87,0.21%,9.91
+Azerbaijan,0.33,0.21%,35.98
+Kazakhstan,0.67,0.17%,39.24
+Mongolia,0.26,0.17%,73.66
+Georgia,0.05,0.16%,14.73
+Bolivia,0.08,0.15%,7.29
+Paraguay,0.06,0.13%,9.13
+Iran,0.7,0.12%,9.08
+Peru,0.4,0.12%,12.94
+Philippines,0.48,0.11%,5.4
+Bahrain,0.06,0.10%,45.2
+Macau,0.07,0.09%,122.2
+Indonesia,2,0.08%,8.09
+Algeria,0.16,0.07%,4.13
