@@ -20,11 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/cards/chart-column.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/chart-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/chart-pie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/column-headers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/create-table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/data-bike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/data-plastic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/data-research.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/filter-table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/find-location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/cards/peak.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ui/blockModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/blockModalUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ui/ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/add-marker.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/add-marker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/average.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/average.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/count.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/count.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/data-football.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/data-football.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/data-forest.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/data-forest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/filter.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/filter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/function.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/function.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/getcolumn.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/getcolumn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/map.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/marti.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/maximum.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/maximum.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/minimum.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/minimum.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/sum.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/sum.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/unique.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/unique.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/cards/variable.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/cards/variable.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/activity.css" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/activity.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/activity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +196,8 @@
       <workItem from="1611725767716" duration="2038000" />
       <workItem from="1612200583157" duration="31000" />
       <workItem from="1612200626442" duration="16427000" />
-      <workItem from="1612357972924" duration="1036000" />
+      <workItem from="1612357972924" duration="1245000" />
+      <workItem from="1612384620102" duration="1260000" />
     </task>
     <servers />
   </component>
