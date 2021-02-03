@@ -189,7 +189,7 @@ function prepareBlocks(blockId) {
         // Chart Operations
 
         // create new table
-        if (blockId.includes(_printTable)) {
+        if (blockId.includes(_printtable)) {
             $(function () {
                 tableDiv = $(
                     '<div style="display: block" class="add-row-container">' +

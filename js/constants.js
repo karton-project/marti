@@ -51,7 +51,6 @@ const _min = "minimum";
 const _sum = "sum";
 const _selectMapBackground = "selectmapbackground";
 const _startwebcam = "startwebcam";
-const _printTable = "printtable";
 const _opengeojson = "opengeojson";
 const _newfunction = "newfunction";
 const _count = "count";
@@ -88,11 +87,11 @@ blockMap.set(_findpeaks, _general);
 blockMap.set(_uniquevals, _general);
 blockMap.set(_scale, _general);
 // visual
-blockMap.set(_printtable, _visual);
 blockMap.set(_drawchart, _visual);
 blockMap.set(_drawchartwithvariable, _visual);
 blockMap.set(_histogram, _visual);
 // file
+blockMap.set(_printtable, _file);
 blockMap.set(_opencsvfromcomputer, _file);
 blockMap.set(_opencsvfromlink, _file);
 blockMap.set(_openjsonfromcomputer, _file);

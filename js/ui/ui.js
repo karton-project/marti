@@ -183,7 +183,7 @@ function changeViewForFile() {
         document.getElementById('visualization_' + _file).innerHTML =
             '<div id="tableArea"></div>';
     });
-    scrollToBlock(_opencsvfromcomputer);
+    scrollToBlock(_printtable);
 }
 
 function changeViewForGeneral() {
@@ -195,7 +195,7 @@ function changeViewForVisual() {
         document.getElementById('visualization_' + _visual).innerHTML =
             '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
     });
-    scrollToBlock(_printTable);
+    scrollToBlock(_drawchart);
 }
 
 function changeViewForMap() {
@@ -304,7 +304,7 @@ function fillHTML() {
     fillHTMLText(_startwebcam, _start_webcam_lang);
     fillHTMLText(_histogram, _histogram_lang);
     fillHTMLText(_selectMapBackground, _select_mapbg_lang);
-    fillHTMLText(_printTable, _print_table_chart_lang);
+    fillHTMLText(_printtable, _print_table_chart_lang);
     fillHTMLText(_opengeojson, _opengeojson_lang);
     fillHTMLText(_sum, _sum_lang);
     fillHTMLText(_openjsonfromcomputer, _openjsonfromcomputer_lang);
