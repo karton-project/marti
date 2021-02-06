@@ -1,3 +1,14 @@
+// Output
+const _file_out = "file";
+const _map_out = "map";
+const _visual_out = "visualization";
+
+// Chart Types
+const _linechart = "line";
+const _piechart = "pie";
+const _barchart = "bar";
+const _chartTypes = [_linechart, _piechart, _barchart];
+
 const page_title_lang = "Playing with Data";
 const _cat_lang = "Categories";
 const _blocks_lang = "Blocks";
@@ -126,3 +137,5 @@ const _less = "less than";
 const _equal = "equal to";
 const _lesseq = "less than or equal to";
 const _greateq = "greater than or eqaul to";
+
+const _download = "download";

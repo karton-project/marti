@@ -167,6 +167,7 @@ function drawChartWithXY(chartType) {
 }
 
 function createTableWithHeaders() {
+    tableArray = [];
     let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
     tableArray.push(title);
     let tableRows = [];

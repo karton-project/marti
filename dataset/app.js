@@ -5,7 +5,7 @@ function addDataCard(id, photoURL, title, context, fileURL) {
         '        <h2>' + title + '</h2>\n' +
         '        <p>' + context + '</p>\n' +
         '        <br>\n' +
-        '        <a href="' + fileURL + '"><i class="fas fa-download"></i>Download</i></a>\n' +
+        '        <a href="' + fileURL + '"><i class="fas fa-download"></i>' + _download + '</i></a>\n' +
         '    </div>'
     )
 }

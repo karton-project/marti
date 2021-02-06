@@ -21,13 +21,9 @@ const _openjsonfromcomputer = "openjsonfromcomputer";
 const _openjsonfromlink = "openjsonfromlink";
 const _listheaders = "listheaders";
 const _printtable = "printtable";
-const _linechart = "line";
-const _piechart = "pie";
-const _barchart = "bar";
 const _histogram = "histogram";
 const _drawchart = "drawchart";
 const _drawchartwithvariable = "chartwvar";
-const _chartTypes = [_linechart, _piechart, _barchart];
 
 // Blocks for Generral
 const _average = "average";

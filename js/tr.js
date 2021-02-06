@@ -1,3 +1,14 @@
+// Output
+const _file_out = "dosya";
+const _map_out = "harita";
+const _visual_out = "gorsel";
+
+// Chart Types
+const _linechart = "cizgi";
+const _piechart = "pasta";
+const _barchart = "cubuk";
+const _chartTypes = [_linechart, _piechart, _barchart];
+
 const page_title_lang = "Veri Programlama";
 const _cat_lang = "Kategori";
 const _blocks_lang = "Bloklar";
@@ -124,3 +135,5 @@ const _less = "küçüktür";
 const _equal = "eşittir";
 const _lesseq = "küçük eşittir";
 const _greateq = "büyük eşittir";
+
+const _download = "indir";

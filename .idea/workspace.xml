@@ -20,8 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2068c09-a475-4d01-b37d-7890611a9ec5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tutorials/img/38895e649450b654.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/44a198e6c12b9da6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/49573bc56f71e822.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/49f2aa242d1585c6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/617e9c82cf76345a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/69fd493eed7b2a87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/811386d3be06af0e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/8540e6be9055ec3b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/8f033cb5b2a985ab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/927b329cabd737bd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/92d3cc06fefb3ea0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/dbcc84f9225e57b0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/e69ee226ecb2ef9e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/e74948155150401b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/f24ab8bb956852b6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/f9b0a9bafb4b9626.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/img/fada4c7e517ae133.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataset/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/visualization/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/visualization/operations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/media/activity0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/media/activity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/media/activity2.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +199,9 @@
       <workItem from="1612200626442" duration="16427000" />
       <workItem from="1612357972924" duration="1245000" />
       <workItem from="1612384620102" duration="1895000" />
-      <workItem from="1612427257917" duration="96000" />
+      <workItem from="1612427257917" duration="748000" />
+      <workItem from="1612444311599" duration="1808000" />
+      <workItem from="1612473571217" duration="8996000" />
     </task>
     <servers />
   </component>
