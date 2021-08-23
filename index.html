@@ -64,10 +64,18 @@
     <script defer src="js/microbit/sketch.js"></script>
     <title>Code Editor</title>
     <script>
+        var head = document.getElementsByTagName('head')[0];
+        var js = document.createElement("script");
+        js.type = "text/javascript";
         let queries = window.location.href.split("#");
         if (queries !== undefined) {
-            let currentDetail = queries[1].split("-");
+            console.log(queries);
+            if (queries[1] === "en") {
+                js.src = "js/en.js";
+                console.log("check");
+            }
         }
+        head.appendChild(js);
     </script>
 </head>
 
@@ -132,7 +140,7 @@
     <i class="far fa-file-alt question-float"></i>
     <p id="_tuts" class="link-detail">Kılavuz ve Aktiviteler</p>
 </a>
-<a href="./tutorials/activity.html" target="_blank" class="float top-left-left link-detail">
+<a href="tutorials/activity/activity.html" target="_blank" class="float top-left-left link-detail">
     <i class="fas fa-gamepad question-float"></i>
     <p id="_card_activity_def" class="link-detail">Kart Aktivitesi</p>
 </a>

@@ -276,6 +276,7 @@ function fillHTML() {
     fillHTMLText('_func_def', _function_defs);
     fillHTMLText('_tuts', _tuts);
     fillHTMLText('_data_sets', _datasets);
+    fillHTMLText('_card_activity_def', _card_activity_def);
 
     // Translate Block Titles
     fillHTMLText(_variable, _var_lang);
