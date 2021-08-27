@@ -10,6 +10,11 @@ The web interface is designed for an easy and fast manipulation of data. You can
  
  You can use your mobile phone with the helper card blocks. The card blocks can be recognized with the camera interface.
 
+------
+Find our curricular resources at [CURRICULUM](CURRICULUM.md)
+
+______
+
 ## Learning Goal
 We aim to increase students' ability to interpret a wide variety of data and use them to solve sustainability issues.
 
