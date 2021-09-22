@@ -103,7 +103,7 @@ function saveVariableFromFunction(id, varVal) {
         if (_.isEqual(varVal, variables.get(varName))) {
             appendWarningText('A variable with same value is already created.');
         } else {
-            createCodeVariable(varName, varVal);
+            (_.isObject(varVal[0])) ? createFileVariable(varName, varVal): createCodeVariable(varName, varVal);
             appendWarningText(varName + _issaved_lang + varVal, "variable_text_" + varName);
         }
     }

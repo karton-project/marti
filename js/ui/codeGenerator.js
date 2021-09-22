@@ -19,11 +19,11 @@ function createNewFunc(varName, varVal) {
 }
 
 function listVariableKeys() {
-    return Array.from(variables.keys()).concat(Array.from(files.keys()));
+    return Array.from(variables.keys());
 }
 
 function listFileKeys() {
-    return Array.from(files.keys()).concat(Array.from(variables.keys()));
+    return Array.from(files.keys());
     //return Array.from(files.keys());
 }
 

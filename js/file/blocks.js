@@ -69,3 +69,18 @@ function openJSONWithLink() {
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
     });
 }
+
+function createTableWithHeaders() {
+    tableArray = [];
+    let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
+    tableArray.push(title);
+    let tableRows = [];
+    for (let i = 0; i <= cntrow; i++) {
+        let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
+        tableRows.push(rowInput);
+        tableArray.push([rowInput[0], parseInt(rowInput[1])]);
+    }
+    drawTable(tableRows, title);
+    defineVariablesUserTable(title, tableRows);
+    appendOutputText(_open_link_output, "linkOpenTextDiv", "");
+}

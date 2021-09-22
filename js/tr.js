@@ -26,6 +26,7 @@ let _trackcolor_lang = "Renk Takibi";
 let _opencsv_comp_lang = "Bilgisayardan CSV Dosyası Aç";
 let _opencsv_link_lang = "Link ile CSV Dosyası Aç";
 let _open_link_output = "Belirtilen link tabloya aktarıldı.";
+let _print_table_output = "Belirtilen veriler tablo olarak hazırlandı.";
 let _listheaders_lang = "Dosya Üst-Bilgileri";
 let _listheaders_text_lang= "Dosyadaki sütunların üst bilgilerini al. Açtığın dosyanın ilk satırını geri döner.";
 let _filter_lang = "Filtre";

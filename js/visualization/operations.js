@@ -40,58 +40,6 @@ function printJSONFiles(file) {
     }
 }
 
-function drawTable(data, titles) {
-    chartisactive = false;
-    var sortAscending = true;
-    if (document.getElementById('tableArea') !== null) {
-        document.getElementById('tableArea').innerHTML = '';
-    }
-    var table = d3.select('#tableArea').append('table');
-    titles = titles || d3.keys(data[0]);
-    var headers = table.append('thead').append('tr')
-        .selectAll('th')
-        .data(titles).enter()
-        .append('th')
-        .text(function (d) {
-            return d;
-        })
-        .on('click', function (d) {
-            headers.attr('class', 'header');
-
-            if (sortAscending) {
-                rows.sort(function (a, b) {
-                    return d3.descending(b[d], a[d]);
-                });
-                sortAscending = false;
-                this.className = 'aes';
-            } else {
-                rows.sort(function (a, b) {
-                    return d3.ascending(b[d], a[d]);
-                });
-                sortAscending = true;
-                this.className = 'des';
-            }
-
-        });
-    titles = d3.keys(data[0]);
-    var rows = table.append('tbody').selectAll('tr')
-        .data(data).enter()
-        .append('tr');
-    rows.selectAll('td')
-        .data(function (d) {
-            return titles.map(function (k) {
-                return {'value': d[k], 'name': k};
-            });
-        }).enter()
-        .append('td')
-        .attr('data-th', function (d) {
-            return d.name;
-        })
-        .text(function (d) {
-            return d.value;
-        });
-}
-
 function drawCharts(chartType) {
     chartType = chartType || chartTypeSel;
 
@@ -164,20 +112,6 @@ function drawChartWithXY(chartType) {
         }
     });
     chartisactive = true;
-}
-
-function createTableWithHeaders() {
-    tableArray = [];
-    let title = getValueFromDomElement("headerinput").split(/[ ,]+/);
-    tableArray.push(title);
-    let tableRows = [];
-    for (let i = 0; i <= cntrow; i++) {
-        let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
-        tableRows.push(rowInput);
-        tableArray.push([rowInput[0], parseInt(rowInput[1])]);
-    }
-    drawTable(tableRows, title);
-    defineVariablesUserTable(title, tableRows);
 }
 
 function transformChart(chartType) {

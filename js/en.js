@@ -26,6 +26,7 @@ _trackcolor_lang = "Track Color";
 _opencsv_comp_lang = "Open CSV From Computer";
 _opencsv_link_lang = "Open CSV with Link";
 _open_link_output = "The link is printed onto table.";
+_print_table_output = "Given data printed as a table.";
 _listheaders_lang = "File Headers";
 _listheaders_text_lang = "Get a list of the headers from the file, which returns the first row.";
 _filter_lang = "Filter";
