@@ -4,7 +4,6 @@ const _general = "math";
 const _map = "map";
 const _media = "media";
 const _visual = "visualization";
-const _microbit = "microbit";
 
 // Color
 const _general_color = "#ef6c00";
@@ -25,20 +24,12 @@ const _histogram = "histogram";
 const _drawchart = "drawchart";
 const _drawchartwithvariable = "chartwvar";
 
-// Blocks for Generral
+// Blocks for General
 const _average = "average";
-const _averagepic = "greypic";
-const _addgeojson = "addgeojson";
-const _addmarker = "addmarker";
 const _applyfunc = "applyfunc";
-const _applythreshold = "threshold";
 const _findpeaks = "findpeaks";
-const _trackcolor = "trackcolor";
 const _filter = "filter";
-const _findposition = "findposition";
-const _pointerevent = "pointerevent";
 const _variable = "variable";
-const _threshold = "threshold";
 const _selectcolumn = "selectcolumn";
 const _scale = "scale";
 const _uniquevals = "uniquevalues";
@@ -46,23 +37,26 @@ const _max = "maximum";
 const _min = "minimum";
 const _sum = "sum";
 const _selectMapBackground = "selectmapbackground";
-const _startwebcam = "startwebcam";
-const _opengeojson = "opengeojson";
 const _newfunction = "newfunction";
 const _count = "count";
 const _filtertable = "filtable";
 
+// Blocks For Map
+const _addgeojson = "addgeojson";
+const _addmarker = "addmarker";
 const _toner = "toner";
 const _terrain = "terrain";
 const _watercolor = "watercolor";
-
-const _connectdevice = "mconndevice";
-const _recorddatawithtime = "mrecordtime";
-const _recorddatawithclick = "mrecordclick";
-const _gettemperature = "mtemp";
+const _findposition = "findposition";
+const _opengeojson = "opengeojson";
 
 // Blocks For Picture
+const _averagepic = "greypic";
 const _openpicture = "openpicture";
+const _trackcolor = "trackcolor";
+const _pointerevent = "pointerevent";
+const _applythreshold = "threshold";
+const _binarythreshold = "bthres";
 
 let classes = [];
 let buttonColor = [];
@@ -95,9 +89,6 @@ blockMap.set(_openjsonfromlink, _file);
 blockMap.set(_selectcolumn, _file);
 blockMap.set(_filtertable, _file);
 blockMap.set(_listheaders, _file);
-// microbit
-blockMap.set(_connectdevice, _microbit);
-blockMap.set(_gettemperature, _microbit);
 // map
 blockMap.set(_opengeojson, _map);
 blockMap.set(_addgeojson, _map);
@@ -108,4 +99,5 @@ blockMap.set(_selectMapBackground, _map);
 blockMap.set(_openpicture, _media);
 blockMap.set(_averagepic, _media);
 blockMap.set(_applythreshold, _media);
+blockMap.set(_binarythreshold, _media);
 blockMap.set(_pointerevent, _media);

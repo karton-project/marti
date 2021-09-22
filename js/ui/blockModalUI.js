@@ -1,5 +1,4 @@
 var selectedSource = "";
-var sliderMax = 100, sliderMin = 50;
 let blockDiv;
 let tableDiv;
 let blockTitle;
@@ -324,31 +323,6 @@ function prepareBlocks(blockId) {
             })
         }
 
-        //Micro:bit Operations
-
-        // connect micro:bit device
-        if (blockId.includes(_connectdevice)) {
-            $(function () {
-                var $connectdeviceDiv = $(
-                    '<p>' + _connectdevice_text_lang + '</p>' +
-                    '<button onclick="searchDevice()">' + _connect_lang + '</button>'
-                );
-                $connectdeviceDiv.appendTo(blockDiv);
-            })
-        }
-
-        // get temperature of micro:bit
-        if (blockId.includes(_gettemperature)) {
-            $(function () {
-                var tempRecordingOpts = [_buttonTempRecordinA, _buttonTempRecordingB, _buttonTempRecordingAB, _timeInterval3, _timeInterval5, _timeInterval10, _timeInterval60];
-                prepareSelectOptionModal(_gettemperature_text_lang, tempRecordingOpts, function (value) {
-                    selectedTempRecordingOpt = value;
-                }, 'selectTempRecordEvent');
-                var $getTempDiv = $('<button onclick="startTemperatureRecording()">' + _start_lang + '</button>');
-                $getTempDiv.appendTo(blockDiv);
-            })
-        }
-
         // Map Operations
 
         // open GEOJSON file
@@ -429,7 +403,7 @@ function prepareBlocks(blockId) {
         }
 
         // picture threshold
-        if (blockId.includes(_threshold)) {
+        if (blockId.includes(_applythreshold)) {
             $(function () {
                 var $sliderDiv = $(
                     '<p>' + _threshold_text_lang + '</p>' +
@@ -444,7 +418,23 @@ function prepareBlocks(blockId) {
                     '<button onclick="pictureApplyThreshold()" ">' + _applybutton_lang + '</button>');
 
                 $sliderDiv.appendTo(blockDiv);
-                generateRangeSlider(0, 255, 1, null, [50, 100], 255);
+                generateRangeSlider(0, 255, 1, null, [sliderMin, sliderMax], 255);
+            })
+        }
+
+
+        if (blockId.includes(_binarythreshold)) {
+            $(function () {
+                var $sliderDiv = $(
+                    '<p>' + _binary_threshold_text_lang + '</p>' +
+                    '<div class="row align-items-center">\n' +
+                    '    <div class="col-sm-2"><p id="value-simple"></p></div>\n' +
+                    '    <div class="col-sm"><div id="slider-simple"></div></div>\n' +
+                    '  </div>' +
+                    '<button onclick="pictureApplyBinaryThreshold()" ">' + _applybutton_lang + '</button>');
+
+                $sliderDiv.appendTo(blockDiv);
+                generateSimpleSlider();
             })
         }
 

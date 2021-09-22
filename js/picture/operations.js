@@ -1,4 +1,5 @@
 var imageContext;
+var sliderMax = 100, sliderMin = 50, limit = 100;
 
 function generateRangeSlider(min, max, step, fillColor, defaultRange, width) {
     step = step || 1;
@@ -34,19 +35,39 @@ function generateRangeSlider(min, max, step, fillColor, defaultRange, width) {
     gRange.call(sliderRange);
 }
 
-function splitWithSlider(data) {
-    if (sliderInterval[0] > 0) {
-        console.log(sliderInterval[0]);
-        console.log(sliderInterval[1]);
-        return splitInterval(data, sliderInterval[0], sliderInterval[1]);
-    }
+function generateSimpleSlider() {
+    var sliderSimple = d3
+        .sliderBottom()
+        .min(0)
+        .max(255)
+        .step(5)
+        .width(300)
+        .default(100)
+        .on('onchange', val => {
+            limit = val;
+            d3.select('p#value-simple').text(val);
+        });
+
+    var gRange = d3
+        .select('div#slider-simple')
+        .append('svg')
+        .attr('width', 300)
+        .attr('height', 100)
+        .append('g')
+        .attr('transform', 'translate(30,30)');
+
+    gRange.call(sliderSimple);
 }
 
 function handleImageFiles() {
     var theGoods = document.getElementById('imageFile').files[0];
     var reader = new FileReader();
-    reader.addEventListener("load", function () { imgObjForVis.src = reader.result; });
-    if (theGoods) { reader.readAsDataURL(theGoods); }
+    reader.addEventListener("load", function () {
+        imgObjForVis.src = reader.result;
+    });
+    if (theGoods) {
+        reader.readAsDataURL(theGoods);
+    }
     imgObjForVis.onload = function () {
         var cv = document.getElementById('source-canvas');
         imageContext = cv.getContext('2d');
@@ -126,22 +147,32 @@ function histogram(data) {
     let W = 600
     let H = W / 1.8;
     const svg = d3.select('svg');
-    const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    const margin = {top: 20, right: 20, bottom: 30, left: 50};
     const width = W - margin.left - margin.right;
     const height = H - margin.top - margin.bottom;
     let q = document.querySelector('svg');
     q.style.width = W;
     q.style.height = H;
-    if (yAxis) { d3.selectAll("g.y-axis").remove(); yAxis = false; }
+    if (yAxis) {
+        d3.selectAll("g.y-axis").remove();
+        yAxis = false;
+    }
+
     function graphComponent(data, color) {
         d3.selectAll(".bar-" + color).remove();
-        var data = Object.keys(data).map(function (key) { return { freq: data[key], idx: +key } });
+        var data = Object.keys(data).map(function (key) {
+            return {freq: data[key], idx: +key}
+        });
         var x = d3.scaleLinear()
             .range([0, width])
-            .domain([0, d3.max(data, function (d) { return d.idx; })]);
+            .domain([0, d3.max(data, function (d) {
+                return d.idx;
+            })]);
         var y = d3.scaleLinear()
             .range([height, 0])
-            .domain([0, d3.max(data, function (d) { return d.freq; })]);
+            .domain([0, d3.max(data, function (d) {
+                return d.freq;
+            })]);
         var g = svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         if (!yAxis) {
@@ -156,12 +187,19 @@ function histogram(data) {
             .enter().append("rect")
             .attr("class", "bar-" + color)
             .attr("fill", color)
-            .attr("x", function (d) { return x(d.idx); })
-            .attr("y", function (d) { return y(d.freq); })
+            .attr("x", function (d) {
+                return x(d.idx);
+            })
+            .attr("y", function (d) {
+                return y(d.freq);
+            })
             .attr("width", 2)
             .attr("opacity", 0.8)
-            .attr("height", function (d) { return height - y(d.freq); })
+            .attr("height", function (d) {
+                return height - y(d.freq);
+            })
     }
+
     graphComponent(data.gD, "green");
     graphComponent(data.bD, "blue");
     graphComponent(data.rD, "red");
@@ -174,15 +212,21 @@ function calcAndGraph(img) {
     let ctx = imageContext;
     let pixelSum = {};
     const iD = ctx.getImageData(0, 0, img.width, img.height).data;
-    for (var i = 0; i < 256; i++) { rD[i] = 0; gD[i] = 0; bD[i] = 0; }
-    for (var i = 0; i <= 765; i++) { pixelSum[i] = 0; }
+    for (var i = 0; i < 256; i++) {
+        rD[i] = 0;
+        gD[i] = 0;
+        bD[i] = 0;
+    }
+    for (var i = 0; i <= 765; i++) {
+        pixelSum[i] = 0;
+    }
     for (var i = 0; i < iD.length; i += 4) {
         pixelSum[iD[i] + iD[i + 1] + iD[i + 2]]++;
         rD[iD[i]]++;
         gD[iD[i + 1]]++;
         bD[iD[i + 2]]++;
     }
-    histogram({ pixelSum, rD, gD, bD });
+    histogram({pixelSum, rD, gD, bD});
 }
 
 function amplify(e) {
@@ -192,8 +236,7 @@ function amplify(e) {
         document.querySelectorAll('rect').forEach(bar => {
             bar.style.opacity = 0.7;
         });
-    }
-    else {
+    } else {
         activeColor = boost;
         const deaden = colors.filter(e => e !== boost);
         document.querySelectorAll('.bar-' + boost).forEach(bar => {

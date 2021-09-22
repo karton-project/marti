@@ -10,20 +10,41 @@ function pictureAverage() {
         this.grayscale();
         this.render();
     });
-    appendOutputText('You took the average of every data point in this picture.');
 }
 
-function pictureApplyThreshold() {
-    Caman.Filter.register("threshold", function (e) {
-        return this.process("threshold", function (r) {
-            var t = .2126 * r.r + .7152 * r.g + .0722 * r.b;
-            r.r = e < t ? 255 : 0, r.g = e < t ? 255 : 0, r.b = e < t ? 255 : 0
-        }), this
+function pictureApplyBinaryThreshold(){
+    Caman.Filter.register("threshold", function () {
+        this.process("threshold", function (rgba) {
+            var lumin = (0.2126 * rgba.r) + (0.7152 * rgba.g) + (0.0722 * rgba.b);
+            rgba.r = lumin < limit ? 0 : 255;
+            rgba.g = lumin < limit ? 0 : 255;
+            rgba.b = lumin < limit ? 0 : 255;
+        });
+        return this;
     });
     Caman("#source-canvas", function () {
         this.revert(false);
         this.threshold();
         this.render();
     });
-    appendOutputText('Threshold value is: ' + sliderMin + ' - ' + sliderMax);
+}
+
+function pictureApplyThreshold() {
+    Caman.Filter.register("threshold", function (limit) {
+        this.process("threshold", function (rgba) {
+            rgba.r = rgba.r  < sliderMin ? 0 : rgba.r;
+            rgba.g = rgba.g < sliderMin ? 0 : rgba.g;
+            rgba.b = rgba.b < sliderMin ? 0 : rgba.b;
+
+            rgba.r = rgba.r > sliderMax ? 255 : rgba.r;
+            rgba.g = rgba.g > sliderMax ? 255 : rgba.g;
+            rgba.b = rgba.b > sliderMax ? 255 : rgba.b;
+        });
+        return this;
+    });
+    Caman("#source-canvas", function () {
+        this.revert(false);
+        this.threshold();
+        this.render();
+    });
 }

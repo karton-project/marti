@@ -9,9 +9,9 @@ function incrementBlockCounter() {
 
 function createSourceTable() {
     const table = $('#dataSourceTable');
-    const sources = [_general, _visual, _file, _map, _media, _microbit];
-    const source_names = [_general_lang, _visual_lang, _file_lang, _map_lang, _media_lang, _microbit_lang];
-    const source_colors = [_general_color, _visual_color, _file_color, _map_color, _picture_color, _microbit_color];
+    const sources = [_general, _visual, _file, _map, _media];
+    const source_names = [_general_lang, _visual_lang, _file_lang, _map_lang, _media_lang];
+    const source_colors = [_general_color, _visual_color, _file_color, _map_color, _picture_color];
     for (let i = 0; i < sources.length; i++) {
         table.append(
             '<div class="icon" style="background:' + source_colors[i] + '" id="' + sources[i] + '">' +
@@ -84,12 +84,6 @@ function giveBackgroundColor(currentBlock, source) {
                 'color': 'white'
             });
             break;
-        case _microbit:
-            currentBlock.css({
-                'background-color': _microbit_color,
-                'color': 'white'
-            });
-            break;
         case _media:
             currentBlock.css({
                 'background-color': _picture_color,
@@ -154,8 +148,6 @@ function changeSourceView(source) {
         changeViewForGeneral();
     else if (source === _map)
         changeViewForMap();
-    else if (source === _microbit)
-        changeViewForMicrobit();
     else if (source === _media)
         changeViewForPicture();
     else if (source === _visual)
@@ -176,6 +168,7 @@ function startOutputTabs() {
             '<div id="mapArea"></div>';
         openMap();
     });
+    changeViewForFile();
 }
 
 function changeViewForFile() {
@@ -205,57 +198,6 @@ function changeViewForMap() {
     });
     scrollToBlock(_opengeojson);
     openMap();
-}
-
-function changeViewForMicrobit() {
-    appendNewTab(_microbit, function () {
-        document.getElementById('visualization_' + _microbit).innerHTML =
-            '<div id="microbitsketch">' +
-            '      <div class="property" style="max-width: 460px; min-width: 460px">\n' +
-            '\n' +
-            '        Led Matrix:\n' +
-            '        <br/>\n' +
-            '\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell1" onchange="updatePixel(0,0,this.checked)" /><label for="matrixCell1"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell2" onchange="updatePixel(0,1,this.checked)" /><label for="matrixCell2"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell3" onchange="updatePixel(0,2,this.checked)" /><label for="matrixCell3"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell4" onchange="updatePixel(0,3,this.checked)" /><label for="matrixCell4"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell5" onchange="updatePixel(0,4,this.checked)" /><label for="matrixCell5"></label></div>\n' +
-            '        <br/>\n' +
-            '\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell6" onchange="updatePixel(1,0,this.checked)" /><label for="matrixCell6"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell7" onchange="updatePixel(1,1,this.checked)" /><label for="matrixCell7"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell8" onchange="updatePixel(1,2,this.checked)" /><label for="matrixCell8"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell9" onchange="updatePixel(1,3,this.checked)" /><label for="matrixCell9"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell10" onchange="updatePixel(1,4,this.checked)" /><label for="matrixCell10"></label></div>\n' +
-            '        <br/>\n' +
-            '\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell11" onchange="updatePixel(2,0,this.checked)" /><label for="matrixCell11"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell12" onchange="updatePixel(2,1,this.checked)" /><label for="matrixCell12"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell13" onchange="updatePixel(2,2,this.checked)" /><label for="matrixCell13"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell14" onchange="updatePixel(2,3,this.checked)" /><label for="matrixCell14"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell15" onchange="updatePixel(2,4,this.checked)" /><label for="matrixCell15"></label></div>\n' +
-            '        <br/>\n' +
-            '\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell16" onchange="updatePixel(3,0,this.checked)" /><label for="matrixCell16"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell17" onchange="updatePixel(3,1,this.checked)" /><label for="matrixCell17"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell18" onchange="updatePixel(3,2,this.checked)" /><label for="matrixCell18"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell19" onchange="updatePixel(3,3,this.checked)" /><label for="matrixCell19"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell20" onchange="updatePixel(3,4,this.checked)" /><label for="matrixCell20"></label></div>\n' +
-            '        <br/>\n' +
-            '\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell21" onchange="updatePixel(4,0,this.checked)" /><label for="matrixCell21"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell22" onchange="updatePixel(4,1,this.checked)" /><label for="matrixCell22"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell23" onchange="updatePixel(4,2,this.checked)" /><label for="matrixCell23"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell24" onchange="updatePixel(4,3,this.checked)" /><label for="matrixCell24"></label></div>\n' +
-            '        <div class="matrixCell"><input type="checkbox" id="matrixCell25" onchange="updatePixel(4,4,this.checked)" /><label for="matrixCell25"></label></div>\n' +
-            '\n' +
-            '\n' +
-            '        <br/>\n' +
-            '      </div>' +
-            '</div>';
-    });
-    scrollToBlock(_connectdevice);
 }
 
 function changeViewForPicture() {
@@ -296,13 +238,13 @@ function fillHTML() {
     fillHTMLText(_addgeojson, _addgeojson_lang);
     fillHTMLText(_findposition, _findpos_lang);
     fillHTMLText(_addmarker, _addmarker_lang);
-    fillHTMLText(_threshold, _threshold_lang);
+    fillHTMLText(_applythreshold, _threshold_lang);
+    fillHTMLText(_binarythreshold, _binary_threshold_lang);
     fillHTMLText(_openpicture, _openpicture_lang);
     fillHTMLText(_averagepic, _averagepic_lang);
     fillHTMLText(_selectcolumn, _select_column_lang);
     fillHTMLText(_drawchart, _drawchart_lang);
     fillHTMLText(_drawchartwithvariable, _drawchartwithvariable_lang);
-    fillHTMLText(_startwebcam, _start_webcam_lang);
     fillHTMLText(_histogram, _histogram_lang);
     fillHTMLText(_selectMapBackground, _select_mapbg_lang);
     fillHTMLText(_printtable, _print_table_chart_lang);
@@ -310,8 +252,6 @@ function fillHTML() {
     fillHTMLText(_sum, _sum_lang);
     fillHTMLText(_openjsonfromcomputer, _openjsonfromcomputer_lang);
     fillHTMLText(_openjsonfromlink, _openjsonfromlink_lang);
-    fillHTMLText(_connectdevice, _connectdevice_lang);
-    fillHTMLText(_gettemperature, _gettemperature_lang);
     fillHTMLText(_newfunction, _newfunction_lang);
     fillHTMLText(_count, _count_lang);
     fillHTMLText(_filtertable, _filtertable_lang);
