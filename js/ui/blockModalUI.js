@@ -26,12 +26,12 @@ function appendOutputHTML(code) {
     $('#outputText').prepend(code);
 }
 
-function appendWarningText(text) {
-    var warningBar = document.getElementById("snackbar");
-    warningBar.innerText = text;
-    warningBar.className = "show";
+function appendToastText(text) {
+    var toastBar = document.getElementById("snackbar");
+    toastBar.innerText = text;
+    toastBar.className = "show";
     setTimeout(function () {
-        warningBar.className = warningBar.className.replace("show", "");
+        toastBar.className = toastBar.className.replace("show", "");
     }, 3000);
 }
 

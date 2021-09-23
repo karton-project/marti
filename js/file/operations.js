@@ -53,6 +53,38 @@ function drawTable(data, titles) {
         });
 }
 
+function printCSVFiles(file) {
+    if (file) {
+        var reader = new FileReader();
+        reader.onloadend = function (evt) {
+            var dataUrl = evt.target.result;
+            readCSVFile(dataUrl, function (data) {
+                fileData = data;
+                fileName = file.name;
+                drawTable(data);
+                defineVariablesFromFileData();
+            });
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function printJSONFiles(file) {
+    if (file) {
+        var reader = new FileReader();
+        reader.onloadend = function (evt) {
+            var dataUrl = evt.target.result;
+            readJSONFile(dataUrl, function (data) {
+                fileData = data;
+                fileName = file.name;
+                drawTable(data);
+                defineVariablesFromFileData();
+            });
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
 function filterTable(data, variableValue, comparedValue, operation) {
     let output = data.filter(d => {
         return compare(d[variableValue], comparedValue, operation);

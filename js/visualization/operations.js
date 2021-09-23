@@ -1,43 +1,10 @@
 let chart, fileName, xAxis_var, chartTypeSel;
 let chartisactive = false;
-let tableArray = [];
 
 function findChartDimensions() {
     let chartAreaWidth = $("#visualization_tabcontent").width() - 10;
     let chartAreaHeight = $("#visualization_tabcontent").width() - 30;
     return [chartAreaHeight, chartAreaWidth];
-}
-
-function printCSVFiles(file) {
-    if (file) {
-        var reader = new FileReader();
-        reader.onloadend = function (evt) {
-            var dataUrl = evt.target.result;
-            readCSVFile(dataUrl, function (data) {
-                fileData = data;
-                fileName = file.name;
-                drawTable(data);
-                defineVariablesFromFileData();
-            });
-        };
-        reader.readAsDataURL(file);
-    }
-}
-
-function printJSONFiles(file) {
-    if (file) {
-        var reader = new FileReader();
-        reader.onloadend = function (evt) {
-            var dataUrl = evt.target.result;
-            readJSONFile(dataUrl, function (data) {
-                fileData = data;
-                fileName = file.name;
-                drawTable(data);
-                defineVariablesFromFileData();
-            });
-        };
-        reader.readAsDataURL(file);
-    }
 }
 
 function drawCharts(chartType) {
@@ -73,7 +40,7 @@ function drawChartWithXY(chartType) {
     let charttitle = getValueFromDomElement('setChartTitle');
     let dim = findChartDimensions();
     let y_values = getValueFromDomElement('chooseYaxis');
-    let valArr = y_values.split(', ').filter(Boolean).map(function (item) {
+    let valArr = y_values.split(',').map(function (item) {
         return item.trim();
     });
     for (let val of valArr) {
@@ -112,6 +79,7 @@ function drawChartWithXY(chartType) {
         }
     });
     chartisactive = true;
+    transformChart(chartType);
 }
 
 function transformChart(chartType) {

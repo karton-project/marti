@@ -66,13 +66,13 @@ function saveVariable() {
         return item.length >= 1;
     });
     if (varName.length <= 0 || varVal.length <= 0) {
-        appendWarningText('You cannot empty name or value.');
+        appendToastText('You cannot empty name or value.');
     } else {
         if (_.isEqual(varVal, variables.get(varName))) {
-            appendWarningText('A variable with same value is already created.');
+            appendToastText('A variable with same value is already created.');
         } else {
             createCodeVariable(varName, varVal);
-            appendWarningText(varName + _issaved_lang + varVal, "variable_text_" + varName);
+            appendToastText(varName + _issaved_lang + varVal, "variable_text_" + varName);
         }
     }
 }
@@ -83,13 +83,13 @@ function saveNewFunc() {
         return item.length >= 1;
     });
     if (varName.length <= 0 || varVal.length <= 0) {
-        appendWarningText('You cannot empty name or property.');
+        appendToastText('You cannot empty name or property.');
     } else {
         if (_.isEqual(varVal, variables.get(varName))) {
-            appendWarningText('A function with same operation is already created.');
+            appendToastText('A function with same operation is already created.');
         } else {
             createNewFunc(varName, varVal);
-            appendWarningText(varName + _issaveddatatype_lang + varVal, "variable_text_" + varName);
+            appendToastText(varName + _issaveddatatype_lang + varVal, "variable_text_" + varName);
         }
     }
 }
@@ -98,13 +98,13 @@ function saveVariableFromFunction(id, varVal) {
     var varName = getValueFromDomElement(id + "_savevarname");
     varVal = JSON.parse(varVal);
     if (varName.length <= 0) {
-        appendWarningText('You cannot empty name or value.');
+        appendToastText('You cannot empty name or value.');
     } else {
         if (_.isEqual(varVal, variables.get(varName))) {
-            appendWarningText('A variable with same value is already created.');
+            appendToastText('A variable with same value is already created.');
         } else {
             (_.isObject(varVal[0])) ? createFileVariable(varName, varVal): createCodeVariable(varName, varVal);
-            appendWarningText(varName + _issaved_lang + varVal, "variable_text_" + varName);
+            appendToastText(varName + _issaved_lang + varVal, "variable_text_" + varName);
         }
     }
 }

@@ -32,7 +32,7 @@ function addUniqueValuesCode() {
         let result = uniqueValues(getVariableValueByName(uniqueValuesVariable));
         appendOutputText(_uniquevals_output.format(uniqueValuesVariable), "uniqueValTextDiv", result);
     } else {
-        appendWarningText('You need to select a variable.');
+        appendToastText('You need to select a variable.');
         console.log("Hello");
     }
 }
@@ -78,7 +78,7 @@ function createTableWithHeaders() {
     for (let i = 0; i <= cntrow; i++) {
         let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
         tableRows.push(rowInput);
-        tableArray.push([rowInput[0], parseInt(rowInput[1])]);
+        tableArray.push(rowInput.map(Number));
     }
     drawTable(tableRows, title);
     defineVariablesUserTable(title, tableRows);

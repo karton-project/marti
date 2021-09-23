@@ -205,7 +205,7 @@ if (function(a) {
     }, a.BingProvider.prototype = new a.ProviderBase(), a.BingProvider.prototype.constructor = a.BingProvider,
         a.BingProvider.prototype.geocode = function(a, d) {
             this.externalLoader.setOptions({
-                protocol: "https",
+                protocol: b === !0 ? "https" : "http",
                 host: "dev.virtualearth.net",
                 pathname: "REST/v1/Locations/" + a
             });
@@ -216,7 +216,7 @@ if (function(a) {
             this.executeRequest(e, d);
         }, a.BingProvider.prototype.geodecode = function(a, d, e) {
         this.externalLoader.setOptions({
-            protocol: "https",
+            protocol: b === !0 ? "https" : "http",
             host: "dev.virtualearth.net",
             pathname: "REST/v1/Locations/" + a + "," + d
         });
@@ -253,7 +253,7 @@ if (function(a) {
     }, a.GoogleAPIProvider.prototype = new a.ProviderBase(), a.GoogleAPIProvider.prototype.constructor = a.GoogleAPIProvider,
         a.GoogleAPIProvider.prototype.geocode = function(a, d) {
             this.externalLoader.setOptions({
-                protocol: "https",
+                protocol: b === !0 ? "https" : "http",
                 host: "maps.googleapis.com",
                 pathname: "maps/api/geocode/json"
             });
@@ -264,7 +264,7 @@ if (function(a) {
             c && (e.key = c), this.executeRequest(e, d);
         }, a.GoogleAPIProvider.prototype.geodecode = function(a, d, e) {
         this.externalLoader.setOptions({
-            protocol: "https",
+            protocol: b ? "https" : "http",
             host: "maps.googleapis.com",
             pathname: "maps/api/geocode/json"
         });
@@ -320,7 +320,7 @@ if (function(a) {
     }, a.MapquestProvider.prototype = new a.ProviderBase(), a.MapquestProvider.prototype.constructor = a.MapquestProvider,
         a.MapquestProvider.prototype.geocode = function(a, b) {
             this.externalLoader.setOptions({
-                protocol: "https",
+                protocol: "http",
                 host: "www.mapquestapi.com",
                 pathname: "geocoding/v1/address"
             });
@@ -333,7 +333,7 @@ if (function(a) {
             this.executeRequest(c, b);
         }, a.MapquestProvider.prototype.geodecode = function(a, b, c) {
         this.externalLoader.setOptions({
-            protocol: "https",
+            protocol: "http",
             host: "www.mapquestapi.com",
             pathname: "geocoding/v1/reverse"
         });
@@ -370,7 +370,7 @@ if (function(a) {
     }, a.OpenStreetMapProvider.prototype = new a.ProviderBase(), a.OpenStreetMapProvider.prototype.constructor = a.OpenStreetMapProvider,
         a.OpenStreetMapProvider.prototype.geocode = function(a, b) {
             this.externalLoader.setOptions({
-                protocol: "https",
+                protocol: "http",
                 host: "nominatim.openstreetmap.org",
                 pathname: "search"
             });
@@ -382,7 +382,7 @@ if (function(a) {
             this.executeRequest(c, b);
         }, a.OpenStreetMapProvider.prototype.geodecode = function(a, b, c) {
         this.externalLoader.setOptions({
-            protocol: "https",
+            protocol: "http",
             host: "nominatim.openstreetmap.org",
             pathname: "reverse"
         });
@@ -421,7 +421,7 @@ if (function(a) {
     }, a.YandexProvider.prototype = new a.ProviderBase(), a.YandexProvider.prototype.constructor = a.YandexProvider,
         a.YandexProvider.prototype.geocode = function(a, c) {
             this.externalLoader.setOptions({
-                protocol: "https",
+                protocol: b === !0 ? "https" : "http",
                 host: "geocode-maps.yandex.ru",
                 pathname: "1.x"
             });
@@ -434,7 +434,7 @@ if (function(a) {
             this.executeRequest(d, c);
         }, a.YandexProvider.prototype.geodecode = function(a, c, d) {
         this.externalLoader.setOptions({
-            protocol: "https",
+            protocol: b === !0 ? "https" : "http",
             host: "geocode-maps.yandex.ru",
             pathname: "1.x"
         });
