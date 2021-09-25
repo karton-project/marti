@@ -30,7 +30,8 @@ Marti is not only a web/mobile data programming environment. We also created a g
 
 ## Other Available Affordable Data Programming Resources
 
+_See the other available resources in our curated [RESOURCES](./RESOURCES.md) list. I listed my three favorite **free** resources/tools here:
+
 * [Orange](https://orange.biolab.si/workflows/page/2/) provides an easy to manipulate graphical interface. It is open source and available in open-distributions. You can use Orange in RasPi.
 * [Data Therapy](https://datatherapy.org/activities/) provides excellent activities that combines storytelling and data. Their [Data Studio 2016](https://datastudio2016.datatherapy.org/2016/03/14/368/) workshop also lists several activities and small real-life data.
 * [Data Basic](https://databasic.io/en/culture/build-a-sculpture) As part of the Data Culture project, Data Basic both provides interactive tools and unplugged activities. [Data Sculptures](https://civic.mit.edu/2019/09/05/thoughts-on-designing-data-sculptures/) explains designing data sculptures.
- 

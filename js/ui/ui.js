@@ -210,7 +210,7 @@ function changeViewForPicture() {
 }
 
 function fillHTML() {
-    // Translate index.html
+    // Translate Main Page
     fillHTMLText('_cat', _cat_lang);
     fillHTMLText('_blocks', _blocks_lang);
     fillHTMLText('_output', _output_lang);
