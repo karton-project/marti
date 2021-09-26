@@ -7,11 +7,15 @@ Data literacy has become a fundamental skill for K12-students to acquire. Today,
     2. [Mobile interface with tangible paper blocks](https://karton-project.github.io/marti/tangible.html) 
 
 The web interface is designed for an easy and fast manipulation of data. You can manipulate data with basic math operations, visualize it, gather data from csv files, represent data on geographic maps or use pictures as your data.
+
+![Marti Screen](media/screen.png)
  
- You can use your mobile phone with the helper card blocks. The card blocks can be recognized with the camera interface.
+ You can use your mobile phone with the helper card blocks. The cards helps students to grasp the data concepts one command at a time. You can create card-based unplugged activities. Or, scan these cards with Marti mobile web app and create your data pipelines using your smartphone.
+
+![Marti Cards](media/sample-forest.png)
 
 ------
-Find our curricular resources at [CURRICULUM](CURRICULUM.md)
+Find our all curricular resources at [CURRICULUM](CURRICULUM.md)
 
 ______
 
