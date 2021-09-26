@@ -1,0 +1,680 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#4F7DC9">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+    <style>
+        .success {
+            color: #1e8e3e;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<google-codelab title="Data Science with Marti"
+                environment="web"
+                feedback-link="">
+
+    <google-codelab-step label="Introduction to Data Science with Marti" duration="0">
+        <p>The Marti application is a platform where you can process and visualize data using drag and drop coding cards. When you open the application, you will see the following interface.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/937deaaede1dcde1.png"></p>
+        <p>While processing data with Marti, you can drag the coding card blocks you see in the Blocks area to the coding area to open the cards. For example, when we drag and drop the Define variable card into the Coding field, two spaces will open where you can enter &#34;Name&#34; and &#34;Value&#34;.</p>
+        <p>You can quickly navigate between the blocks by clicking the icons you see in the category area. Each category also lets you navigate between different Output tabs. For example, if you are going to open a file, you will see the values ​​in that file in the &#34;File&#34; tab in the Output area. If you want to draw a chart, you will see it in the &#34;Visualization&#34; tab.</p>
+        <p>Let&#39;s get acquainted with the data collection, processing, and visualization mechanisms of Marti with an example activity.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Data Collection" duration="0">
+        <p>In this activity, you will learn how different types of data collected in the classroom can be expressed and visualized with the Marti application. Throughout the activity, you will see how different mathematical operations can be used to play with data and their possible applications in Seagull.</p>
+        <aside class="special"><p><strong>Data</strong>: The Information gathered to use during research or solving a problem. </p>
+        </aside>
+        <p>The table below shows some of the data collected as a result of a classroom survey. </p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Name</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Age</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Gender</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Favorite Color</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Ahmet</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>9</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Boy</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Green</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Leyla</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>10</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Girl</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Orange</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Cansu</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>9</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Girl</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Green</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Hakan</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>10</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Boy</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Orange</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+            </tr>
+        </table>
+        <p>This table aims to show the trend in the students&#39; favorite colors according to their age and gender distribution. I wonder if age or gender has an impact when choosing a favorite color, or is it completely irrelevant?</p>
+        <p>When we analyze the table according to age and gender, we notice that no particular color preference is observed according to gender. However, while 9-year-old students preferred the color green, 10-year-old students preferred the color orange. </p>
+        <aside class="special"><p><strong>Analysis</strong>: It is a systematic examination of the data collected from research.</p>
+        </aside>
+        <p>But according to the results of this survey, can we say that all 9-year-old children in Turkey prefer the color green? Of course, we cannot claim this. The community we present the survey to consists of very few people, and they are all in the same class, so they are susceptible to being influenced by each other. </p>
+        <aside class="special"><p><strong>Sample</strong>: A limited piece selected from the whole universe concerns the problem we are examining. For example, if we want to learn the favorite colors of 9-year-old children in Turkey, we can create a sample with 100 completely random children from each province.</p>
+        </aside>
+        <p>To obtain a scalable survey result, the data must be distributed dispersedly among the area the survey is to be conducted in and applied to enough people to make the scalability of the results reasonable.</p>
+        <p><strong>Now, in the activity we will be doing, we will fill a similar table for our class. We will learn how to do basic data operations and reflect the results of different data types with the Marti application.</strong></p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Activity: Getting to" duration="0">
+        <p>Let&#39;s draw a table with columns for name, age, gender, and favorite color on a blank sheet of paper. (You can also use the sample data collection page to which you will be directed when the button below is clicked. Instead of collecting data for &#34;Favorite Color&#34; data, you can ask questions that may be of more interest to the class, such as data for &#34;Pet&#34;, &#34;Favorite Sport&#34;).</p>
+        <p><a href="https://docs.google.com/document/d/1dY-5BL2aw6hMmblGKsU5EtisoJcvKCdJgvYsXO44Fdk/edit?usp=sharing" target="_blank">
+            <paper-button class="colored" raised>
+                <iron-icon icon="file-download"></iron-icon>
+                Download Sample Data Collection Table
+            </paper-button>
+        </a></p>
+        <aside class="special"><p><strong>Variable:</strong> We use it to hold information in computer programs. For example, you want to save the result of an addition operation and use that result in a multiplication operation. You define a variable for this action. </p>
+        </aside>
+        <aside class="special"><p><strong>Column:</strong> Each vertical segment in a table is called a column. When you create a table in the Marti interface, each column is saved as a variable,,&#34; and you can use this variable at any time throughout your session.</p>
+        </aside>
+        <p>Let&#39;s fill in the table we prepared by interviewing our classmates.</p>
+        <h2 is-upgraded><strong>Transferring the Data We Collected to the Marti Interface</strong></h2>
+        <p>Depending on what we want to do with the collected data, we can save our table in two different ways:</p>
+        <ol type="1" start="1">
+            <li><h3 is-upgraded><strong>Defining Variables </strong></h3>
+            </li>
+        </ol>
+        <p>We can store each column in the table using a separate variable. <strong>A variable </strong>is a symbol we define to store the data we have and use it in the programming environment. To define a variable in the Marti interface, let&#39;s drag the Define Variable box to the coding area. Let&#39;s define a variable called &#34;class colors&#34; to define the class&#39;s favorite colors: </p>
+        <p class="image-container"><img style="width: 624.00px" src="img/cd5218434771d2ea.png"></p>
+        <p>The figure above shows the moment we save the colors in our example table to the variable. When we click the Save button, a confirmation text will appear at the bottom of the screen. If this confirmation box says that the defined variable is saved, then everything is fine.</p>
+        <ol type="1" start="2">
+            <li><h3 is-upgraded><strong>Creating a Table</strong></h3>
+            </li>
+        </ol>
+        <p>What should we do if we want to save data like names, lucky numbers, and cities along with the color data? </p>
+        <p>If we want to transfer the entire table we have created to Marti altogether, let&#39;s drag the Create Table block from the File category to the coding area.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/c7e9a404f832df84.png"></p>
+        <p>When we want to create a table, the first line we need to fill out is the title, which defines the data in the table. The title and all the data we have filled out should be separated by commas <strong>(,)</strong>. In the example above, the names, favorite colors, the cities of birth, and numbers of a group of four were recorded.</p>
+        <aside class="warning"><p><strong><em>Question: </em></strong><em>The average height of students of the same age is given in the table below. By looking at the data collected from the students, how can we create a visualization where we can see the relationship between age and height?</em></p>
+            <table>
+                <tr>
+                    <td colspan="1" rowspan="1"><p><strong>Age</strong></p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p><strong>Length(cm)</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>11</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>137</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>12</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>144</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>13</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>148</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>14</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>165</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>15</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>167</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>16</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>171</p>
+                    </td>
+                </tr>
+            </table>
+        </aside>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Data Visualization with Marti" duration="0">
+        <p>With the &#34;Create Table&#34; coding card, we can use the &#34;Draw Graph from Table&#34; command to instantly see the data we have recorded. With Marti, we can visualize three types of data: <a href="https://datavizcatalogue.com/TR/yontemleri/cizgi_grafik.html" target="_blank">Line</a>, <a href="https://datavizcatalogue.com/TR/yontemleri/pasta_grafik.html" target="_blank">Circle (pie)</a>, and <a href="https://datavizcatalogue.com/TR/yontemleri/cubuk_grafik.html" target="_blank">Column (bar)</a></p>
+        <p>Showing the relationship between Age and Height with a line or bar graph can be a suitable way to show how height changes as age increases. To try the line chart, first, select the &#34;line&#34; chart from the selection menu. Then, enter a title that clearly describes the chart so that other people understand it when they see it.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/49f2aa242d1585c6.png"></p>
+        <p>You can choose the &#34;bar&#34; chart instead of the line chart on the coding card to quickly change the type of the chart.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/69fd493eed7b2a87.png"></p>
+        <p><strong>Data Visualization Using Variables</strong></p>
+        <p>When there are two columns in the table, we can use the <strong>Make Graph from Chart</strong> card to visualize data quickly. When the table has more columns or when we want to include different variables, the <strong>Draw Graph with Variable</strong> card will help us. </p>
+        <p class="image-container"><img style="width: 385.50px" src="img/e69ee226ecb2ef9e.png"></p>
+        <p>Using the card, we can draw either one of the line charts, pie charts, or bar charts in 4 steps.</p>
+        <ol type="1" start="1">
+            <li>Select the chart type.</li>
+            <li>Set the values you want on the x-axis, the horizontal axis, equal to a variable.</li>
+            <li>You can display more than one variable at the same time in the y-axis, which is the vertical axis. If you want to show multiple variables at once, you can separate them with commas.</li>
+            <li>Set a descriptive title to indicate the purpose of the chart correctly.</li>
+        </ol>
+        <p>All the examples we have given so far have covered the visualization of numeric values. The data visualization method we choose depends on what type of data we are transferring. For example, if we have cities in our dataset, it might make sense to show our data on a map. If we want to show the distribution of favorite colors according to cities, we can do this in an eye-catching manner by painting these cities in that particular color.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Physical Data Visualization Experiment" duration="0">
+        <p>Data visualization can be a very powerful tool when used correctly. It can rapidly convey data that requires very long readings and analyses. By using different materials and different visualization tools, we can reflect this power in our classrooms. We can encourage students to prepare posters that will both develop their creativity and explain data science to the community we live in.</p>
+        <p>In order to support the diversity of data visualization, we will also grasp how we can develop different visualizations with different materials, starting with the Marti interface.</p>
+        <aside class="warning"><p><strong>Materials to be used:</strong></p>
+            <ul>
+                <li>1.5V clock battery</li>
+                <li>Copper cable</li>
+                <li>LEDs in different colors</li>
+                <li>A world map that is drawn on paper (<a href="https://drive.google.com/file/d/1AR67aW2SdNM4sC9zASWmcI48kXo4SBtG/view?usp=sharing" target="_blank">download the map we use</a>)</li>
+            </ul>
+        </aside>
+        <p>Let&#39;s start with some basic information on electronics;</p>
+        <p class="image-container"><img style="width: 302.50px" src="img/f9b0a9bafb4b9626.png"></p>
+        <p>This simple circuit you will probably remember from your science class consists of a battery that provides electrical energy, a light bulb, and a switch that switches the light on and off. Our electronic circuit, with its sliding button used to show change according to the number of years, solely comprises of these objects. The final product will work as follows: </p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 276.50px" src="img/fada4c7e517ae133.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 263.50px" src="img/811386d3be06af0e.png"></p>
+                </td>
+            </tr>
+        </table>
+        <p>The orange button will act as a switch that completes electricity from the positive (+) end so that when the button is slid for a certain period of time, the lights will turn on as we pass the empty spaces. </p>
+        <p>For this, let&#39;s stick the LED on the back of the page with copper wires that serve to prolong the circuit:</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 147.50px" src="img/8f033cb5b2a985ab.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 172.50px" src="img/44a198e6c12b9da6.png"></p>
+                </td>
+            </tr>
+        </table>
+        <p>We can use this simple circuit to observe the changes of a particular country over one year. So, what can be done when we want to convey a change not solely over a single year but for many years? </p>
+        <p>As an example activity, let&#39;s visualize the relationship between the extent of the forest areas and of the surface area of a country over many years.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Activity: Player Data In" duration="0">
+        <p>In this activity, we will explore how we can show the top 100 potential players in FIFA18 with the desired features on the map. We will learn about data, analysis methods, visualization techniques, and presenting data for different problems. </p>
+        <p>In each row of the downloaded data set, there is the name, age, country, club information and the score and potential information calculated based on the performance of the football players.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Name</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Age</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Country</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Point</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Potential</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Club</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>C. Ronaldo</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Real Madrid CF</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>L. Messi</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>30</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Barcelona</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>F. Muslera</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>31</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Uruguay</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>82</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>82</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Galatasaray SK</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>M. Neuer</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>31</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Germany</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Bayern Munich</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>R. Lewandowski</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>28</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Poland</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Bayern Munich</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>E. Hazard</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>26</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>90</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Chelsea</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>... ...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+            </tr>
+        </table>
+        <p><em>(The table above shows some of the player data. If we shared all the data here, it would take up more than 10 pages)</em></p>
+        <h2 is-upgraded><strong>Download and View</strong></h2>
+        <p>Dataset Click the &#34;Datasets&#34; button in the navigation area in the upper right corner of the Marti application.</p>
+        <p><a href="https://karton-project.github.io/marti/dataset/index.html" target="_blank">Data Sets Page</a></p>
+        <p>On the site we have entered, you can find different data sets that we will use for the following activities. To download player data, click on the link on the card titled &#34;FIFA18 Football Players.&#34; We can use this data by dragging the<strong> File &gt; &#34;Select CSV File from Computer&#34; </strong>card to the coding area. Next, click on the &#34;<em>Select File&#34;</em> button. After clicking the button and selecting the file, you can view the data in the file you have opened in the Output Area.</p>
+        <p>Alternatively, you can copy the link of the source CSV file and use this link in the &#34;<strong>Open CSV via link</strong>&#34; card.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/29254c180ab95d9a.png"></p>
+        <aside class="special"><p><strong>Additional Information: </strong>The Marti interface also includes the &#34;Open CSV file with link&#34; block, which allows us to open CSV files with a link. To open any file on the datasets page, we can right-click the link, click the &#34;Copy link&#34; option, and paste the copied link into the blocks input field to proceed without downloading the data files to our computer. </p>
+        </aside>
+        <p>By programming, we can perform many operations in simpler ways. For example, let&#39;s say that we are curious about the average age of players coming from different countries, and we want to illustrate our results by using a graph.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Name</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Age</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Country</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Point</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Potential</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Club</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>C. Ronaldo</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Real Madrid CF</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>L. Messi</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>30</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Barcelona</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Bruno Fernandes</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>78</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>85</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Sporting CP</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>P. Dybala</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>23</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>88</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Juventus</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>K. De Bruyne</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>26</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>89</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Manchester City</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>T. Courtois</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>25</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>89</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Chelsea</p>
+                </td>
+            </tr>
+        </table>
+        <aside class="warning"><p><strong>Practice: </strong>Based on the information in the table above, let&#39;s draw a graph showing the potential of players over 29 of age in various countries using paper and pencil.</p>
+        </aside>
+        <p>It is possible to identify players over the age of 29 from a six-line table and draw a graph using this information. But how long would it take to make this chart for a list of 100 players? Or how many minutes would this process take if there were 10000 players on the table?</p>
+        <p>For such problems, we can make our job easier by writing a small piece of code. During this activity, we will perform this operation on our 100-player dataset by using the programming interface on the site we have opened.</p>
+        <h2 is-upgraded><strong>Filtering Table Data</strong></h2>
+        <p>We can filter data using a conditional operation by dragging the &#34;<strong>Filter the Table&#34; </strong>card to the coding area. The filtering process resembles the working mechanism of a tea strainer. Just like we want the tea sprouts to remain in the tea strainer and the flavored water to pass through, we enter the data which we hope will &#34;pass through&#34; in the filtering process. </p>
+        <p>We first need to select a table in the card we left in the coding area. When we open the football player file, the Marti application saves this file with its name. To filter a specific table, we need to select its name.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/4f87d531571ed79.png"></p>
+        <p>After selecting the table, we must write a comparison function. As a result of this function, a selection will be made according to the columns features. For example, in the comparison function above, we&#39;re trying to find the rows that are equal to &#34;Argentina&#34; in the <em>country </em>block. We can quickly find that there are two Argentine football players in this dataset: Messi and Dybala.</p>
+        <p>Moving on to a different example, let&#39;s try to get a list of football players whose age is over 30. In this case, we need to choose &#34;age&#34; as the column. Then we choose the operation <em>greater than </em>and choose 30 as the value that will be compared to.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/dbcc84f9225e57b0.png"></p>
+        <h2 is-upgraded><strong>SaveResults</strong></h2>
+        <p>At the end of each operation, there happens to be a button at the bottom of the output area which saves this data. If you want to use the filtered table in the future, you can click this &#34;save&#34; button and save the result. </p>
+        <p>We can click the save button and write &#34;Footballers over 30&#34; in the input field that will appear. Now, we can use this table in the operations we want to do later on.</p>
+        <h2 is-upgraded><strong>Select Column from Filtered Table</strong></h2>
+        <p>We select Select Column from the Blocks and drag it to the coding area. We choose the variable we have saved in the card and specify that we want to use the <em>country</em> column. I also save the countries&#39; names in the selected column as variables.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/8540e6be9055ec3b.png"></p>
+        <h2 is-upgraded><strong>Show Countries on</strong></h2>
+        <p>When you click on Map among the categories, you will see the map and the blocks related to it in the visualization area. To mark it, drag the Add Marker block from the map section.</p>
+        <p>Let&#39;s find the saved name of the column we had selected in the Add Sign block and click the Apply button.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 298.00px" src="img/49573bc56f71e822.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 298.00px" src="img/441ee8f0aab3fb38.png"></p>
+                </td>
+            </tr>
+        </table>
+        <aside class="warning"><p><strong>Let&#39;s Try by Ourselves </strong></p>
+            <p>Now we are more knowledgeable when it comes to processing data. Now, let&#39;s try to solve the following two questions by ourselves and understand what we have and what we have not learned:</p>
+            <p><strong>Question 1:</strong> Let&#39;s list the nationalities of football players under 24 years old in alphabetical order.</p>
+            <p><strong>Question 2: </strong>Let&#39;s show the countries of the players under the age of 24 on the map.</p>
+        </aside>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Activity: Free Fall In" duration="0">
+        <p>In this activity we will design a physics experiment using our phones. Our phones allow us to record physical changes happening in our environment thanks to their sensors. Now, we will measure the intervals of the balls sound hitting the phone&#39;s microphone and the air resistance that is developed against different materials.</p>
+        <h2 is-upgraded><strong>Description</strong></h2>
+        <p><strong>Data</strong>: Information collected to use during research or to solve a problem</p>
+        <p>In the activity, depending on the time intervals, we will collect data about the when the crashing sound occurred for the each item in the table below:</p>
+        <table>
+            <tr>
+                <td colspan="2" rowspan="1"><p><strong>Tennis Ball</strong></p>
+                </td>
+                <td colspan="2" rowspan="1"><p><strong>Cushion Ball</strong></p>
+                </td>
+                <td colspan="2" rowspan="1"><p><strong>Elastic Ball</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Distance</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Elapsed Time</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Sound Intensity</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Time</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Sound Intensity</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Time</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+        </table>
+        <p>Thanks to the data in the table and the information obtained from previous studies, we can easily calculate the air resistance that the ball came across. </p>
+        <p>When we release a ball without applying any additional force, its velocity and height change every second as follows:</p>
+        <pre>height (m) = 0.5 x gravitational acceleration (m/s2) x time2 (s)</pre>
+        <pre>velocity (m/s) = gravitational acceleration (m/s) s2) x seconds (s)</pre>
+        <p>According to these formulas, if 3 seconds pass from the time a ball is released to the time it hits the ground, that ball has been dropped from a height of 45 meters. In this formula, we do not see a parameter depending on the mass. In other words, we should expect a feather and an iron ball dropped from a height of 45 meters to fall on the surface at the exact same time. But it is impossible to witness such a thing in our daily life. This is because in an environment filled with air, light and flat objects like feathers, are weak against a lot of air resistance.</p>
+        <p>At the YouTube link below, you can find an experiment of a feather and an iron ball that has been dropped simultaneously in a completely air-free environment. The video link takes you right to the beginning of the attempt. As soon as you open it, the experiment will start, so watch carefully:</p>
+        <aside class="warning"><p><strong>https://youtu.be/E43-CfukEgs?t=170</strong></p>
+        </aside>
+        <p>Now that we can confide in the formulas, we can start our activity to calculate air resistance by coding:</p>
+        <h2 is-upgraded><strong>Data Collection with Sensors</strong></h2>
+        <p><a href="https://phyphox.org/" target="_blank">Download Phyphox Application to Your Phone In</a></p>
+        <p> In this activity, we will collect data with the assistance of our phones. After downloading the Phyphox application to our phone, let&#39;s watch the video at the following link: </p>
+        <p><a href="https://www.youtube.com/watch?v=zRGh9_a1J7s" target="_blank">https://www.youtube.com/watch?v=zRGh9_a1J7s</a></p>
+        <p>Let&#39;s save the data we have collected through the table identification card. If we do not have the necessary means to collect data, we can use the table below.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Distance</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Drawdown Initial</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Drawdown End</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+                <td colspan="1" rowspan="1"></td>
+            </tr>
+        </table>
+        <p>Time elapsed over distance </p>
+        <p>Show the calculations you have made in the following spaces:</p>
+
+
+    </google-codelab-step>
+
+</google-codelab>
+
+<script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+<script src="//support.google.com/inapp/api.js"></script>
+<script>
+    document.getElementById('done').href = 'javascript:window.history.back();';
+    document.getElementById('arrow-back').href = 'javascript:window.history.back();';
+</script>
+
+
+</body>
+</html>

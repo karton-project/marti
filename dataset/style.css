@@ -20,6 +20,8 @@ a{
     color: #002d5b;
     font-size: calc(1.2em + 0.6vw);
     font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    bottom: 5px;
 }
 /* Create two equal columns that floats next to each other */
 .wrapper {
@@ -34,6 +36,7 @@ a{
     margin: 10px;
     border-radius: 2px;
     background: #f1f1f1;
+    position: relative;
 }
 
 .card-up {

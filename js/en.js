@@ -135,3 +135,11 @@ _card_activity_def = "Card Activity";
 document.getElementById("_dataset_link").onclick = function () {
     document.getElementById("_dataset_link").href = "dataset/en.html";
 };
+
+document.getElementById("_activity_link").onclick = function () {
+    document.getElementById("_activity_link").href = "activity/en.html";
+};
+
+document.getElementById("_tutorial_link").onclick = function () {
+    document.getElementById("_tutorial_link").href = "tutorials/en/index.html";
+};

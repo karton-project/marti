@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marti - Activity</title>
+    <link href='../style/dragula.css' rel='stylesheet' type='text/css'/>
+    <link href='activity.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+<h2>Marti Data Programming Cards</h2>
+<div class='parent'>
+    <p id="console" style="cursor: pointer" onclick="copyElementText()"></p>
+    <div class='wrapper'>
+        <div id='left-copy-1tomany' class='container container-left'>
+            <div id="add"><img src="../media/cards-en/sum.png" alt="sum"></div>
+            <div id="average"><img src="../media/cards-en/average.png" alt="average"></div>
+            <div id="count"><img src="../media/cards-en/count.png" alt="count"></div>
+            <div id="maximum"><img src="../media/cards-en/maximum.png" alt="maximum"></div>
+            <div id="minimum"><img src="../media/cards-en/minimum.png" alt="minimum"></div>
+            <div id="filter"><img src="../media/cards-en/filter.png" alt="filter"></div>
+            <div id="variable"><img src="../media/cards-en/variable.png" alt="define variable"></div>
+            <div id="unique"><img src="../media/cards-en/unique.png" alt="unique values"></div>
+            <div id="peak"><img src="../media/cards-en/peak.png" alt="peak values"></div>
+            <div id="function"><img src="../media/cards-en/function.png" alt="apply function"></div>
+            <div id="column_chart"><img src="../media/cards-en/chart-column.png" alt="bar chart"></div>
+            <div id="pie_chart"><img src="../media/cards-en/chart-pie.png" alt="pie chart"></div>
+            <div id="line_chart"><img src="../media/cards-en/chart-line.png" alt="line chart"></div>
+            <div id="football_data"><img src="../media/cards-en/data-football.png" alt="Data: FIFA18"></div>
+            <div id="bike_data"><img src="../media/cards-en/data-bike.png" alt="Data: e-bike"></div>
+            <div id="research_data"><img src="../media/cards-en/data-research.png" alt="Data: Research Budget"></div>
+            <div id="plastic_data"><img src="../media/cards-en/data-plastic.png" alt="Data: Plastic Production"></div>
+            <div id="forest_data"><img src="../media/cards-en/data-forest.png" alt="Data: Forest Areas"></div>
+            <div id="create_table"><img src="../media/cards-en/create-table.png" alt="Create Table"></div>
+            <div id="filter_table"><img src="../media/cards-en/filter-table.png" alt="Filter Table"></div>
+            <div id="column_headers"><img src="../media/cards-en/column-headers.png" alt="Get Table Headers"></div>
+            <div id="column"><img src="../media/cards-en/getcolumn.png" alt="Get Column"></div>
+            <div id="map"><img src="../media/cards-en/map.png" alt="Open Map"></div>
+            <div id="add_marker"><img src="../media/cards-en/add-marker.png" alt="Add Marker"></div>
+            <div id="find_location"><img src="../media/cards-en/find-location.png" alt="Find Position"></div>
+        </div>
+        <div id='right-copy-1tomany' class='container container-right'>
+        </div>
+    </div>
+</div>
+<script src='../js/ui/dragula.js'></script>
+<script src="drag.js"></script>
+<script>
+    function copyElementText() {
+        var text = document.getElementById("console").innerText;
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    }
+</script>
+</body>
+</html>

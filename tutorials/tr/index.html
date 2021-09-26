@@ -1,0 +1,721 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#4F7DC9">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+    <style>
+        .success {
+            color: #1e8e3e;
+        }
+
+        .error {
+            color: red;
+        }
+
+        td {
+            min-height: 12pt;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<google-codelab title="Martı ile Veri Bilimine Giriş" environment="web" feedback-link="">
+
+    <google-codelab-step label="Martı ile Veri Bilimine Giriş" duration="0">
+        <p>Martı uygulaması, sürükle bırak kodlama kartlarını kullanarak veri işleyebileceğin ve görselleştirebileceğin bir platformdur. Uygulamayı açtığında aşağıdaki arayüzle karşılaşacaksın.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/f24ab8bb956852b6.png"></p>
+        <p>Martı ile veri işlerken, Bloklar alanında gördüğün kodlama kart bloklarını kodlama alanına sürükleyerek kartların açılmasını sağlarsın. Örneğin değişken tanımla kartını sürükleyip, Kodlama alanına bıraktığımızda &#34;İsim&#34; ve &#34;Değer&#34; girdilerini girebileceğin bir alan açılacaktır.</p>
+        <p>Kategori alanında gördüğün simgelere tıklayarak bloklar arasında hızlıca gezebilirsin. Her bir kategori farklı Çıktı sekmeleri arasında da dolaşmanı sağlar. Örneğin, eğer bir dosya açacaksan bu dosyanın içindeki değerleri Çıktı alanındaki &#34;Dosya&#34; sekmesinde görürsün. Eğer bir grafik çizmek istersen, bu grafiği &#34;Görselleştirme&#34; sekmesinde görürsün.</p>
+        <p>Şimdi örnek bir aktivite ile Martı&#39;nın veri toplama, işleme ve görselleştirme mekanizmalarını tanıyalım.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Veri Toplama" duration="0">
+        <p>Bu aktivitede, sınıf içinde toplanan farklı verilerin Martı uygulaması ile nasıl ifade edilebileceğini ve nasıl görselleştirilebileceğini öğreneceksin. Aktivite boyunca, farklı matematiksel işlemlerin verilerle oynamak için nasıl kullanılacağını ve Martı&#39;daki olası uygulamalarını göreceksin.</p>
+        <aside class="special"><p><strong>Veri</strong>: Bir araştırma sırasında veya bir problem çözümünde kullanılmak üzere toplanmış bilgidir. </p>
+        </aside>
+        <p>Aşağıdaki tablo, bir sınıfta gerçekleştirilen anket sonucunda toplanan verilerinin bir kısmını göstermektedir. </p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Ad</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Yaş</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Cinsiyet</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Favori Renk</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Ahmet</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>9</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Erkek</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Yeşil</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Leyla</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>10</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Kız</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Turuncu</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Cansu</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>9</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Kız</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Yeşil</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Hakan</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>10</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Erkek</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Turuncu</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+            </tr>
+        </table>
+        <p>Bu tablonun hazırlanmasının amacı, sınıftaki öğrencilerin yaş ve cinsiyet dağılımında göre favori renklerindeki trendi göstermektir. Acaba, yaş veya cinsiyetin favori renk seçimine bir tercihi var mıdır, yoksa tamamen alakasız mıdır?</p>
+        <p>Tabloda yaş ve cinsiyete göre bir analiz yaptığımızda, cinsiyete göre bir renk tercihi gözlemlenmediğini fark edebiliriz. Ama 9 yaşındaki öğrenciler yeşil rengi tercih ederken, 10 yaşındaki öğrenciler turuncu rengi tercih etmiştir. </p>
+        <aside class="special"><p><strong>Analiz</strong>: Bir araştırma sonucunda toplanan verilerden anlam çıkarmak için yapılan sistematik incelemedir.</p>
+        </aside>
+        <p>Ama bu anket sonucuna göre, Türkiye&#39;deki tüm 9 yaşındaki çocuklar yeşil rengi tercih eder diyebilir miyiz? Tabii ki, diyemeyiz. Çünkü, anketi sunduğumuz topluluk hem çok az sayıda insandan oluşuyor hem de aynı sınıfta oldukları için birbirlerinden etkilnmeye müsaitler. </p>
+        <aside class="special"><p><strong>Örneklem</strong>: İncelediğimiz problemi ilgilendiren tüm evrenden seçilen sınırlı bir parçadır. Örneğin, Türkiye&#39;deki 9 yaşındaki çocukların en sevdikleri renkleri öğrenmek istiyorsak, her ilden tamamen rastgele 100&#39;er çocuk ile bir örneklem oluşturabiliriz.</p>
+        </aside>
+        <p>Bir anketin sonucunun ölçeklenebilir olması için, anketin genelleneceği alan için dağınık toplanması ve sonuçların ölçeklenebilmesini mantıklı kılacak kadar çok kişiye uygulanması gerekmektedir.</p>
+        <p><strong>Şimdi yapacağımız aktivitede benzer bir tabloyu kendi sınıfımız için dolduracağız. Temel veri operasyonlarını ve farklı veri tiplerinin sonuçlarını yansıtmayı Martı uygulaması ile nasıl yapacağımızı öğreneceğiz.</strong></p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Aktivite: Sınıfımızı Tanıyalım" duration="0">
+        <p>Ad, yaş, cinsiyet ve favori renk sütunlarını içeren bir tabloyu boş bir kağıda çizelim. (Aşağıdaki butona tıklandığında açılan örnek veri toplama sayfasını da kullanabilirsin ve &#34;Favori Renk&#34; verisi toplamak yerine &#34;Evcil Hayvan&#34;, &#34;Favori Spor&#34; gibi sınıfın daha çok ilgisini çekebilecek soruları sorabilirsin).</p>
+        <p><a href="https://docs.google.com/document/d/1dY-5BL2aw6hMmblGKsU5EtisoJcvKCdJgvYsXO44Fdk/edit?usp=sharing" target="_blank">
+            <paper-button class="colored" raised>Örnek Veri Toplama Tablosunu İndir</paper-button>
+        </a></p>
+        <aside class="special"><p><strong>Değişken:</strong> Bilgisayar programlarında bilgiyi tutmak için kullanırız. Örneğin, bir toplama işleminin sonucunu kaydetmek ve bu sonucu bir çarpma işleminde kullanmak istiyorsun. Bu işlem için bir değişken tanımlarsın. </p>
+        </aside>
+        <aside class="special"><p><strong>Sütun:</strong> Tablodaki her bir dikey parçaya sütun denir. Martı arayüzünde bir tablo oluşturduğunda her bir sütun bir değişken olarak kaydedilir ve oturumun boyunca bu değişkeni istediğin zaman kullanabilirsin.</p>
+        </aside>
+        <p>Hazırladığımız tabloyu, sınıftaki arkadaşlarımıza sorarak dolduralım.</p>
+        <h2 is-upgraded><strong>Martı Arayüzüne Topladığımız Verileri Aktarma</strong></h2>
+        <p>Topladığımız veriler ile ne yapmak istediğimize bağlı olarak, tablomuzu iki farklı yöntem ile kaydedebiliriz:</p>
+        <ol type="1" start="1">
+            <li><h3 is-upgraded><strong>Değişken Tanımlama</strong></h3>
+            </li>
+        </ol>
+        <p>Tablodaki her sütunu ayrı bir değişken kullanarak depolayabiliriz. <strong>Değişken</strong>, sahip olduğumuz verileri bir süreliğine depolamak ve bunu programlama ortamında kullanabilmek için tanımladığımız semboldür. Martı arayüzünde değişken tanımlamak için, değişken tanımla kutusunu, kodlama alanına sürükleyelim. Sınıfın en sevdiği renkleri tanımlamak için &#34;sınıfın renkleri&#34; adlı bir değişken tanımlayalım:</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/92d3cc06fefb3ea0.png"></p>
+        <p>Yukarıdaki şekilde, örnek tablomuzda olan renkleri değişkene kaydettiğimiz an gösteriliyor. Kaydet butonuna bastığımızda, ekranın alt kısmında bir onaylama metni çıkacak. Bu onaylama kutusunda, tanımlanan değişkenin kaydedildiği söyleniyorsa, her şey yolunda demektir.</p>
+        <ol type="1" start="2">
+            <li><h3 is-upgraded><strong>Tablo Oluşturma</strong></h3>
+            </li>
+        </ol>
+        <p>Renk verisi ile beraber isim, uğurlu sayı, şehir gibi verileri de kaydetmek istiyorsak ne yapmalıyız? </p>
+        <p>Eğer oluştuduğumuz tüm tabloyu aynı anda Martı&#39;ya aktarmak istiyorsak, Dosya kategorisinden Tablo Oluştur bloğunu kodlama alanına sürükleyelim.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/e74948155150401b.png"></p>
+        <p>Tablo oluşturmak istediğimizde, doldurmamız gereken ilk satır tablodaki verilerin ne olduğunu gösteren başlıklardır. Başlıkları ve doldurduğumuz tüm verileri virgül (<strong>,</strong>) ile ayırarak doldurmamız gerekmektedir. Yukarıdaki örnekte, dört kişilik bir grubun, adı, favori renk ve sayıları ve doğdukları şehirler kaydedilmiştir.</p>
+        <aside class="warning"><p><strong><em>Soru: </em></strong><em>Aşağıdaki tabloda aynı yaşta olan öğrencilerin ortalama uzunlukları verilmiştir. Öğrencilerden toplanan verilere bakarak, yaş ve uzunluk ilişkisini görebileceğimiz bir görselleştirmeyi nasıl oluşturabiliriz?</em></p>
+            <table>
+                <tr>
+                    <td colspan="1" rowspan="1"><p><strong>Yaş</strong></p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p><strong>Uzunluk(cm)</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>11</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>137</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>12</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>144</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>13</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>148</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>14</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>165</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>15</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>167</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="1"><p>16</p>
+                    </td>
+                    <td colspan="1" rowspan="1"><p>171</p>
+                    </td>
+                </tr>
+            </table>
+        </aside>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Martı ile Veri Görselleştirme" duration="0">
+        <p>&#34;Tablo Oluştur&#34; kodlama kartı ile kaydettiğimiz verileri anında görebilmek için &#34;Tablodan Grafik Çiz&#34; komutunu kullanabilriz. Martı ile üç tip veri görselleştirmesi yapabiliriz: <a href="https://datavizcatalogue.com/TR/yontemleri/cizgi_grafik.html" target="_blank">Çizgi (line)</a>, <a href="https://datavizcatalogue.com/TR/yontemleri/pasta_grafik.html" target="_blank">Daire (pie)</a> ve <a href="https://datavizcatalogue.com/TR/yontemleri/cubuk_grafik.html" target="_blank">Sütun (bar)</a></p>
+        <p>Yaş ve Uzunluk arasındaki ilişkiyi çizgi veya bar grafiği ile göstermek yaş arttıkça boyun nasıl değiştiğini göstermek için güzel bir yol olabilir. Önce çizgi grafiğini denemek için, seçim menüsünden &#34;çizgi&#34; grafiğini seçin. Ardından grafiği diğer insanlara gösterdiğimizde tam olarak ne grafiği olduğunu net olarak açıklayan bir başlık girin.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/49f2aa242d1585c6.png"></p>
+        <p>Grafikleri hızlıca değiştirmek için kart üzerinden çizgi yerine sütun grafiğini işaretleyebilirsiniz.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/69fd493eed7b2a87.png"></p>
+        <p><strong>Değişkenleri Kullanarak Veri Görselleştirme</strong></p>
+        <p>Tabloda iki sütun olduğunda <strong>Tablodan Grafik Çiz </strong>kartını kullanarak hızlı bir veri görselleştirme yapabiliriz. Tabloda daha fazla sütun olduğunda veya farklı değişkenleri grafiğe katmak istediğimizde <strong>Değişken ile Grafik Çiz</strong> kartı bize yardımcı olacaktır. </p>
+        <p class="image-container"><img style="width: 385.50px" src="img/e69ee226ecb2ef9e.png"></p>
+        <p>Kartı kullanarak 4 adımda çizgi, pasta veya çubuk grafiklerinden birini çizebiliriz.</p>
+        <ol type="1" start="1">
+            <li>Grafik tipini seç.</li>
+            <li>X ekseninde, yani yatay eksende olmasını istediğin değerler için bir değişken belirle</li>
+            <li>Y ekseninde, yani dikey eksende birden fazla değişkeni aynı anda görüntüleyebilirsin. Eğer birden fazla değişkeni aynı anda göstermek istersen bunları virgül ile ayırabilirsin.</li>
+            <li>Grafiğin iletişimini doğru kurmak için açıklayıcı bir başlık belirle.</li>
+        </ol>
+        <p>Şu ana kadar verdiğimiz tüm örnekler sayısal değerlerin görselleştirmesini kapsıyordu. Seçeceğimiz veri görselleştirme yöntemi, ne tip bir veriyi aktaracağımıza bağlıdır. Örneğin, veri setimizde şehirler varsa, verilerimizi harita üzerinde göstermek mantıklı olabilir. Şehirlere göre, favori renk dağılımını göstermek istiyorsak, bu şehirleri o renge boyayarak, bir bakışta tüm verimizi anlatmış oluruz.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Fiziksel Veri Görselleştirme Deneyi" duration="0">
+        <p>Veri görselleştirme doğru kullanıldığında çok güçlü bir araç olabilir. Çünkü, çok uzun okumalar ve analizler gerektiren verilerin hızlıca karşımızdakine aktarılmasını sağlar. Farklı malzemeler ve farklı görselleştirme araçları kullanarak, bu gücü sınıflarımıza da yansıtabiliriz. Öğrencilerin hem yaratıcılıklarını geliştirecek hem de veri bilimini anlatacak afişler hazırlamaları konusunda teşvik edebiliriz.</p>
+        <p>Veri görselleştirmenin bu çeşitliliğini desteklemek adına Martı arayüzü ile başlayarak, farklı görselleştirmeleri farklı materyaller ile nasıl geliştirebileceğimizi de bu aktivitede deneyimleyeceğiz.</p>
+        <aside class="warning"><p><strong>Kullanılacak Malzemeler:</strong></p>
+            <ul>
+                <li>1.5V saat pili</li>
+                <li>Bakır kablo</li>
+                <li>Farklı renklerde LED&#39;ler</li>
+                <li>Kağıda çizilmiş bir dünya haritası (<a href="https://drive.google.com/file/d/1AR67aW2SdNM4sC9zASWmcI48kXo4SBtG/view?usp=sharing" target="_blank">bizim kullandığımız haritayı indir</a>)</li>
+            </ul>
+        </aside>
+        <p>Temel elektronik bilgisi ile başlayalım;</p>
+        <p class="image-container"><img style="width: 302.50px" src="img/f9b0a9bafb4b9626.png"></p>
+        <p>Fen bilgisi dersinden hatırlayacağın bu basit devre, elektrik enerjisini sağlayan pil, ışık veren ampül ve ışığın açılıp kapanmasını sağlayan anahtardan oluşur. Yıllara göre değişimi göstermek için kaydırabileceğimiz bir butonu olan elektronik devremiz de tamamen bu şekilden oluşur. Son ürün aşağıdaki gibi çalışacak:</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 276.50px" src="img/fada4c7e517ae133.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 263.50px" src="img/811386d3be06af0e.png"></p>
+                </td>
+            </tr>
+        </table>
+        <p>Turuncu buton, + uçtan elektriği tamamlayacak bir anahtar görevi görecek, böylece bir zaman aralığı boyunca butonu kaydırdığımızda, boş olan yerlerden geçerken, istediğimiz ışıklar yanacak. </p>
+        <p>Bunun için kağıdın arka kısmına LED ve devremizi devam ettirecek bakır kabloları yapıştıralım:</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 147.50px" src="img/8f033cb5b2a985ab.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 172.50px" src="img/44a198e6c12b9da6.png"></p>
+                </td>
+            </tr>
+        </table>
+        <p>Bu basit devreyi, bir ülkedeki bir yıldan itibaren gözlenen değişimler için kullanabiliriz. Peki, sadece bir yıl için değil de, yıllar boyu bir değişimi aktarmak istediğimizde ne yapmalıyız? </p>
+        <p>Örnek bir aktivite olarak, ülkelerin yüzölçümlerine oranla sahip oldukları ormanlık alanlarının yıllara göre değişimini görselleştirelim.</p>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Aktivite: Futbolcu Verileri" duration="0">
+        <p>Bu aktivitede FIFA18 oyununda potansiyeli en yüksek 100 oyunculardan istediğimiz özelliklerde olanları harita üzerinde nasıl gösterebileceğimizi keşfedeceğiz. Verileri, analiz yöntemlerini, görselleştirme tekniklerini ve farklı problemler için verileri nasıl sunacağımızı öğreneceğiz. </p>
+        <p>İndireceğimiz veri setinin her bir satırında, futbolcuların ad, yaş, ülke, kulüp bilgileri ve gösterdikleri performansa bağlı olarak hesaplanmış puan ve potansiyel bilgileri bulunmaktadır.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Ad</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Yaş</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Ülke</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Puan</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Potansiyel</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Kulüp</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>C. Ronaldo</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Real Madrid CF</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>L. Messi</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>30</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Barcelona</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>F. Muslera</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>31</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Uruguay</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>82</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>82</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Galatasaray SK</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>M. Neuer</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>31</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Germany</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Bayern Munich</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>R. Lewandowski</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>28</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Poland</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Bayern Munich</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>E. Hazard</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>26</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>90</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>91</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Chelsea</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>...</p>
+                </td>
+            </tr>
+        </table>
+        <p><em>(Yukarıdaki tablo, futbolcu verilerinin bir kısmını göstermektedir. Verilerin tamamını burada paylaşsaydık 10 sayfadan fazla yer kaplayacaktı)</em></p>
+        <h2 is-upgraded>Veri Setini İndir ve Görüntüle</h2>
+        <p>Martı uygulamasının sağ üst köşesindeki navigasyon alanındaki &#34;Veri Setleri&#34;butonuna tıklayın.</p>
+        <p><a href="https://karton-project.github.io/marti/dataset/index.html" target="_blank">
+            <paper-button class="colored" raised>Veri Setleri Sayfası</paper-button>
+        </a></p>
+        <p>Girdiğimiz sitede aktiviteler için kullanacağımız farklı veri setlerini bulabilirsin. Futbolcu verilerini seçmek indirmek için FIFA18 Furbolcuları başlıklı karttaki indir linkine tıklayalım. Bilgisayarımıza indirdiğimiz verileri, kodlama alanına aktarmak için <strong>Dosya &gt; Bilgisayardan CSV Dosyası Seç </strong>kod bloğunu kodlama alanına sürükleyelim. <em>Dosya Seç</em> butonuna tıklayıp, dosyayı seçtikten sonra Çıktı Alanında açtığınız dosyadaki verileri göreceksiniz.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/617e9c82cf76345a.png"></p>
+        <aside class="special"><p><strong>Ek Bilgi: </strong>Martı arayüzü CSV dosyalarını link ile açabilmemizi sağlayan &#34;Link ile CSV dosyası aç&#34; bloğunu da içerir. Veri setleri sayfasındaki herhangi bir dosyayı açmak için &#34;indir&#34; linkine sağ tıklayıp, &#34;Bağlantıyı kopyala&#34; seçeneğine tıkladığımızda kopyalanan linki bloğun girdi alanına yapıştırarak bilgisayarımıza veri dosyalarını indirmeden devam edebiliriz. </p>
+        </aside>
+        <p>Programlama yaparak, birçok işlemi kolaylıkla gerçekleştirebiliriz. Örneğin, ülkelerin çıkardığı oyuncuların yaş ortalamasını merak ediyoruz. Ve bunu bir grafik ile göstermek istiyoruz.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Ad</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Yaş</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Ülke</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Puan</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Potansiyel</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Kulüp</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>C. Ronaldo</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>94</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Real Madrid CF</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>L. Messi</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>30</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>FC Barcelona</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Bruno Fernandes</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>34</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Portugal</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>78</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>85</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Sporting CP</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>P. Dybala</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>23</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Argentina</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>88</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>93</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Juventus</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>K. De Bruyne</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>26</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>89</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Manchester City</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>T. Courtois</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>25</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Belgium</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>89</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>92</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Chelsea</p>
+                </td>
+            </tr>
+        </table>
+        <aside class="warning"><p><strong>Alıştırma: </strong>Kağıt ve kalem kullanarak, yukarıdaki tablodaki bilgilere göre, ülkelerde 29 yaşından büyük futbolcuların potansiyellerini gösteren grafiği çizelim.</p>
+        </aside>
+        <p>Altı satırlık bir tablodan 29 yaş üstü oyuncuları belirleyip, bu oyuncular ile ilgili bir grafiği çizmek mümkündür. Peki, bu grafiği 100 oyunculu bir liste için yapmak ne kadar zamanını alırdı? Ya da tabloda 10000 oyuncu olsaydı kaç dakikamızı alırdı?</p>
+        <p>İşte bu tarz problemler için, küçük bir kod parçası yazarak işimizi kolaylaştırabiliriz. Bu aktivitemiz sırasında, açtığımız sitedeki programlama arayüzünü kullanarak, 100 oyunculu veri setimizde bu işlemi gerçekleştireceğiz.</p>
+        <h2 is-upgraded>Tabloyu Filtrele</h2>
+        <p>Dosya kategorisinde olan <strong>Tabloyu Filtrele </strong>kodlama bloğunu Kodlama alanına sürükleyip bırakalım. Filtre işlemini bir çay süzgecinin çalışma mekanizmasına benzetebiliriz. Nasıl çay süzgecinde, çay filizlerinin kalmasını ve çayın özünü içeren suyun geçmesini istiyorsak, filtre işleminde de geçmesini istediğimiz verileri gireriz. </p>
+        <p>Kodlama alanına bıraktığımız kartta önce bir tablo seçmemiz gerekiyor. Futbolcu dosyasını açtığımızda Marti uygulaması bu dosyayı adı ile birlikte kaydeder. Tabloyu filtrelemek için önce filtrelemek istediğimiz tablonun adını seçmemiz gerekiyor.</p>
+        <p class="image-container"><img style="width: 845.00px" src="img/38895e649450b654.png"></p>
+        <p>Tabloyu seçtikten sonra, bir karşılaştırma fonksiyonu yazmalıyız. Bu fonksiyonun sonucunda bir sütunun özelliklerine göre bir seçim yapılacak. Örneğin, yukarıdaki karşılaştırma fonksiyonunda <em>ulke</em> bloğunda &#34;Arjantin&#34; e eşit olan satırları bulmaya çalışıyoruz. Bu veri setinde Arjantinli iki futbolcu olduğunu hızlıca bulduk: Messi ve Dybala.</p>
+        <p>Şimdi farklı bir örnek yapalım. Yaşı 30&#39;dan büyük olan futbolcuların bir listesini almaya çalışalım. Bu durumda sütun olarak &#34;yas&#34;&#39;ı seçmemiz gerekiyor. Ardından işlem olarak <em>büyüktür </em>seçiyorum ve karşılaştırılacak değer olarak 30&#39;u seçiyorum.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/dbcc84f9225e57b0.png"></p>
+        <h2 is-upgraded><strong>Çıkan Sonuçları Kaydet</strong></h2>
+        <p>Her operasyonunun sonunda, çıktı alanının alt parçasında bu veriyi kaydetmen için bir buton bulunmaktadır. Eğer filtrelenmiş tabloyu tekrardan kullanmak istiyorsan bu kaydet butonunun üzerine gelip sonucu kaydedebilirsin. </p>
+        <p>Kaydet butonunun üzerine geliyorum ve çıkan girdi alanına &#34;30 yaşından büyük futbolcular&#34; yazıyorum. Artık bu tabloyu ileride yapmak isteyeceğim işlemlerde kullanabilirim.</p>
+        <h2 is-upgraded><strong>Filtrelenmiş Tablodan Sütun Seç</strong></h2>
+        <p>Bloklar arasından Sütun Seç&#39;i Kodlama alanına sürüklüyorum. Kart içinde kaydettiğim değişkeni seçip <em>ulke</em> sütununu seçmek istediğimi belirtiyorum. Seçilen sütundaki ülkelerin isimlerini de bir değişken olarak kaydediyorum.</p>
+        <p class="image-container"><img style="width: 624.00px" src="img/8540e6be9055ec3b.png"></p>
+        <h2 is-upgraded><strong>Ülkeleri Harita Üzerinde Göster</strong></h2>
+        <p>Kategoriler arasından Harita&#39;ya tıkladığımızda görselleştirme alanındaki haritayı ve ilgili harita bloklarını göreceksin. işaretlemek için harita bölümünden İşaret Ekle bloğunu sürükleyelim.</p>
+        <p>İşaret ekle bloğunda seçtiğimiz sütunun kaydettiğimiz adını bulalım ve Uygula butonuna basalım.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 298.00px" src="img/49573bc56f71e822.png"></p>
+                </td>
+                <td colspan="1" rowspan="1"><p class="image-container"><img style="width: 1398.89px" src="img/927b329cabd737bd.png"></p>
+                </td>
+            </tr>
+        </table>
+        <aside class="warning"><p><strong>Kendimiz Deneyelim</strong></p>
+            <p>Artık verileri işleme konusunda daha bilgiliyiz. Şimdi aşağıdaki iki soruyu çözerek, kendimizi deneyelim ve neleri öğrenip, öğrenmediğimizi anlamaya çalışalım:</p>
+            <p><strong>Soru 1: </strong>24 yaşından küçük futbolcuların ülkelerini alfabetik olarak sıralayalım.</p>
+            <p><strong>Soru 2: </strong>24 yaşından küçük futbolcuların ülkelerini haritada gösterelim.</p>
+        </aside>
+
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Aktivite: Serbest Düşüş" duration="0">
+        <p>Bu aktivitede telefonlarımızı kullanarak bir fizik deneyi tasarlayacağız. Telefonlarımız, bulundurdukları sensörler sayesinde çevremizdeki fiziksel değişimleri kaydetmemize olanak verir. Bu aktivitemizde telefonun mikrofonu ile çarpan topun sesinin aralıkları ile farklı maddelere karşı gelişen hava direncini ölçeceğiz.</p>
+        <h2 is-upgraded><strong>Açıklama</strong></h2>
+        <p><strong>Veri</strong>: Bir araştırma sırasında veya bir problem çözümünde kullanılmak üzere toplanmış bilgidir. </p>
+        <p>Yapılacak aktivitede, aşağıdaki tablonun başlığında görünen farklı maddeler için zaman aralıklarına bağlı olarak çarpma sesinin ne zaman kaydedildiğinin verisini toplayacağız:</p>
+        <table>
+            <tr>
+                <td colspan="2" rowspan="1"><p><strong>Tenis Topu</strong></p>
+                </td>
+                <td colspan="2" rowspan="1"><p><strong>Yastık Top</strong></p>
+                </td>
+                <td colspan="2" rowspan="1"><p><strong>Elastik Top</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>Uzaklık</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Geçen Zaman</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Ses Şiddeti</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Zaman</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Ses Şiddeti</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>Zaman</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+                <td colspan="1" rowspan="1">...</td>
+            </tr>
+        </table>
+        <p>Tablodaki veriler ve önceden yapılan çalışmalardan edinilen bilgiler sayesinde, bir topa uygulanan hava direncini rahatlıkla hesaplayabiliriz.</p>
+        <p>Bir topu hiçbir ek kuvvet uygulamadan elimizden bıraktığımızda her saniye hızı ve yüksekliği aşağıdaki gibi değişir:</p>
+        <pre>yükseklik (m) = 0.5 x yerçekimi ivmesi (m/s<sup>2</sup>) x zaman<sup>2</sup> (s)</pre>
+        <pre>hız (m/s) = yerçekimi ivmesi (m/s<sup>2</sup>) x saniye (s)</pre>
+        <p>Bu formüllere göre bir top bırakıldığından yere çarptığı zamana kadar 3 saniye geçiyorsa, o top 45 metre yükseklikten bırakılmıştır. Bu formülde kütleye bağlı olarak bir parametre görmeyiz. Yani aslında 45 metre yükseklikten bırakılan bir tüy ile bir demir topun aynı anda yüzeye düşmesini beklemeliyiz. Ama günlük yaşantımızda böyle bir şeye rastlamamız olanaksız. Bunun sebebi, hava dolu bir ortamda, tüy gibi hafif ve yassı bir cismin çok hava direncine karşı zayıf olmasıdır.</p>
+        <p>Aşağıdaki Youtube videosunda tamamen havası boşaltılmış bir ortamda, aynı anda bırakılan tüy ve demir topun düşüşlerini gösteren deneyi bulabilirsin. Video linki deneyin tam başlama anınına götürüyor. Açtığın anda deney başlayacak, dikkatli izle:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/E43-CfukEgs?start=169" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </aside>
+        <p>Artık formüllere olan güvenimizi kazandığımıza göre, hava direnci kodlayarak hesapayacağımız aktivitemize başlayabiliriz:</p>
+        <h2 is-upgraded><strong>Sensörler ile Veri Toplama</strong></h2>
+        <p><a href="https://phyphox.org/" target="_blank">
+            <paper-button class="colored" raised>Phyphox Uygulamasını Telefonuna İndir</paper-button>
+        </a></p>
+        <p>Bu aktivitede telefonumuz yardımı ile veri toplayacağız. Telefonumuza phyphox uygulamasını indirdikten sonra, aşağıdaki videoyu izleyelim.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zRGh9_a1J7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Topladığımız verileri, "Tablo Oluştur" kartı ile kaydedelim. Eğer veri toplamak için gerekli imkanlara sahip değilsek, aşağıdaki örnek tabloyu kullanabiliriz.</p>
+        <table>
+            <tr>
+                <td colspan="1" rowspan="1"><p><strong>Uzaklık</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Düşüşe Başlangıç</strong></p>
+                </td>
+                <td colspan="1" rowspan="1"><p><strong>Düşüş Bitiş</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.1</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.6</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.8</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.25</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>2.87</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>3.1</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.4</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>0.52</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>0.82</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.55</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.78</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>2.09</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.7</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>3.2</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>3.6</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>0.85</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>3.51</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>3.94</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>1</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.27</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.72</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>1.15</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>0.6</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.1</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>1.3</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>5.2</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>5.73</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>1.45</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>0.82</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.38</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1" rowspan="1"><p>1.6</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>1.6</p>
+                </td>
+                <td colspan="1" rowspan="1"><p>2.17</p>
+                </td>
+            </tr>
+        </table>
+
+        <aside class="warning"><p><strong>Alıştırma: </strong>Mesafe boyunca geçen zamanı bir çizgi grafiği ile gösterelim. (İpucu: Geçen Zaman = Düşüş Bitiş - Düşüş Başlangıç)</p>
+        </aside>
+
+
+    </google-codelab-step>
+
+</google-codelab>
+
+<script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+<script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+<script src="//support.google.com/inapp/api.js"></script>
+
+<script>
+    document.getElementById('done').href = 'javascript:window.history.back();';
+    document.getElementById('arrow-back').href = 'javascript:window.history.back();';
+</script>
+</body>
+</html>
