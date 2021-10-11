@@ -1,6 +1,10 @@
 .idea/
 .vscode/
 data/
+.ipynb_checkpoints/
+saved_model/
+tfjs_model/
+*.h5
 
 # Logs
 logs
