@@ -8,9 +8,9 @@ Data literacy has become a fundamental skill for K12-students to acquire. Today,
 
 The web interface is designed for an easy and fast manipulation of data. You can manipulate data with basic math operations, visualize it, gather data from csv files, represent data on geographic maps or use pictures as your data.
 
-![Marti Screen](media/screen.png)
+![Marti Screen](media/tuts/martiweb_xs.gif)
  
- You can use your mobile phone with the helper card blocks. The cards helps students to grasp the data concepts one command at a time. You can create card-based unplugged activities. Or, scan these cards with Marti mobile web app and create your data pipelines using your smartphone.
+ You can use your mobile phone with the helper card blocks. You can print these cards using [Data Programming Cards - Google Slides](https://docs.google.com/presentation/d/1BFM48sA1IQlBnmjADtulfzn37pymWqVCsiU1TjCVDBA/edit?usp=sharing ). If you use the "Print on Both Sides" >> "Flip on Long Edge" setting, the cards front face and explanations will be printed properly. The cards help students to grasp the data concepts one command at a time. You can create card-based unplugged activities. Or, scan these cards with Marti mobile web app and create your data pipelines using your smartphone.
 
 ![Marti Cards](media/sample-forest.png)
 
@@ -39,3 +39,10 @@ _See the other available resources in our curated [RESOURCES](./RESOURCES.md) li
 * [Orange](https://orange.biolab.si/workflows/page/2/) provides an easy to manipulate graphical interface. It is open source and available in open-distributions. You can use Orange in RasPi.
 * [Data Therapy](https://datatherapy.org/activities/) provides excellent activities that combines storytelling and data. Their [Data Studio 2016](https://datastudio2016.datatherapy.org/2016/03/14/368/) workshop also lists several activities and small real-life data.
 * [Data Basic](https://databasic.io/en/culture/build-a-sculpture) As part of the Data Culture project, Data Basic both provides interactive tools and unplugged activities. [Data Sculptures](https://civic.mit.edu/2019/09/05/thoughts-on-designing-data-sculptures/) explains designing data sculptures.
+
+## TODO:
+
+- [ ] Save program state to JSON. (import and export)
+- [ ] Mobile use tutorial
+- [ ] Refactor variable and function definitions
+- [ ] Few-shot card training scripts for TFJS and CoreML
