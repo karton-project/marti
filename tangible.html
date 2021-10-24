@@ -45,7 +45,9 @@
     <script defer src="js/ui/codeGenerator.js"></script>
     <script defer src="libs/leaflet/leaflet.js"></script>
     <script defer src="libs/leaflet/tile.stamen.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+    <script defer src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script defer src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script defer src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
     <script defer src="libs/geocoder/Control.OSMGeocoder.js"></script>
     <script defer src="libs/geocoder/geocoder.js"></script>
     <script defer src="js/ui/blockModalUI.js"></script>
@@ -68,30 +70,73 @@
 <input type="file" id="jsonFile" accept=".json" style="display:none"/>
 <input type="file" id="geoJSONFile" accept=".geo.json" style="display:none"/>
 <div class="saveblock_container">
-    <div id="visualContainer" class="saveblock_visualization_container">
+    <div id="train_container" class="saveblock_train_container">
+        <div id="dataSourceTable" class="container saveblock_source_container"></div>
+        <div id='left-copy-1tomany' class="container saveblock_block_container"></div>
+    </div>
+    <div id="visualContainer" class="saveblock_visualization_container" style="display:none">
         <ul id="tab_list" class="tabs"></ul>
     </div>
-    <div id="outputText" class="saveblock_output_container">
+    <div id="outputText" class="saveblock_output_container" style="display:none">
         <table id="outputTable"></table>
     </div>
     <div id="train_coding_cards" class="tangible_recognizers_container">
-        <video autoplay playsinline muted id="cardClassifierCam" width="240" height="240"></video>
+        <video autoplay playsinline muted id="cardClassifierCam" width="224" height="224"></video>
         <div id="trained_card_info" style="color: white"></div>
     </div>
-    <button id="label" class="button saveblock_button">Add Code Block</button>
+
+    <button id="learn" class="button saveblock_button">Add New Instance</button>
+    <button id="label" class="button saveblock_button" style="display:none">Add Code Block</button>
 </div>
 
 <div id="snackbar"></div>
+<a href="#" id="start_coding" class="float_top_right" onclick="showTangibleCoding()">Start Coding ➡️</a>
+<a href="#output_title" id="back_coding" class="float_top_left" hidden>Back to Coding ⬆️</a>
+<a href="#" id="save_model" class="float_bottom" onclick="save()">Save Model</a>
+<a href="#" id="load_model" class="float_top_right" onclick="load()" hidden>Load Model</a>
+
 <script>
+    let isCodingScreen = false;
 
     window.onload = function () {
         setTimeout(function () {
+            isTangibleInterface = true;
             createSourceTable();
+            startClassifier();
             fillHTML();
             prepareTabList();
         }, 0);
     };
 
+    function showTangibleCoding() {
+        if (!isCodingScreen) {
+            document.getElementById("start_coding").innerHTML = "⬅️Train Model";
+            document.getElementById("saveblock_title").style.display = "none";
+            document.getElementById("train_container").style.display = "none";
+            document.getElementById("learn").style.display = "none";
+            document.getElementById("trained_card_info").style.display = "none";
+            document.getElementById("output_title").style.display = "";
+            document.getElementById("label").style.display = "";
+            document.getElementById("visualContainer").style.display = "";
+            document.getElementById("outputText").style.display = "";
+            document.getElementById("save_model").hidden = true;
+            document.getElementById("load_model").hidden = false;
+        } else {
+            document.getElementById("start_coding").innerHTML = "Start Coding ➡️";
+            document.getElementById("saveblock_title").style.display = "";
+            document.getElementById("train_container").style.display = "";
+            document.getElementById("learn").style.display = "";
+            document.getElementById("trained_card_info").style.display = "";
+            document.getElementById("output_title").style.display = "none";
+            document.getElementById("label").style.display = "none";
+            document.getElementById("outputText").style.display = "none";
+            document.getElementById("visualContainer").style.display = "none";
+            document.getElementById("save_model").hidden = false;
+            document.getElementById("load_model").hidden = true;
+        }
+        isCodingScreen = !isCodingScreen;
+    }
+
 </script>
-<script defer src="tangible/loader.js"></script>
+<script defer src="tangible/classifier.js"></script>
 </body>
