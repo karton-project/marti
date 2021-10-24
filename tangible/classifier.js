@@ -88,6 +88,23 @@ async function load() {
     classifier.setClassifierDataset(tensorObj);
 }
 
+async function load_model() {
+    net = await tf.loadGraphModel("https://raw.githubusercontent.com/karton-project/marti/master/tangible/tfjs_model/model.json");
+    return net;
+}
+
+async function get_prediction() {
+    if (net.getNumClasses() > 0) {
+        const result = await net.predict(webcamElement, 'conv_preds');
+        let key = classes[result.classIndex];
+        showBlockDialog(key, blockMap.get(key), function(){
+            openBlockDetails(key);
+            changeSourceView(key);
+        });
+    }
+    await tf.nextFrame();
+}
+
 async function getClassLabel() {
     if (classifier.getNumClasses() > 0) {
         const activation = net.infer(webcamElement, 'conv_preds');

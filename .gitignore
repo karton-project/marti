@@ -1,12 +1,9 @@
 .idea/
 .vscode/
 data/
-.ipynb_checkpoints
+.ipynb_checkpoints/
 profile_default/
 ipython_config.py
-saved_model/
-tfjs_model/
-*.h5
 
 # Logs
 logs
