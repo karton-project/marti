@@ -22,6 +22,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
     <script src="js/tr.js"></script>
+    <script src="js/state.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/utils.js"></script>
     <script src="libs/selectize.js"></script>
@@ -75,9 +76,9 @@
 <input type="file" id="csvFile" accept=".csv" style="display:none"></input>
 <input type="file" id="jsonFile" accept=".json" style="display:none"></input>
 <input type="file" id="geoJSONFile" style="display:none"></input>
+<input type="file" id="stateFile" accept=".marti" style="display:none"></input>
 
-<img id="back_button" class="left" src="media/ui/Back-Button.png">
-<img class="center" src="media/ui/budgie.png">
+<div id="_marti_title" class="left">Martı - Veri Programlama <a href="index.html/#en">EN</a> </div>
 <div class="title-grid-container">
     <div class="tooltip">
         <p id="_cat" class="title">Kategori</p>
@@ -143,15 +144,19 @@
     $('#selectSensor').change(function () {
         selectedSource = $(this).val();
     });
-    $("#back_button").click(() => window.history.back());
+
     window.onload = function () {
         setTimeout(function () {
             createSourceTable();
             fillHTML();
             prepareTabList();
             startOutputTabs();
+
         }, 0);
     };
     google.charts.load('current', {packages: ['corechart', 'line', 'bar']});
 </script>
+
+<button onclick="downloadStateHTML()">save state</button>
+<button onclick="loadTextFile()">load state</button>
 </body>

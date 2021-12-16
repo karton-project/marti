@@ -9,6 +9,7 @@ let _piechart = "pasta";
 let _barchart = "cubuk";
 let _chartTypes = [_linechart, _piechart, _barchart];
 
+let _marti_title = "Martı - Veri Programlama <a href='https://karton-project.github.io/marti/#en'>(EN)</a> ";
 let page_title_lang = "Veri Programlama";
 let _cat_lang = "Kategori";
 let _blocks_lang = "Bloklar";
