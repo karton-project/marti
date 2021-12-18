@@ -127,5 +127,9 @@ let _equal = "eşittir";
 let _lesseq = "küçük eşittir";
 let _greateq = "büyük eşittir";
 
+let _ok = "OK";
 let _download = "indir";
 let _card_activity_def = "Kart Aktivitesi";
+
+let _datalink_forest_exp = "Orman Alanları Veri Setini Aç"
+let _datalink_forest = "https://karton-project.github.io/marti/dataset/csv-tr/forest.csv"

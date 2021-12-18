@@ -131,6 +131,10 @@ _greateq = "greater than or eqaul to";
 
 _download = "download";
 _card_activity_def = "Card Activity";
+_ok = "OK";
+
+_datalink_forest_exp = "Open Forest Data"
+_datalink_forest = "https://karton-project.github.io/marti/dataset/csv/forest.csv"
 
 document.getElementById("_dataset_link").onclick = function () {
     document.getElementById("_dataset_link").href = "dataset/en.html";

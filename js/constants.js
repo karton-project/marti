@@ -23,6 +23,11 @@ const _printtable = "printtable";
 const _histogram = "histogram";
 const _drawchart = "drawchart";
 const _drawchartwithvariable = "chartwvar";
+const _dataforest = "dataforest";
+const _datafootball = "datafootball";
+const _databike = "databike";
+const _dataplastic = "dataplastic";
+const _dataresearch = "dataresearch";
 
 // Blocks for General
 const _average = "average";

@@ -261,6 +261,17 @@ function prepareBlocks(blockId) {
             })
         }
 
+        // open csv file from computer
+        if (blockId.includes(_dataforest)) {
+            $(function () {
+                var $openCSV = $(
+                    '<p>' + _datalink_forest_exp + '</p>' +
+                    '<button onclick="openForestData()">' + _ok + '</button>'
+                );
+                $openCSV.appendTo(blockDiv);
+            })
+        }
+
         // open json file from computer
         if (blockId.includes(_openjsonfromcomputer)) {
             $(function () {

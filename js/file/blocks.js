@@ -60,6 +60,15 @@ function openCSVWithLink() {
     });
 }
 
+function openForestData() {
+    d3.csv(_datalink_forest).then(function (data) {
+        fileData = data;
+        drawTable(data);
+        defineVariablesFromFileData(_datalink_forest);
+        appendOutputText(_open_link_output, "linkOpenTextDiv", "");
+    });
+}
+
 function openJSONWithLink() {
     webLink = getValueFromDomElement("openJSONLinkInput");
     d3.json(webLink).then(function (data) {

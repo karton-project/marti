@@ -2,6 +2,24 @@ const URL = "https://raw.githubusercontent.com/karton-project/marti/master/tangi
 
 let model, webcam, labelContainer, prediction;
 
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
+
 async function getWebcamImage() {
     const img = (await webcam.capture()).toFloat();
     const normalized = img.div(127).sub(1);
@@ -14,7 +32,7 @@ async function predict() {
     tf.tidy(() => {
         const tensor = img.reshape([1, 224, 224, 3]);
         prediction = model.predict(tensor).dataSync();
-        console.log(prediction)
+        console.log(indexOfMax(prediction))
     });
     img.dispose();
 }
