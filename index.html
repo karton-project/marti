@@ -2,17 +2,16 @@
 
 <head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
-    <link href='style/dragula.css' rel='stylesheet' type='text/css'/>
-    <link href='style/index.css' rel='stylesheet' type='text/css'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link href='style/dragula.css' rel='stylesheet' type='text/css' />
+    <link href='style/index.css' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Biryani&display=swap" rel="stylesheet">
     <link href="libs/leaflet/leaflet.css" rel="stylesheet">
     <link href="libs/c3/c3.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="libs/geocoder/Control.OSMGeocoder.css" rel="stylesheet">
     <link href="style/selectize.css" rel="stylesheet">
 
@@ -71,92 +70,94 @@
 </head>
 
 <body style="margin: 0">
-<script src='js/ui/dragula.js'></script>
-<input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"></input>
-<input type="file" id="csvFile" accept=".csv" style="display:none"></input>
-<input type="file" id="jsonFile" accept=".json" style="display:none"></input>
-<input type="file" id="geoJSONFile" style="display:none"></input>
-<input type="file" id="stateFile" accept=".marti" style="display:none"></input>
+    <script src='js/ui/dragula.js'></script>
+    <input type="file" id="imageFile" accept=".png, .jpg, .jpeg" style="display:none"></input>
+    <input type="file" id="csvFile" accept=".csv" style="display:none"></input>
+    <input type="file" id="jsonFile" accept=".json" style="display:none"></input>
+    <input type="file" id="geoJSONFile" style="display:none"></input>
+    <input type="file" id="stateFile" accept=".marti" style="display:none"></input>
 
-<div id="_marti_title" class="left">Martı - Veri Programlama <a href="index.html/#en">EN</a> </div>
-<div class="title-grid-container">
-    <div class="tooltip">
-        <p id="_cat" class="title">Kategori</p>
-        <span class="tooltiptext">
+    <div id="_marti_title" class="left">Martı - Veri Programlama <a href="index.html/#en">EN</a> </div>
+    <div class="title-grid-container">
+        <div class="tooltip">
+            <p id="_cat" class="title">Kategori</p>
+            <span class="tooltiptext">
             Kategori alanındaki kutuların üzerine basarak blokları görebilirsin.
         </span>
-    </div>
-    <div class="tooltip">
-        <p id="_blocks" class="title">Bloklar</p>
-        <span class="tooltiptext">
+        </div>
+        <div class="tooltip">
+            <p id="_blocks" class="title">Bloklar</p>
+            <span class="tooltiptext">
             Blokları kodlama üzerine sürükleyerek programlamaya başlayabilirsin.
         </span>
-    </div>
-    <div class="tooltip">
-        <p id="_coding" class="title">Kodlama</p>
-        <span class="tooltiptext">
+        </div>
+        <div class="tooltip">
+            <p id="_coding" class="title">Kodlama</p>
+            <span class="tooltiptext">
             Kodlama alanındaki bloklara basınca, detaylar çıkacak.
          </span>
-    </div>
-    <div class="tooltip">
-        <p id="_output" class="title">Çıktı</p>
-        <span id="_output_tiptext" class="tooltiptext">
+        </div>
+        <div class="tooltip">
+            <p id="_output" class="title">Çıktı</p>
+            <span id="_output_tiptext" class="tooltiptext">
             Oluşturduğun her program bloğu, burada çıktıya dönüşür.
              </span>
-    </div>
+        </div>
 
-</div>
-<div class="grid-container">
-    <div id="dataSourceTable" class="container source_container"></div>
-    <div id='left-copy-1tomany' class="container block_container"></div>
-    <div id='right-copy-1tomany' class="container code_container"></div>
-    <div id="outputText" class="text-container output_container">
-        <table id="outputTable">
-        </table>
     </div>
-    <div id="visualContainer" class="out-container visualization_container">
-        <ul id="tab_list" class="tabs"></ul>
+    <div class="grid-container">
+        <div id="dataSourceTable" class="container source_container"></div>
+        <div id='left-copy-1tomany' class="container block_container"></div>
+        <div id='right-copy-1tomany' class="container code_container"></div>
+        <div id="outputText" class="text-container output_container">
+            <table id="outputTable">
+            </table>
+        </div>
+        <div id="visualContainer" class="out-container visualization_container">
+            <ul id="tab_list" class="tabs"></ul>
+        </div>
     </div>
-</div>
-<div id="snackbar"></div>
-<a id="_activity_link" href="activity/tr.html" target="_blank" class="float top-right link-detail">
-    <i class="fas fa-gamepad question-float"></i>
-    <p id="_card_activity_def" class="link-detail">Kart Aktivitesi</p>
-</a>
-<a id="_dataset_link" href="dataset/tr.html" target="_blank" class="float top-right-center link-detail">
-    <i class="fas fa-table question-float"></i>
-    <p id="_data_sets" class="link-detail">Veri Setleri</p>
-</a>
-<a id="_tutorial_link" href="tutorials/tr/index.html" target="_blank" class="float top-right-left link-detail">
-    <i class="far fa-file-alt question-float"></i>
-    <p id="_tuts" class="link-detail">Kılavuz ve Aktiviteler</p>
-</a>
+    <div id="snackbar"></div>
+    <a id="_activity_link" href="activity/tr.html" target="_blank" class="float top-right link-detail">
+        <i class="fas fa-gamepad question-float"></i>
+        <p id="_card_activity_def" class="link-detail">Kart Aktivitesi</p>
+    </a>
+    <a id="_dataset_link" href="dataset/tr.html" target="_blank" class="float top-right-center link-detail">
+        <i class="fas fa-table question-float"></i>
+        <p id="_data_sets" class="link-detail">Veri Setleri</p>
+    </a>
+    <a id="_tutorial_link" href="tutorials/tr/index.html" target="_blank" class="float top-right-left link-detail">
+        <i class="far fa-file-alt question-float"></i>
+        <p id="_tuts" class="link-detail">Kılavuz ve Aktiviteler</p>
+    </a>
 
-<script>
-    if (!String.prototype.format) {
-        String.prototype.format = function () {
-            var args = arguments;
-            return this.replace(/{(\d+)}/g, function (match, number) {
-                return typeof args[number] !== 'undefined' ? args[number] : match;
-            });
+    <script>
+        if (!String.prototype.format) {
+            String.prototype.format = function() {
+                var args = arguments;
+                return this.replace(/{(\d+)}/g, function(match, number) {
+                    return typeof args[number] !== 'undefined' ? args[number] : match;
+                });
+            };
+        }
+        $('#selectSensor').change(function() {
+            selectedSource = $(this).val();
+        });
+
+        window.onload = function() {
+            setTimeout(function() {
+                createSourceTable();
+                fillHTML();
+                prepareTabList();
+                startOutputTabs();
+
+            }, 0);
         };
-    }
-    $('#selectSensor').change(function () {
-        selectedSource = $(this).val();
-    });
+        google.charts.load('current', {
+            packages: ['corechart', 'line', 'bar']
+        });
+    </script>
 
-    window.onload = function () {
-        setTimeout(function () {
-            createSourceTable();
-            fillHTML();
-            prepareTabList();
-            startOutputTabs();
-
-        }, 0);
-    };
-    google.charts.load('current', {packages: ['corechart', 'line', 'bar']});
-</script>
-
-<button onclick="downloadStateHTML()">save state</button>
-<button onclick="loadTextFile()">load state</button>
+    <button onclick="downloadStateHTML()">save state</button>
+    <button onclick="loadTextFile()">load state</button>
 </body>

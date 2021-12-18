@@ -1,4 +1,5 @@
-var map, mapLoaded = false, geoJsonData;
+var map, mapLoaded = false,
+    geoJsonData;
 
 function addMarker(lat, lon) {
     var marker = L.marker([lat, lon]).addTo(map);
@@ -14,7 +15,7 @@ function addMarkerFromResult(result) {
 
 function findPosition(placeName) {
     var openStreetMapGeocoder = GeocoderJS.createGeocoder('openstreetmap');
-    openStreetMapGeocoder.geocode(placeName, function (out) {
+    openStreetMapGeocoder.geocode(placeName, function(out) {
         addMarkerFromResult(out[0]);
         appendOutputText('Place is added to coordinate: ', "findPosTextDiv", JSON.stringify(out[0]));
     });
@@ -23,7 +24,7 @@ function findPosition(placeName) {
 function addMarkerArray(results) {
     for (var result of results) {
         var openStreetMapGeocoder = GeocoderJS.createGeocoder('openstreetmap');
-        openStreetMapGeocoder.geocode(result, function (out) {
+        openStreetMapGeocoder.geocode(result, function(out) {
             console.log(out);
             addMarkerFromResult(out[0]);
         });
@@ -46,8 +47,8 @@ function openMap(val) {
     }
 
     map = new L.Map('mapArea', {
-        center: new L.LatLng(0, 0),
-        zoom: 1
+        center: new L.LatLng(37.8, -122.4),
+        zoom: 10
     });
     map.addLayer(new L.StamenTileLayer(layer, {
         detectRetina: true
@@ -57,7 +58,7 @@ function openMap(val) {
 }
 
 function openGEOJSON() {
-    let geo = L.geoJson({features: []}, {
+    let geo = L.geoJson({ features: [] }, {
         onEachFeature: function popUp(f, l) {
             var out = [];
             if (f.properties) {
@@ -69,10 +70,10 @@ function openGEOJSON() {
         }
     }).addTo(map);
 
-    d3.select("#geoJSONFile").on("change", function () {
+    d3.select("#geoJSONFile").on("change", function() {
         var file = d3.event.target.files[0];
         if (file) {
-            shp(file).then(function (data) {
+            shp(file).then(function(data) {
                 geo.addData(data);
             });
         }
@@ -108,6 +109,6 @@ function addGEOJSON() {
 }
 
 function addGEOCoderSearchBar() {
-    var osmGeocoder = new L.Control.OSMGeocoder({placeholder: 'Search location...'});
+    var osmGeocoder = new L.Control.OSMGeocoder({ placeholder: 'Search location...' });
     map.addControl(osmGeocoder);
 }
