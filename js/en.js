@@ -9,6 +9,7 @@ _piechart = "pie";
 _barchart = "bar";
 _chartTypes = [_linechart, _piechart, _barchart];
 
+_marti_title = "Marti - Data Programming";
 page_title_lang = "Playing with Data";
 _cat_lang = "Categories";
 _blocks_lang = "Blocks";

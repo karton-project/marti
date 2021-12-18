@@ -211,6 +211,7 @@ function changeViewForPicture() {
 
 function fillHTML() {
     // Translate Main Page
+    fillHTMLText('_marti_title', _marti_title);
     fillHTMLText('_cat', _cat_lang);
     fillHTMLText('_blocks', _blocks_lang);
     fillHTMLText('_output', _output_lang);

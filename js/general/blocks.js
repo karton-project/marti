@@ -2,6 +2,7 @@ var applyFuncVar, countedvar, scaledVariable;
 
 function addAverageBlock(varName) {
     let out = mean(getVariableValueByName(varName));
+    state.addBlock(new Block(_average, varName));
     appendOutputText('Average of the values: ', 'average_out', out);
 }
 

@@ -93,9 +93,10 @@ ul.ui-dialog-content.ui-widget-content {
 }
 
 .left {
-    height: 3vh;
+    height: 5vh;
     width: auto;
     cursor: pointer;
+    color: var(--line);
     margin: calc(0.4em + 0.4vw);
 }
 
