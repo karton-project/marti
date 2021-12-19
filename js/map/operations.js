@@ -31,28 +31,17 @@ function addMarkerArray(results) {
     }
 }
 
-function openMap(val) {
+function openMap() {
     $('#mapArea').addClass('mapArea');
-    var layer = _terrain;
+
     if (mapLoaded) {
         map.off();
         map.remove();
     }
-    if (_.isEqual(0, val)) {
-        layer = "toner";
-    } else if (_.isEqual(1, val)) {
-        layer = "terrain";
-    } else if (_.isEqual(2, val)) {
-        layer = "watercolor";
-    }
+    map = L.map('mapArea').setView([38, 27], 2);
 
-    map = new L.Map('mapArea', {
-        center: new L.LatLng(37.8, -122.4),
-        zoom: 10
-    });
-    map.addLayer(new L.StamenTileLayer(layer, {
-        detectRetina: true
-    }));
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
     mapLoaded = true;
     addGEOCoderSearchBar();
 }
@@ -83,26 +72,6 @@ function openGEOJSON() {
 
 
 }
-/*
-function openGEOJSON() {
-
-    d3.select("#geoJSONFile").on("change", function () {
-        var file = d3.event.target.files[0];
-        if (file) {
-            var reader = new FileReader();
-            reader.onloadend = function (evt) {
-                var dataUrl = evt.target.result;
-                readJSONFile(dataUrl, function (data) {
-                    geoJsonData = data;
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-    $('#geoJSONFile').trigger('click');
-}
-*/
 
 function addGEOJSON() {
     L.geoJSON(jsonData, {}).addTo(map);

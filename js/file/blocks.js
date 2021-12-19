@@ -87,7 +87,7 @@ function createTableWithHeaders() {
     for (let i = 0; i <= cntrow; i++) {
         let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
         tableRows.push(rowInput);
-        tableArray.push(rowInput.map(Number));
+        tableArray.push(rowInput);
     }
     drawTable(tableRows, title);
     defineVariablesUserTable(title, tableRows);

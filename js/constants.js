@@ -11,7 +11,6 @@ const _visual_color = "#c62828";
 const _file_color = "#1f635b";
 const _map_color = "#558b2f";
 const _picture_color = "#283593";
-const _microbit_color = "#0277bd";
 
 // Blocks for CSV
 const _opencsvfromcomputer = "opencsvfromcomputer";
@@ -20,9 +19,14 @@ const _openjsonfromcomputer = "openjsonfromcomputer";
 const _openjsonfromlink = "openjsonfromlink";
 const _listheaders = "listheaders";
 const _printtable = "printtable";
-const _histogram = "histogram";
-const _drawchart = "drawchart";
-const _drawchartwithvariable = "chartwvar";
+
+// Blocks for Vis
+const _drawlinechart = "chartline";
+const _drawpiechart = "chartpie";
+const _drawbarchart = "chartbar";
+
+
+// Blocks for Data (Mobile)
 const _dataforest = "dataforest";
 const _datafootball = "datafootball";
 const _databike = "databike";
@@ -41,7 +45,6 @@ const _uniquevals = "uniquevalues";
 const _max = "maximum";
 const _min = "minimum";
 const _sum = "sum";
-const _selectMapBackground = "selectmapbackground";
 const _newfunction = "newfunction";
 const _count = "count";
 const _filtertable = "filtable";
@@ -81,10 +84,12 @@ blockMap.set(_filter, _general);
 blockMap.set(_findpeaks, _general);
 blockMap.set(_uniquevals, _general);
 blockMap.set(_scale, _general);
+
 // visual
-blockMap.set(_drawchart, _visual);
-blockMap.set(_drawchartwithvariable, _visual);
-blockMap.set(_histogram, _visual);
+blockMap.set(_drawbarchart, _visual);
+blockMap.set(_drawlinechart, _visual);
+blockMap.set(_drawpiechart, _visual);
+
 // file
 blockMap.set(_printtable, _file);
 blockMap.set(_opencsvfromcomputer, _file);
@@ -94,12 +99,13 @@ blockMap.set(_openjsonfromlink, _file);
 blockMap.set(_selectcolumn, _file);
 blockMap.set(_filtertable, _file);
 blockMap.set(_listheaders, _file);
+
 // map
 blockMap.set(_opengeojson, _map);
 blockMap.set(_addgeojson, _map);
 blockMap.set(_findposition, _map);
 blockMap.set(_addmarker, _map);
-blockMap.set(_selectMapBackground, _map);
+
 // picture
 blockMap.set(_openpicture, _media);
 blockMap.set(_averagepic, _media);

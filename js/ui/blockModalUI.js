@@ -201,38 +201,52 @@ function prepareBlocks(blockId) {
             })
         }
 
-        if (blockId.includes(_drawchart)) {
-            $(function () {
-                prepareChartListModal(_select_chart_type_lang, function (value) {
-                    chartTypeSel = value;
-                    transformChart(value);
-                }, 'chartTypeChooseDiv');
-
-                blockDiv.append(
-                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
-                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="google.charts.setOnLoadCallback(drawCharts())">' + _applybutton_lang + '</button>');
-            })
-        }
-
         // create line chart
-        if (blockId.includes(_drawchartwithvariable)) {
+        if (blockId.includes(_drawlinechart)) {
             $(function () {
                 prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
                     xAxis_var = value;
                 }, 'xAxisChooseDiv');
-
-                prepareChartListModal(_select_chart_type_lang, function (value) {
-                    chartTypeSel = value;
-                    transformChart(value);
-                }, 'chartTypeXYChooseDiv');
 
                 blockDiv.append(
                     '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
                     '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="drawChartWithXY()">' + _applybutton_lang + '</button>');
+                    '<button onclick="drawChartWithXY(\'line\')">' + _applybutton_lang + '</button>');
+            })
+        }
+
+
+        // create pie chart
+        if (blockId.includes(_drawpiechart)) {
+            $(function () {
+                prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
+                    xAxis_var = value;
+                }, 'xAxisChooseDiv');
+
+                blockDiv.append(
+                    '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
+                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
+                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<button onclick="drawChartWithXY(\'pie\')">' + _applybutton_lang + '</button>');
+            })
+        }
+
+        // create bar chart
+        if (blockId.includes(_drawbarchart)) {
+            $(function () {
+                prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
+                    xAxis_var = value;
+                }, 'xAxisChooseDiv');
+
+                blockDiv.append(
+                    '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
+                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
+                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<button onclick="drawChartWithXY(\'bar\')">' + _applybutton_lang + '</button>');
             })
         }
 
@@ -374,19 +388,6 @@ function prepareBlocks(blockId) {
                 placesList = getVariableValueByName(value);
             }, 'placesSelectDiv');
             blockDiv.append('<button onclick="addMarkerCode()">' + _add_lang + '</button>');
-        }
-
-        // select map background
-        if (blockId.includes(_selectMapBackground)) {
-            $(function () {
-                var $openMapBGDiv = $(
-                    '<p>' + _select_mapbg_lang + '</p>' +
-                    '<button onclick="openMap(0)">' + _map_bg_bw_lang + '</button>' +
-                    '<button onclick="openMap(1)">' + map_bg_geog_lang + '</button>' +
-                    '<button onclick="openMap(2)">' + map_bg_watercolor_lang + '</button>'
-                );
-                $openMapBGDiv.appendTo(blockDiv);
-            });
         }
 
         // Picture Operations

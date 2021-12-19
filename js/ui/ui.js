@@ -188,7 +188,7 @@ function changeViewForVisual() {
         document.getElementById('visualization_' + _visual).innerHTML =
             '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
     });
-    scrollToBlock(_drawchart);
+    scrollToBlock(_drawbarchart);
 }
 
 function changeViewForMap() {
@@ -230,7 +230,6 @@ function fillHTML() {
     fillHTMLText(_min, _min_lang);
     fillHTMLText(_scale, _scale_lang);
     fillHTMLText(_applyfunc, _applyfunc_lang);
-    fillHTMLText(_trackcolor, _trackcolor_lang);
     fillHTMLText(_opencsvfromcomputer, _opencsv_comp_lang);
     fillHTMLText(_opencsvfromlink, _opencsv_link_lang);
     fillHTMLText(_listheaders, _listheaders_lang);
@@ -244,10 +243,9 @@ function fillHTML() {
     fillHTMLText(_openpicture, _openpicture_lang);
     fillHTMLText(_averagepic, _averagepic_lang);
     fillHTMLText(_selectcolumn, _select_column_lang);
-    fillHTMLText(_drawchart, _drawchart_lang);
-    fillHTMLText(_drawchartwithvariable, _drawchartwithvariable_lang);
-    fillHTMLText(_histogram, _histogram_lang);
-    fillHTMLText(_selectMapBackground, _select_mapbg_lang);
+    fillHTMLText(_drawlinechart, _drawlinechart_lang);
+    fillHTMLText(_drawbarchart, _drawbarchart_lang);
+    fillHTMLText(_drawpiechart, _drawpiechart_lang);
     fillHTMLText(_printtable, _print_table_chart_lang);
     fillHTMLText(_opengeojson, _opengeojson_lang);
     fillHTMLText(_sum, _sum_lang);
