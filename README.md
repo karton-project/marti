@@ -1,9 +1,11 @@
 ## A Step for an Inclusive Data Programming Environment
 
+[[TR]](https://karton-project.github.io/marti/index.html), [[EN]](https://karton-project.github.io/marti/index.html#en)
+
 Data literacy has become a fundamental skill for K12-students to acquire. Today, we need to understand data to grasp global events and take decisions accordingly. Therefore, the research on teaching data literacy in the early years of education gains more interest. Yet, current applications to teach about data in K-12 classrooms gained a limited audience due to lacking available curricular activities and requiring desktop interfaces that limit the affordability. To address these challenges, we designed a set of tools for supporting different learning styles and increasing affordability.
 
 - We have developed two interfaces for two different cases:
-    1. [Web interface with drag and drop programming blocks](https://karton-project.github.io/marti/index.html)
+    1. [Web interface with drag and drop programming blocks](https://karton-project.github.io/marti/index.html#en)
     2. [Mobile interface with tangible paper blocks](https://karton-project.github.io/marti/mobile.html) 
 
 The web interface is designed for an easy and fast manipulation of data. You can manipulate data with basic math operations, visualize it, gather data from csv files, represent data on geographic maps or use pictures as your data.
@@ -40,9 +42,11 @@ _See the other available resources in our curated [RESOURCES](./RESOURCES.md) li
 * [Data Therapy](https://datatherapy.org/activities/) provides excellent activities that combines storytelling and data. Their [Data Studio 2016](https://datastudio2016.datatherapy.org/2016/03/14/368/) workshop also lists several activities and small real-life data.
 * [Data Basic](https://databasic.io/en/culture/build-a-sculpture) As part of the Data Culture project, Data Basic both provides interactive tools and unplugged activities. [Data Sculptures](https://civic.mit.edu/2019/09/05/thoughts-on-designing-data-sculptures/) explains designing data sculptures.
 
-## TODO:
+## TODOs:
 
-- [ ] Save program state to JSON. (import and export)
+- [ ] Level-mode tutorials for students
+- [ ] Save program state to JSON. (in-progress)
 - [ ] Mobile use tutorial
-- [ ] Refactor variable and function definitions
-- [ ] Few-shot card training scripts for TFJS and CoreML
+- [x] Few-shot card training scripts for TFJS and CoreML
+- [x] Refactor variable and function definitions
+- [x] Leaflet Update to solve the CORS Policy Error
