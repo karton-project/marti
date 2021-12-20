@@ -115,7 +115,9 @@ let _filtertable_lang = "Tabloyu Filtrele";
 let _filtertable_detail_lang = "Önce bir tablo seç";
 let _filter_Table_output_text = "Filtrelenmiş tablo yukarıda hazır.";
 let _drawchart_lang = "Tablodan Grafik Çiz";
-let _drawchartwithvariable_lang = "Değişken ile Grafik Çiz";
+let _drawpiechart_lang = "Pasta Grafiği";
+let _drawlinechart_lang = "Çizgi Grafiği";
+let _drawbarchart_lang = "Sütun Grafiği";
 let _select_chart_type_lang = "Çizmek istediğin grafik tipini seç";
 let _function_defs = "Fonksiyon Tanımları";
 let _tuts = "Kılavuz ve Aktiviteler";
@@ -128,5 +130,9 @@ let _equal = "eşittir";
 let _lesseq = "küçük eşittir";
 let _greateq = "büyük eşittir";
 
+let _ok = "OK";
 let _download = "indir";
 let _card_activity_def = "Kart Aktivitesi";
+
+let _datalink_forest_exp = "Orman Alanları Veri Setini Aç"
+let _datalink_forest = "https://karton-project.github.io/marti/dataset/csv-tr/forest.csv"

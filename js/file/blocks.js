@@ -60,6 +60,15 @@ function openCSVWithLink() {
     });
 }
 
+function openForestData() {
+    d3.csv(_datalink_forest).then(function (data) {
+        fileData = data;
+        drawTable(data);
+        defineVariablesFromFileData(_datalink_forest);
+        appendOutputText(_open_link_output, "linkOpenTextDiv", "");
+    });
+}
+
 function openJSONWithLink() {
     webLink = getValueFromDomElement("openJSONLinkInput");
     d3.json(webLink).then(function (data) {
@@ -78,7 +87,7 @@ function createTableWithHeaders() {
     for (let i = 0; i <= cntrow; i++) {
         let rowInput = getValueFromDomElement("rowinput" + i).split(/[ ,]+/);
         tableRows.push(rowInput);
-        tableArray.push(rowInput.map(Number));
+        tableArray.push(rowInput);
     }
     drawTable(tableRows, title);
     defineVariablesUserTable(title, tableRows);

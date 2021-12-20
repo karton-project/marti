@@ -113,12 +113,11 @@ function pickColorWithMouseEvent(mouseEvent) {
     canvas.addEventListener(mouseEvent, function (event) {
         var x = event.layerX;
         var y = event.layerY;
-        var pixel = ctx.getImageData(x, y, 1, 1);
-        var data = pixel.data;
-        var rgba = 'rgba(' + data[0] + ', ' + data[1] +
-            ', ' + data[2] + ', ' + (data[3] / 255) + ')';
-        color.style.background = rgba;
-        color.textContent = rgba;
+        var pixel = ctx.getImageData(x, y, 1, 1).data;
+        var rgb = 'rgb(' + pixel[0] + ', ' + pixel[1] +
+            ', ' + pixel[2]  + ')';
+        color.style.background = rgb;
+        color.textContent = rgb;
     });
 }
 

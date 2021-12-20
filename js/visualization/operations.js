@@ -7,32 +7,6 @@ function findChartDimensions() {
     return [chartAreaHeight, chartAreaWidth];
 }
 
-function drawCharts(chartType) {
-    chartType = chartType || chartTypeSel;
-
-    let charttitle = getValueFromDomElement('setChartTitle');
-    var data = google.visualization.arrayToDataTable(tableArray);
-    var options = {
-        title: charttitle
-    };
-
-    switch (chartType) {
-        case _linechart:
-            var chart = new google.visualization.LineChart(document.getElementById('chartArea'));
-            break;
-        case _piechart:
-            var chart = new google.visualization.PieChart(document.getElementById('chartArea'));
-            break;
-        case _barchart:
-            var chart = new google.visualization.BarChart(document.getElementById("chartArea"));
-            break;
-        default:
-            break;
-    }
-
-    chart.draw(data, options);
-}
-
 function drawChartWithXY(chartType) {
     chartType = chartType || chartTypeSel;
     let dataArray = [];
@@ -72,7 +46,7 @@ function drawChartWithXY(chartType) {
             },
             y: {
                 label: { // ADD
-                    text: 'CSV Values',
+                    text: 'y-values',
                     position: 'outer-middle'
                 }
             }

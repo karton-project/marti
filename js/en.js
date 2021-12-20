@@ -117,7 +117,9 @@ _filtertable_lang = "Filter Table";
 _filtertable_detail_lang = "First, select a file";
 _filter_Table_output_text = "Filtered table is printed";
 _drawchart_lang = "Draw Chart from Table";
-_drawchartwithvariable_lang = "Draw Chart with Variables";
+_drawpiechart_lang = "Pie Chart";
+_drawlinechart_lang = "Bar Chart";
+_drawbarchart_lang = "Line Chart";
 _select_chart_type_lang = "Select the type of chart you want to use";
 _function_defs = "Function Definitions";
 _tuts = "Tutorials and Activities";
@@ -132,6 +134,10 @@ _greateq = "greater than or eqaul to";
 
 _download = "download";
 _card_activity_def = "Card Activity";
+_ok = "OK";
+
+_datalink_forest_exp = "Open Forest Data"
+_datalink_forest = "https://karton-project.github.io/marti/dataset/csv/forest.csv"
 
 document.getElementById("_dataset_link").onclick = function () {
     document.getElementById("_dataset_link").href = "dataset/en.html";
