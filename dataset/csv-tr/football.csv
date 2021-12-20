@@ -1,4 +1,4 @@
-is,isim,yas,ulke,puan,potansiyel,kulup
+id,isim,yas,ulke,puan,potansiyel,kulup
 20801,C. Ronaldo,34,Portekiz,94,94,Real Madrid CF
 158023,L. Messi,30,Arjantin,93,93,FC Barcelona
 182494,F. Muslera,31,Uruguay,82,82,Galatasaray SK
@@ -9,14 +9,14 @@ is,isim,yas,ulke,puan,potansiyel,kulup
 155862,Sergio Ramos,31,ispanya,90,90,Real Madrid CF
 192985,K. De Bruyne,26,Belcika,89,92,Manchester City
 192119,T. Courtois,25,Belcika,89,92,Chelsea
-184941,A. Sanchez,28,?ili,89,89,Arsenal
-177003,L. Modric,31,H?rvatistan,89,89,Real Madrid CF
-138956,G. Chiellini,32,?talya,89,89,Juventus
-1179,G. Buffon,39,?talya,89,89,Juventus
+184941,A. Sanchez,28,Şili,89,89,Arsenal
+177003,L. Modric,31,Hırvatistan,89,89,Real Madrid CF
+138956,G. Chiellini,32,İtalya,89,89,Juventus
+1179,G. Buffon,39,İtalya,89,89,Juventus
 211110,P. Dybala,23,Arjantin,88,93,Juventus
 194765,A. Griezmann,26,Fransa,88,91,Atletico Madrid
 116494,C. Carrasso,35,Fransa,81,81,Galatasaray SK
-184344,L. Bonucci,30,?talya,88,88,Milan
+184344,L. Bonucci,30,İtalya,88,88,Milan
 183907,J. Boateng,28,Almanya,88,88,FC Bayern Munich
 212198,Bruno Fernandes,34,Portekiz,78,85,Sporting CP
 178603,M. Hummels,28,Almanya,88,88,FC Bayern Munich
@@ -24,16 +24,16 @@ is,isim,yas,ulke,puan,potansiyel,kulup
 164240,Thiago Silva,32,Brezilya,88,88,Paris Saint-Germain
 41236,Z. Ibrahimovic,35,Isvec,88,88,Manchester United
 9014,A. Robben,33,Hollanda,88,88,FC Bayern Munich
-199556,M. Verratti,24,?talya,87,91,Paris Saint-Germain
+199556,M. Verratti,24,İtalya,87,91,Paris Saint-Germain
 195864,P. Pogba,24,Fransa,87,92,Manchester United
-181872,A. Vidal,30,?ili,87,87,FC Bayern Munich
+181872,A. Vidal,30,Şili,87,87,FC Bayern Munich
 189156,Daniel Carrio,28,Portekiz,80,81,Sevilla FC
 179813,E. Cavani,30,Uruguay,87,87,Paris Saint-Germain
 176676,Marcelo,29,Brezilya,87,87,Real Madrid CF
 168542,David Silva,31,ispanya,87,87,Manchester City
 152729,Pique,30,ispanya,87,87,FC Barcelona
 41,Iniesta,33,ispanya,87,87,FC Barcelona
-202126,H. Kane,23,?ngiltere,86,90,Tottenham Hotspur
+202126,H. Kane,23,İngiltere,86,90,Tottenham Hotspur
 197781,Isco,25,ispanya,86,90,Real Madrid CF
 197445,D. Alaba,25,Avusturya,86,88,FC Bayern Munich
 7826,R. van Persie,33,Hollanda,78,78,Fenerbahçe SK
@@ -60,7 +60,7 @@ is,isim,yas,ulke,puan,potansiyel,kulup
 208418,Y. Carrasco,23,Belcika,85,90,Atletico Madrid
 201535,R. Varane,24,Fransa,85,92,Real Madrid CF
 200145,Casemiro,25,Brezilya,85,89,Real Madrid CF
-198219,L. Insigne,26,?talya,85,86,Napoli
+198219,L. Insigne,26,İtalya,85,86,Napoli
 194079,A. Potuk,26,Turkiye,77,80,Fenerbahçe SK
 185239,O. Toprak,27,Turkiye,83,84,Borussia Dortmund
 193301,A. Lacazette,26,Fransa,85,88,Arsenal
