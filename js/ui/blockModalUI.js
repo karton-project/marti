@@ -313,8 +313,9 @@ function prepareBlocks(blockId) {
         if (blockId.includes(_selectcolumn)) {
             prepareSelectFileModal(_selectvar_text_lang, function (value) {
                 selectedDataForColumn = value;
+                autocomplete(document.getElementById("selectedColumnInput"), listVariableKeysofFile(value));
             }, 'selectedColumnDiv');
-            blockDiv.append('<p for="selectedColumnInput">' + _selectcolumn_text_lang + '</p>\n' +
+            blockDiv.append('<p for="selectedColumnInput">' + _selectcolumn_text_lang + '</p>' +
                 '<input type="text" id="selectedColumnInput" name="selectedColumnInput">');
             blockDiv.append('<button onclick="selectColumnBlock()"> OK </button>');
         }
@@ -323,6 +324,7 @@ function prepareBlocks(blockId) {
         if (blockId.includes(_filtertable)) {
             prepareSelectFileModal(_filtertable_detail_lang, function (value) {
                 fileData = getVariableValueByName(value);
+                autocomplete(document.getElementById("variableValue"), listVariableKeysofFile(value));
             }, 'selFileDiv');
             blockDiv.append(
                 '<p>' + _create_comparison + '</p>\n' +
