@@ -206,6 +206,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
                     xAxis_var = value;
+                    autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
                 }, 'xAxisChooseDiv');
 
                 blockDiv.append(
@@ -223,6 +224,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
                     xAxis_var = value;
+                    autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
                 }, 'xAxisChooseDiv');
 
                 blockDiv.append(
@@ -239,6 +241,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
                     xAxis_var = value;
+                    autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
                 }, 'xAxisChooseDiv');
 
                 blockDiv.append(

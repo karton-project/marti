@@ -2,6 +2,7 @@ let fileData, jsonData;
 let dataArray = [];
 
 function drawTable(data, titles) {
+    fileData = data;
     chartisactive = false;
     var sortAscending = true;
     if (document.getElementById('tableArea') !== null) {

@@ -220,6 +220,8 @@ function fillHTML() {
     fillHTMLText('_tuts', _tuts);
     fillHTMLText('_data_sets', _datasets);
     fillHTMLText('_card_activity_def', _card_activity_def);
+    fillHTMLText('_download_state_button', _download_state);
+    fillHTMLText('_load_state_button', _load_state);
 
     // Translate Block Titles
     fillHTMLText(_variable, _var_lang);

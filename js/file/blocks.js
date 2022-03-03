@@ -53,7 +53,6 @@ function selectColumnBlock() {
 function openCSVWithLink() {
     webLink = getValueFromDomElement("openCSVLinkInput");
     d3.csv(webLink).then(function (data) {
-        fileData = data;
         drawTable(data);
         defineVariablesFromFileData(webLink);
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
@@ -62,7 +61,6 @@ function openCSVWithLink() {
 
 function openForestData() {
     d3.csv(_datalink_forest).then(function (data) {
-        fileData = data;
         drawTable(data);
         defineVariablesFromFileData(_datalink_forest);
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
@@ -72,7 +70,6 @@ function openForestData() {
 function openJSONWithLink() {
     webLink = getValueFromDomElement("openJSONLinkInput");
     d3.json(webLink).then(function (data) {
-        fileData = data;
         drawTable(data);
         defineVariablesFromFileData();
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
