@@ -22,13 +22,19 @@ function drawTable(data, titles) {
 
             if (sortAscending) {
                 rows.sort(function (a, b) {
-                    return d3.descending(b[d], a[d]);
+                    if(Number.isNaN(+b[d]))
+                        return d3.descending(b[d], a[d]);
+                    else
+                        return d3.descending(+b[d], +a[d]);
                 });
                 sortAscending = false;
                 this.className = 'aes';
             } else {
                 rows.sort(function (a, b) {
-                    return d3.ascending(b[d], a[d]);
+                    if(Number.isNaN(+b[d]))
+                        return d3.ascending(b[d], a[d]);
+                    else
+                        return d3.ascending(+b[d], +a[d]);
                 });
                 sortAscending = true;
                 this.className = 'des';
