@@ -694,48 +694,6 @@ th.aes:after {
 }
 
 
-.property {
-    border: 1px bottom black;
-    display: block;
-    font-size: 14px;
-    color: #000;
-}
-
-/* SQUARED TWO */
-.matrixCell {
-    width: 50px;
-    height: 50px;
-    background: #fff;
-
-    margin: 20px 20px;
-    position: relative;
-    float: left;
-}
-
-.matrixCell label {
-    cursor: pointer;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    left: 0px;
-    top: 0px;
-    background-color: white;
-    border: 2px solid black;
-}
-
-
-.matrixCell label:hover {
-    background-color: #ffaaaa;
-
-}
-
-.matrixCell input[type=checkbox]:checked + label {
-    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100);
-    opacity: 1;*/
-    background-color: red;
-}
-
 #file_tabcontent {
     background-color: var(--file-color);
 }

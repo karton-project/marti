@@ -22,9 +22,20 @@ function showList(inp, arr, val) {
                 inp.value = this.getElementsByTagName("input")[0].value;
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
-                closeAllLists();
+                closeAllLists(e.target);
             });
             a.appendChild(b);
+        }
+    }
+
+    function closeAllLists(elmnt) {
+        /*close all autocomplete lists in the document,
+        except the one passed as an argument:*/
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
         }
     }
 }
