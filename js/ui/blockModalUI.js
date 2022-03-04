@@ -40,7 +40,7 @@ function appendExpandableSaveField(savediv, id, value) {
         '<div class="tooltip">\n' +
         '        <div class="fa fa-save"</div>\n' +
         '        <span class="savetext save-tooltip-container ">\n' +
-        '           <input type="text" id="' + id + '_savevarname" name="savevarname" placeholder="' + _saveas_lang + '">\n' +
+        '           <input autoComplete="off" type="text" id="' + id + '_savevarname" name="savevarname" placeholder="' + _saveas_lang + '">\n' +
         '           <button id="' + id + '_savebutton"> OK </button>' +
         '        </span>\n' +
         '</div>');
@@ -53,9 +53,9 @@ function prepareVariableModal(blockDiv, title, onclickfun) {
     $(function () {
         var $form = $('<form />'),
             frmSave = $('<p />', {id: "createVarText", text: title}),
-            frmName = $('<input />', {id: 'varname', name: 'varname', placeholder: _varname_lang, type: 'text'}),
-            frmVal = $('<input />', {id: 'varval', name: 'Value', placeholder: _varval_lang, type: 'text'}),
-            frmButton = $('<input />', {
+            frmName = $('<input autoComplete="off" />', {id: 'varname', name: 'varname', placeholder: _varname_lang, type: 'text'}),
+            frmVal = $('<input autoComplete="off" />', {id: 'varval', name: 'Value', placeholder: _varval_lang, type: 'text'}),
+            frmButton = $('<input autoComplete="off" />', {
                 id: 'savebutton',
                 type: "button",
                 name: "saveButton",
@@ -100,7 +100,7 @@ function prepareBlocks(blockId) {
                     countedvar = value;
                 });
                 var $countDiv =
-                    $('<input type="text" id="countinput" name="countinput" placeholder="' + _count_lang + '">' +
+                    $('<input autoComplete="off" type="text" id="countinput" name="countinput" placeholder="' + _count_lang + '">' +
                         '<button onclick="countBlock()">' + _applybutton_lang + '</button>');
                 $countDiv.appendTo(blockDiv);
 
@@ -136,7 +136,7 @@ function prepareBlocks(blockId) {
                     applyFuncVar = value;
                 });
                 var $applyFuncDiv = $('<p>' + _applyfunc_text_lang + '</p>\n' +
-                    '<input type="text" id="applyfuncinput" name="applyfuncinput" placeholder="' + _function_lang + '">' +
+                    '<input autoComplete="off" type="text" id="applyfuncinput" name="applyfuncinput" placeholder="' + _function_lang + '">' +
                     '<button onclick="applyFunctionBlock()">' + _applybutton_lang + '</button>');
                 $applyFuncDiv.appendTo(blockDiv);
             })
@@ -152,7 +152,7 @@ function prepareBlocks(blockId) {
                 '<div class="bia-holder">' +
                 '<select id="comparisonOperation">' +
                 '<option id="selectVar">' + _operation_lang + '</option></select>' +
-                '<input type="text" id="comparedValue" name="compared value" placeholder="' + _varval_lang + '"></div>\n');
+                '<input autoComplete="off" type="text" id="comparedValue" name="compared value" placeholder="' + _varval_lang + '"></div>\n');
             blockDiv.append('<button onclick="addFilterCode()"> ' + _applybutton_lang + ' </button>');
             createComparisonSelection();
         }
@@ -180,7 +180,7 @@ function prepareBlocks(blockId) {
                 scaledVariable = value;
             }, "scaleop");
             var $applyScaleDiv = $('<p>' + _applyfunc_text_lang + '</p>\n' +
-                '<input type="text" id="applyscaleinput" name="applyscaleinput" placeholder="' + _scale_lang + '">' +
+                '<input autoComplete="off" type="text" id="applyscaleinput" name="applyscaleinput" placeholder="' + _scale_lang + '">' +
                 '<button onclick="applyScale()">' + _applybutton_lang + '</button>');
             $applyScaleDiv.appendTo(blockDiv);
         }
@@ -192,10 +192,10 @@ function prepareBlocks(blockId) {
             $(function () {
                 tableDiv = $(
                     '<div style="display: block" class="add-row-container">' +
-                    '<input type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
+                    '<input autoComplete="off" type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
                     '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
                     '</div>');
-                blockDiv.append('<input type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
+                blockDiv.append('<input autoComplete="off" type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
                 blockDiv.append(tableDiv);
                 blockDiv.append('<button onclick="createTableWithHeaders()">' + _show_button_lang + '</button>');
             })
@@ -211,9 +211,9 @@ function prepareBlocks(blockId) {
 
                 blockDiv.append(
                     '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
-                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
-                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
                     '<button onclick="drawChartWithXY(\'line\')">' + _applybutton_lang + '</button>');
             })
         }
@@ -229,9 +229,9 @@ function prepareBlocks(blockId) {
 
                 blockDiv.append(
                     '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
-                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
-                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
                     '<button onclick="drawChartWithXY(\'pie\')">' + _applybutton_lang + '</button>');
             })
         }
@@ -246,9 +246,9 @@ function prepareBlocks(blockId) {
 
                 blockDiv.append(
                     '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
-                    '<input type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
+                    '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
-                    '<input type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
+                    '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
                     '<button onclick="drawChartWithXY(\'bar\')">' + _applybutton_lang + '</button>');
             })
         }
@@ -271,7 +271,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 var $openCSV = $(
                     '<label for="openCSVLink">' + _link_input_lang + '</label>\n' +
-                    '<input type="text" id="openCSVLinkInput" name="openCSVLink" placeholder="' + _web_link_lang + '">' +
+                    '<input autoComplete="off" type="text" id="openCSVLinkInput" name="openCSVLink" placeholder="' + _web_link_lang + '">' +
                     '<button onclick="openCSVWithLink()">' + _applybutton_lang + '</button>'
                 );
                 $openCSV.appendTo(blockDiv);
@@ -305,7 +305,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 var $openJSON = $(
                     '<label for="openJSONLink">' + _openjsonfromlink_lang + '</label>\n' +
-                    '<input type="text" id="openJSONLinkInput" name="openJSONLink" placeholder="' + _web_link_lang + '">' +
+                    '<input autoComplete="off" type="text" id="openJSONLinkInput" name="openJSONLink" placeholder="' + _web_link_lang + '">' +
                     '<button onclick="openJSONWithLink()">' + _applybutton_lang + '</button>'
                 );
                 $openJSON.appendTo(blockDiv);
@@ -319,7 +319,7 @@ function prepareBlocks(blockId) {
                 autocomplete(document.getElementById("selectedColumnInput"), listVariableKeysofFile(value));
             }, 'selectedColumnDiv');
             blockDiv.append('<p for="selectedColumnInput">' + _selectcolumn_text_lang + '</p>' +
-                '<input type="text" id="selectedColumnInput" name="selectedColumnInput">');
+                '<input autoComplete="off" type="text" id="selectedColumnInput" name="selectedColumnInput">');
             blockDiv.append('<button onclick="selectColumnBlock()"> OK </button>');
         }
 
@@ -332,10 +332,10 @@ function prepareBlocks(blockId) {
             blockDiv.append(
                 '<p>' + _create_comparison + '</p>\n' +
                 '<div class="bia-holder">' +
-                '<input type="text" id="variableValue" name="variablevalue" placeholder="' + _varname_lang + '"></div>\n' +
+                '<input autoComplete="off" type="text" id="variableValue" name="variablevalue" placeholder="' + _varname_lang + '"></div>\n' +
                 '<select id="comparisonOperation">' +
                 '<option id="selectVar">' + _operation_lang + '</option></select>' +
-                '<input type="text" id="comparedValue" name="comparedvalue" placeholder="' + _varval_lang + '"></div>\n');
+                '<input autoComplete="off" type="text" id="comparedValue" name="comparedvalue" placeholder="' + _varval_lang + '"></div>\n');
             blockDiv.append('<button onclick="addFilterTableCode()"> ' + _applybutton_lang + ' </button>');
             createComparisonSelection();
         }
@@ -380,7 +380,7 @@ function prepareBlocks(blockId) {
             $(function () {
                 var $findPosDiv = $(
                     '<label for="findPosInput">' + _findpos_text_lang + '</label>\n' +
-                    '<input type="text" id="findPosInput" name="findPosInput" placeholder="' + _enter_position + '">' +
+                    '<input autoComplete="off" type="text" id="findPosInput" name="findPosInput" placeholder="' + _enter_position + '">' +
                     '<button onclick="findPositionCode()">' + _applybutton_lang + '</button>'
                 );
                 $findPosDiv.appendTo(blockDiv);
@@ -542,7 +542,7 @@ function addRow() {
         cntrow += 1;
         tableDiv.append(
             '<div style="display: block" class="add-row-container">' +
-            '<input type="text" class="add-input" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
+            '<input autoComplete="off" type="text" class="add-input" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
             '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
             '</div>');
     }

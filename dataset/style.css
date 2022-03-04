@@ -18,7 +18,7 @@ img{
 
 a{
     color: #002d5b;
-    font-size: calc(1.2em + 0.6vw);
+    font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     bottom: 5px;

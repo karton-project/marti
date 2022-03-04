@@ -134,17 +134,21 @@ ul.ui-dialog-content.ui-widget-content {
 }
 
 input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-right: 10px;
-    font-size: 16px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    background-color: #ecf0f1;
+    padding: 0.25em;
+    color: #942A57;
+    border: 0;
+    font-size: 1rem;
+    margin: 0.25em;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 input[type=text] {
     background-color: #f1f1f1;
-    width: 100%;
 }
 
 input[type=submit] {
