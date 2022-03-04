@@ -1,11 +1,10 @@
-
-var removeByAttr = function(arr, attr, value){
+var removeByAttr = function (arr, attr, value) {
     var i = arr.length;
-    while(i--){
-        if( arr[i]
+    while (i--) {
+        if (arr[i]
             && arr[i].hasOwnProperty(attr)
-            && (arguments.length > 2 && arr[i][attr] === value ) ){
-            arr.splice(i,1);
+            && (arguments.length > 2 && arr[i][attr] === value)) {
+            arr.splice(i, 1);
         }
     }
     return arr;
@@ -19,13 +18,13 @@ function download(content, fileName, contentType) {
     a.click();
 }
 
-function readTextFile(fileURL, callback) {
-    d3.text(fileURL).then(function (data) {
+function readJSONFile(fileURL, callback) {
+    d3.json(fileURL).then(function (data) {
         callback(data);
     });
 }
 
-function loadTextFile(file){
+function loadSateFile() {
     $('#stateFile').trigger('click');
     d3.select("#stateFile").on("change", function () {
         var file = d3.event.target.files[0];
@@ -33,8 +32,15 @@ function loadTextFile(file){
             var reader = new FileReader();
             reader.onloadend = function (evt) {
                 var dataUrl = evt.target.result;
-                readTextFile(dataUrl, function (data) {
-                    document.getElementById("right-copy-1tomany").innerHTML = data;
+                readJSONFile(dataUrl, function (data) {
+                    document.getElementById("right-copy-1tomany").innerHTML = data["blocks"];
+                    files = new Map(Object.entries(data["files"]));
+                    fileData = data["fileData"];
+                    if (fileData.length > 0) {
+                        drawTable(fileData);
+                    }
+                    ;
+                    variables = new Map(Object.entries(data["variables"]));
                 });
             };
             reader.readAsDataURL(file);
@@ -42,43 +48,15 @@ function loadTextFile(file){
     });
 }
 
-function downloadStateJSON(){
+function downloadStateFile() {
+    state["files"] = Object.fromEntries(files);
+    state["fileData"] = fileData;
+    state["variables"] = Object.fromEntries(variables);
+    state["blocks"] = document.getElementById("right-copy-1tomany").innerHTML;
     download(JSON.stringify(state), 'state.marti', 'text/plain');
 }
 
-
-function downloadStateHTML(){
-    download(document.getElementById("right-copy-1tomany").innerHTML, 'state.marti', 'text/plain');
-
-}
-
-let State = class {
-    constructor() {
-        this.programList = [];
-        this.output = "";
-    }
-
-    addBlock(block) {
-        this.programList.push(block);
-    }
-
-    removeBlock(block) {
-        removeByAttr(this.programList, 'id', block.id);
-    }
-};
-
-let Block = class {
-    name = "";
-    input = [];
-
-    constructor(name, input) {
-        this.id = new Date().valueOf();
-        this.name = name;
-        this.input = input;
-    }
-};
-
-var state = new State();
+var state = new Object();
 
 
 

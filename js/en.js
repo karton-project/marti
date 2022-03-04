@@ -135,6 +135,8 @@ _greateq = "greater than or eqaul to";
 _download = "download";
 _card_activity_def = "Card Activity";
 _ok = "OK";
+_download_state = "Download State";
+_load_state = "Load State";
 
 _datalink_forest_exp = "Open Forest Data"
 _datalink_forest = "https://karton-project.github.io/marti/dataset/csv/forest.csv"

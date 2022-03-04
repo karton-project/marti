@@ -10,7 +10,6 @@ function createFileVariable(varName, varVal) {
     files.set(varName, varVal);
 }
 
-
 function createNewFunc(varName, varVal) {
     functionDefs.set(varName, varVal);
 }
@@ -22,6 +21,10 @@ function listVariableKeys() {
 function listFileKeys() {
     return Array.from(files.keys());
     //return Array.from(files.keys());
+}
+
+function listVariableKeysofFile(fileName){
+    return Object.keys(files.get(fileName)[0]);
 }
 
 function getVariableValueByName(varName) {
