@@ -26,6 +26,7 @@ function drawChartWithXY(chartType) {
         },
         axis: {
             x: {
+                text: xAxis_var,
                 type: 'category',
                 tick: {
                     rotate: -45,
@@ -36,7 +37,7 @@ function drawChartWithXY(chartType) {
 
             y: {
                 label: { // ADD
-                    text: 'y-values',
+                    text: y_values,
                     position: 'outer-middle'
                 }
             }
