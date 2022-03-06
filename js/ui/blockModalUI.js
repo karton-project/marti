@@ -53,15 +53,9 @@ function prepareVariableModal(blockDiv, title, onclickfun) {
     $(function () {
         var $form = $('<form />'),
             frmSave = $('<p />', {id: "createVarText", text: title}),
-            frmName = $('<input autoComplete="off" />', {id: 'varname', name: 'varname', placeholder: _varname_lang, type: 'text'}),
-            frmVal = $('<input autoComplete="off" />', {id: 'varval', name: 'Value', placeholder: _varval_lang, type: 'text'}),
-            frmButton = $('<input autoComplete="off" />', {
-                id: 'savebutton',
-                type: "button",
-                name: "saveButton",
-                value: _savebutton_lang,
-                onClick: onclickfun
-            }),
+            frmName = $('<input autoComplete="off" id= "varname", name= "varname", placeholder="'  + _varname_lang + '" type= "text"/>'),
+            frmVal = $('<input autoComplete="off" id= "varval", name= "Value", placeholder="'  + _varval_lang + '" type= "text"/>'),
+            frmButton = $('<input autoComplete="off" onClick="'+ onclickfun +'" id= "savebutton", name= "saveButton", value="'  + _savebutton_lang + '" type= "button"/>'),
             warnText = $('<p id="variableWarning"></p>');
         $form.append(frmSave, frmName, frmVal, $('<br />'), frmButton, warnText).appendTo(blockDiv);
     });
