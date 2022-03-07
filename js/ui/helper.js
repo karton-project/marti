@@ -19,7 +19,7 @@ function showList(inp, arr, val) {
             /*execute a function when someone clicks on the item value (DIV element):*/
             b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/
-                inp.value = this.getElementsByTagName("input")[0].value;
+                inp.value += this.getElementsByTagName("input")[0].value;
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists(e.target);
@@ -50,7 +50,7 @@ function autocomplete(inp, arr) {
         closeAllLists();
         if (!val) { return false;}
         currentFocus = -1;
-        showList(inp, arr, val);
+        showList(inp, arr, val.split(',').slice(-1).pop());
     });
 
     inp.addEventListener("focus", function(e) {

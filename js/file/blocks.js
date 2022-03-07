@@ -32,7 +32,7 @@ function addUniqueValuesCode() {
         let result = uniqueValues(getVariableValueByName(uniqueValuesVariable));
         appendOutputText(_uniquevals_output.format(uniqueValuesVariable), "uniqueValTextDiv", result);
     } else {
-        appendToastText('You need to select a variable.');
+        appendToastText(_select_variable_warning);
         console.log("Hello");
     }
 }
@@ -40,14 +40,14 @@ function addUniqueValuesCode() {
 function listHeaderBlock() {
     var lke = listKeyElements(fileData);
     createCodeVariable(listHeaders, lke);
-    appendOutputText('List of headers: ', "listHeadersDiv", lke);
+    appendOutputText("", "listHeadersDiv", lke);
 }
 
 function selectColumnBlock() {
     selectedColumn = getValueFromDomElement('selectedColumnInput');
     var result = mapData(getVariableValueByName(selectedDataForColumn), selectedColumn);
     createCodeVariable("selectedColumn", result);
-    appendOutputText(selectedColumn + ' column is selected. Column contains the values: ', "selectColumnTextDiv", result);
+    appendOutputText(selectedColumn + _selected_column_text, "selectColumnTextDiv", result);
 }
 
 function openCSVWithLink() {

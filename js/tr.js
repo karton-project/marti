@@ -1,13 +1,23 @@
 // Output
-let _file_out = "dosya";
-let _map_out = "harita";
-let _visual_out = "gorsel";
+let _file_out = "Tablo";
+let _map_out = "Harita";
+let _visual_out = "Grafik";
+let _media_out = "Medya";
 
 // Chart Types
 let _linechart = "cizgi";
 let _piechart = "pasta";
 let _barchart = "cubuk";
 let _chartTypes = [_linechart, _piechart, _barchart];
+
+let _average_result_text= "Değerlerin ortalaması: ";
+let _max_result_text = 'Değişkenin en yüksek değeri: ';
+let _min_result_text = 'Değişkenin en düşük değeri: ';
+let _sum_result_test = 'Değerlerin toplamı: ';
+let _apply_func_result_text = 'Fonksiyonun uygulanması ile elde edilen değerler: ';
+let _filter_var_result_text = 'Filtrelenen değerler: ';
+let _scaling_result_text = 'Ölçeklendirme sonucu: ';
+let _count_result_text = 'Sayım işlemi sonucu: ';
 
 let _marti_title = "Martı - Veri Programlama";
 let page_title_lang = "Veri Programlama";
@@ -28,7 +38,7 @@ let _opencsv_comp_lang = "Bilgisayardan CSV Dosyası Aç";
 let _opencsv_link_lang = "Link ile CSV Dosyası Aç";
 let _open_link_output = "Belirtilen link tabloya aktarıldı.";
 let _print_table_output = "Belirtilen veriler tablo olarak hazırlandı.";
-let _listheaders_lang = "Dosya Üst-Bilgileri";
+let _listheaders_lang = "Sütun İsimlerini Getir";
 let _listheaders_text_lang= "Dosyadaki sütunların üst bilgilerini al. Açtığın dosyanın ilk satırını geri döner.";
 let _filter_lang = "Filtre";
 let _uniquevals_lang = "Tekilleştir";
@@ -99,6 +109,7 @@ let _openjsonfromlink_lang = "Link ile JSON dosyası aç";
 let _addXAxis_text_lang = "Yatay eksende görüntülemek istediğin veriyi seç";
 let _addYAxis_text_lang = "Düşey eksende görüntülemek istediğin verileri virgülle ayırarak yaz";
 let _addYAxis_lang = " Düşey Eksen Değişkenleri";
+let _pie_axis_text_lang = "Pastayı oluşturacak değişkenleri gir:";
 let _add_title_text_lang = "Grafiğe başlık ekle : ";
 let _add_title_lang = "Başlık";
 let _barchart_lang = "Sütun Grafiği";
@@ -123,6 +134,10 @@ let _function_defs = "Fonksiyon Tanımları";
 let _tuts = "Kılavuz ve Aktiviteler";
 let _datasets = "Veri Setleri";
 
+let _peak_indices_text = 'Tepe değerlerin veri içindeki konumları: ';
+let _add_geojson_text = 'GEOJSON dosyası haritaya eklendi.';
+let _places_added_text = 'Konum listesi haritaya eklendi';
+
 // Comparison Operations
 let _greater = "büyüktür";
 let _less = "küçüktür";
@@ -135,6 +150,14 @@ let _download = "indir";
 let _card_activity_def = "Kart Aktivitesi";
 let _download_state = "Programı İndir";
 let _load_state = "Programı Yükle";
+
+let _select_variable_warning = 'Önce bir değişken seçmen gerekiyor.';
+let _empty_variable_name_warning = 'Değişkenin ismi veya değeri boş olamaz.';
+let _empty_function_name_warning = 'Fonksiyonun ismi veya değeri boş olamaz.';
+let _function_with_same_name_warning = 'Bu isimde bir fonksiyon zaten yaratılmıştı.';
+let _variable_with_same_name_warning = 'Bu isimde bir değişken zaten yaratılmıştı.';
+let _variable_with_same_value_warning = 'Bu değeri içeren bir değişken zaten yaratılmıştı.';
+let _selected_column_text = ' sütunu seçildi. Sütunun içerdiği değerler: ';
 
 let _datalink_forest_exp = "Orman Alanları Veri Setini Aç"
 let _datalink_forest = "https://karton-project.github.io/marti/dataset/csv-tr/forest.csv"

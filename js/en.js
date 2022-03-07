@@ -1,13 +1,23 @@
 // Output
-_file_out = "file";
-_map_out = "map";
-_visual_out = "visualization";
+_file_out = "Table";
+_map_out = "Map";
+_visual_out = "Chart";
+_media_out = "Media";
 
 // Chart Types
 _linechart = "line";
 _piechart = "pie";
 _barchart = "bar";
 _chartTypes = [_linechart, _piechart, _barchart];
+
+_average_result_text= "Average of the values: ";
+_max_result_text = 'The maximum of the selected variable is: ';
+_min_result_text = 'The minimum of the selected variable is: ';
+_sum_result_test = 'The sum of the selected variable is: ';
+_apply_func_result_text = 'The result of the function is: ';
+_filter_var_result_text = 'Filtered variable is printed';
+_scaling_result_text = 'The result of the scaling is: ';
+_count_result_text = 'The total count of the selected variable is: ';
 
 _marti_title = "Marti - Data Programming";
 page_title_lang = "Playing with Data";
@@ -28,7 +38,7 @@ _opencsv_comp_lang = "Open CSV From Computer";
 _opencsv_link_lang = "Open CSV with Link";
 _open_link_output = "The link is printed onto table.";
 _print_table_output = "Given data printed as a table.";
-_listheaders_lang = "File Headers";
+_listheaders_lang = "Get Column Names ";
 _listheaders_text_lang = "Get a list of the headers from the file, which returns the first row.";
 _filter_lang = "Filter";
 _uniquevals_lang = "Unique Values";
@@ -100,6 +110,7 @@ _openjsonfromcomputer_lang = "Open JSON File from Computer";
 _openjsonfromlink_lang = "Open JSON File with Link";
 _addXAxis_text_lang = "Choose the variable to fill X axis";
 _addYAxis_text_lang = "Write comma-seperated variable/s to show on the Y axis";
+_pie_axis_text_lang = "Enter the variables that will create the pie:";
 _addYAxis_lang = "Y Axis Variables";
 _add_title_text_lang = "Add title to chart: ";
 _add_title_lang = "Title Name";
@@ -125,6 +136,10 @@ _function_defs = "Function Definitions";
 _tuts = "Tutorials and Activities";
 _datasets = "Datasets";
 
+_peak_indices_text = 'The indices of the peak values: ';
+_add_geojson_text = 'Added the selected geojson file to map.';
+_places_added_text = 'List of places is added to map';
+
 // Comparison Operations
 _greater = "greater than";
 _less = "less than";
@@ -137,6 +152,14 @@ _card_activity_def = "Card Activity";
 _ok = "OK";
 _download_state = "Download State";
 _load_state = "Load State";
+
+_select_variable_warning = 'You need to select a variable.';
+_empty_variable_name_warning = 'You cannot empty name or value of the variable.';
+_empty_function_name_warning = 'You cannot empty name or value of the function.';
+_function_with_same_name_warning = 'A function with same operation is already created.';
+_variable_with_same_name_warning = 'A variable with same name is already created.';
+_variable_with_same_value_warning = 'A variable with same value is already created.';
+_selected_column_text = ' column is selected. Column contains the values: ';
 
 _datalink_forest_exp = "Open Forest Data"
 _datalink_forest = "https://karton-project.github.io/marti/dataset/csv/forest.csv"

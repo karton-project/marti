@@ -212,21 +212,16 @@ function prepareBlocks(blockId) {
             })
         }
 
-
         // create pie chart
         if (blockId.includes(_drawpiechart)) {
             $(function () {
-                prepareSelectVariableModal(_addXAxis_text_lang, function (value) {
-                    xAxis_var = value;
-                    autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
-                }, 'xAxisChooseDiv');
-
                 blockDiv.append(
-                    '<label for="chooseYaxis">' + _addYAxis_text_lang + '</label>\n' +
+                    '<label for="chooseYaxis">' + _pie_axis_text_lang + '</label>\n' +
                     '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
                     '<button onclick="drawChartWithXY(\'pie\')">' + _applybutton_lang + '</button>');
+                autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
             })
         }
 

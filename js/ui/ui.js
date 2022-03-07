@@ -100,10 +100,10 @@ function closeTab(tabID) {
     $("#" + tabID + "_tabcontent").remove();
 }
 
-function appendNewTab(tabID, callback) {
+function appendNewTab(tabID, tabName, callback) {
     if ($("#" + tabID + "_tabcontent").length <= 0) {
         $("#tab_list").append(
-            '<li id="' + tabID + '_key" class="tab-link" data-tab="' + tabID + '_tabcontent">' + tabID +
+            '<li id="' + tabID + '_key" class="tab-link" data-tab="' + tabID + '_tabcontent">' + tabName +
             //'<i id="' + tabID + '_closebutton" class="fa fa-times" aria-hidden="true"></i>' +
             '</li>');
         $("#visualContainer").append(
@@ -155,15 +155,15 @@ function changeSourceView(source) {
 }
 
 function startOutputTabs() {
-    appendNewTab(_file, function () {
+    appendNewTab(_file, _file_out, function () {
         document.getElementById('visualization_' + _file).innerHTML =
             '<div id="tableArea"></div>';
     });
-    appendNewTab(_visual, function () {
+    appendNewTab(_visual, _visual_out,function () {
         document.getElementById('visualization_' + _visual).innerHTML =
             '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
     });
-    appendNewTab(_map, function () {
+    appendNewTab(_map, _map_out, function () {
         document.getElementById('visualization_' + _map).innerHTML =
             '<div id="mapArea"></div>';
         openMap();
@@ -172,7 +172,7 @@ function startOutputTabs() {
 }
 
 function changeViewForFile() {
-    appendNewTab(_file, function () {
+    appendNewTab(_file, _file_out,function () {
         document.getElementById('visualization_' + _file).innerHTML =
             '<div id="tableArea"></div>';
     });
@@ -184,7 +184,7 @@ function changeViewForGeneral() {
 }
 
 function changeViewForVisual() {
-    appendNewTab(_visual, function () {
+    appendNewTab(_visual, _visual_out, function () {
         document.getElementById('visualization_' + _visual).innerHTML =
             '<div id="chartArea"></div>' + '<div id="tableArea"></div>';
     });
@@ -192,7 +192,7 @@ function changeViewForVisual() {
 }
 
 function changeViewForMap() {
-    appendNewTab(_map, function () {
+    appendNewTab(_map, _map_out, function () {
         document.getElementById('visualization_' + _map).innerHTML =
             '<div id="mapArea"></div>';
     });
@@ -201,7 +201,7 @@ function changeViewForMap() {
 }
 
 function changeViewForPicture() {
-    appendNewTab(_media, function () {
+    appendNewTab(_media, _media_out, function () {
         document.getElementById("imageFile").addEventListener("change", handleImageFiles);
         document.getElementById('visualization_' + _media).innerHTML =
             '<canvas id="source-canvas" width="600"></canvas>';

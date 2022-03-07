@@ -2,7 +2,7 @@ var placesList;
 
 function addGEOJsonCode() {
     openGEOJSON();
-    appendOutputText('Added the selected geojson file to map.');
+    appendOutputText(_add_geojson_text);
 }
 
 function findPositionCode() {
@@ -12,5 +12,5 @@ function findPositionCode() {
 
 function addMarkerCode() {
     addMarkerArray(placesList);
-    appendOutputText('List of places is added to map');
+    appendOutputText(_places_added_text);
 }
