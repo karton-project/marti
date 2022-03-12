@@ -378,14 +378,13 @@ input[type=submit] {
 .float {
     position: absolute;
     top: 10px;
-    font-size: small;
     color: #000;
     padding: 6px;
     text-align: center;
 }
 
 .link-detail {
-    font-size: 0.7em;
+    font-size: small;
 }
 
 .top-right {
@@ -479,7 +478,6 @@ img.icon {
 
 p.icon {
     text-align: center;
-    font-size: 1.5vh;
     color: var(--text-light);
 }
 
@@ -775,5 +773,24 @@ th.aes:after {
     100% {
         -webkit-transform: rotateX(-180deg);
         transform: rotateX(-180deg);
+    }
+}
+
+.color-change-anim {
+    animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+    0% {
+        color: #505050;
+        background: #e08888;
+    }
+    50% {
+        color: #d0d0d0;
+        background: #526b77;
+    }
+    100% {
+        color: #505050;
+        background: #e08888;
     }
 }
