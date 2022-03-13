@@ -17,7 +17,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="libs/jquery-ui-touch-punch.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
     <script src="js/tr.js"></script>
     <script src="js/state.js"></script>
@@ -117,18 +116,10 @@
     <p id="_tuts" class="link-detail">Kılavuz ve Aktiviteler</p>
 </a>
 
-<div id="womenParticipation1" title="Cinsiyet Veri Setini Aç" hidden>
-    <ol>
-        <li>Veri Setleri sayfasında bulacağın <b>Araştırma Kurumlarındaki Kadın Katılımı</b> verisetinin linkini kopyala.</li>
-        <li>Bu sayfaya geri dön ve "Link ile CSV dosyası aç" programlama kartını kullanarak Tablo kısmında veri setini görüntüle.</li>
-    </ol>
-</div>
+<div id="womenParticipation" hidden></div>
 
-<div id="womenParticipation2" title="Veri Setini Filtrele" hidden>
-    <ol>
-        <li>Katılımı 2021 yılında %50'den fazla olan ülkeleri bulmak için veri setini filtrele.</li>
-    </ol>
-</div>
+<button id="_download_state_button" onclick="downloadStateFile()">Programı İndir</button>
+<button id="_load_state_button" onclick="loadSateFile()">Program Yükle</button>
 
 <script>
     if (!String.prototype.format) {
@@ -140,10 +131,6 @@
         };
     }
 
-    $('#selectSensor').change(function () {
-        selectedSource = $(this).val();
-    });
-
     window.onload = function () {
         setTimeout(function () {
             createSourceTable();
@@ -154,14 +141,6 @@
         }, 0);
     };
 
-    google.charts.load('current', {
-        packages: ['corechart', 'line', 'bar']
-    });
-</script>
-
-<button id="_download_state_button" onclick="downloadStateFile()">Programı İndir</button>
-<button id="_load_state_button" onclick="loadSateFile()">Program Yükle</button>
-<script>
     var head = document.getElementsByTagName('head')[0];
     var js = document.createElement("script");
     js.type = "text/javascript";

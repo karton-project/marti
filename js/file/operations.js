@@ -96,6 +96,9 @@ function filterTable(data, variableValue, comparedValue, operation) {
     let output = data.filter(d => {
         return compare(d[variableValue], comparedValue, operation);
     });
+    if (womenParticipationLevelMode && variableValue == "2021" && comparedValue == "50" && operation == _greater){
+        openWomenParticipationChart();
+    }
     return output;
 }
 

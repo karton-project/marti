@@ -159,5 +159,24 @@ let _variable_with_same_name_warning = 'Bu isimde bir değişken zaten yaratılm
 let _variable_with_same_value_warning = 'Bu değeri içeren bir değişken zaten yaratılmıştı.';
 let _selected_column_text = ' sütunu seçildi. Sütunun içerdiği değerler: ';
 
-let _datalink_forest_exp = "Orman Alanları Veri Setini Aç"
-let _datalink_forest = "https://karton-project.github.io/marti/dataset/csv-tr/forest.csv"
+let _datalink_forest_exp = "Orman Alanları Veri Setini Aç";
+let _datalink_forest = "https://karton-project.github.io/marti/dataset/csv-tr/forest.csv";
+
+let _women_participation_1_title = "Veri Setini Aç";
+let _women_participation_1_text =
+    "    <ol>\n" +
+    "        <li>Veri Setleri sayfasında bulacağın <b>Araştırma Kurumlarındaki Kadın Katılımı</b> verisetinin linkini kopyala.</li>\n" +
+    "        <li>Bu sayfaya geri dön ve \"Link ile CSV dosyası aç\" programlama kartını kullanarak Tablo kısmında veri setini görüntüle.</li>\n" +
+    "    </ol>"
+
+let _women_participation_2_title = "Veri Setini Filtrele";
+let _women_participation_2_text =
+    "<ol>\n" +
+    "   <li>Katılımı 2021 yılında %50'den fazla olan ülkeleri bulmak için veri setini filtrele.</li>\n" +
+    "</ol>";
+
+let _women_participation_3_title = "2021 Yılı Katılımının Grafiğini Hazırla";
+let _women_participation_3_text =
+    "<ol>\n" +
+    "   <li>Filtrelediğin veri setini sütun grafiği olarak göster.</li>\n" +
+    "</ol>";

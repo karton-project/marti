@@ -1,4 +1,3 @@
-var selectedSource = "";
 let blockDiv;
 let tableDiv;
 let blockTitle;

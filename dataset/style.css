@@ -16,13 +16,19 @@ img{
     height: auto;
 }
 
-a{
+a.bottom{
     color: #002d5b;
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     bottom: 5px;
 }
+
+a.top {
+    top: 5px;
+    right: 3px;
+}
+
 /* Create two equal columns that floats next to each other */
 .wrapper {
     display: grid;

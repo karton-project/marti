@@ -10,7 +10,7 @@ _piechart = "pie";
 _barchart = "bar";
 _chartTypes = [_linechart, _piechart, _barchart];
 
-_average_result_text= "Average of the values: ";
+_average_result_text = "Average of the values: ";
 _max_result_text = 'The maximum of the selected variable is: ';
 _min_result_text = 'The minimum of the selected variable is: ';
 _sum_result_test = 'The sum of the selected variable is: ';
@@ -163,6 +163,26 @@ _selected_column_text = ' column is selected. Column contains the values: ';
 
 _datalink_forest_exp = "Open Forest Data"
 _datalink_forest = "https://karton-project.github.io/marti/dataset/csv/forest.csv"
+
+_women_participation_1_title = "Open the Dataset";
+_women_participation_1_text =
+    "    <ol>\n" +
+    "        <li>Copy the link adress of <b>Women Participation in Research Organizations</b> dataset, which can be found under Datasets page.</li>\n" +
+    "        <li>Come back to this page, and use 'Open CSV using Link' programming card to open this dataset.</li>\n" +
+    "    </ol>";
+
+_women_participation_2_title = "Filter the Dataset";
+_women_participation_2_text =
+    "<ol>\n" +
+    "   <li>Find the countries that has more than 50% women participation in 2021.</li>\n" +
+    "</ol>";
+
+_women_participation_3_title = "Draw the Bar Chart";
+_women_participation_3_text =
+    "<ol>\n" +
+    "   <li>Draw a bar chart that shows the filtered countries and their participation levels.</li>\n" +
+    "</ol>";
+
 
 document.getElementById("_dataset_link").onclick = function () {
     document.getElementById("_dataset_link").href = "dataset/en.html";

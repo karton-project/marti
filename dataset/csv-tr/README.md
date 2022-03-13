@@ -1,0 +1,4 @@
+
+## Araştırma Yönetimine Kadın Katılımı Veri Seti
+
+Bu verisetine [data.europa.eu](https://data.europa.eu/data/datasets/gender-training-resources?locale=en) üzerinden erişebilirsiniz. [EIGE's webpage](https://eige.europa.eu/gender-statistics/dgs/indicator/wmidm_educ__wmid_resfund/bar) linkinden de daha detaylı bilgileri edinebilirsiniz. [Buraya tıklayarak](https://eige.europa.eu/gender-statistics/dgs/data-talks/decision-making-environment-and-climate-change-women-woefully-under-represented-eu-member-states) karar verme mekanizmalarında kadın katılımı hakkında EIGE'nin hazırladığı analizleri inceleyebilirsiniz. 
