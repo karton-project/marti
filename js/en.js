@@ -183,6 +183,10 @@ _women_participation_3_text =
     "   <li>Draw a bar chart that shows the filtered countries and their participation levels.</li>\n" +
     "</ol>";
 
+_women_participation_4_title = "Congratulations!";
+_women_participation_4_text =
+    "<p>You completed all the given tasks. If you want to see more missions with different datasets visit our <a href='./board/index.html'>Activity Page</a>.</p>";
+
 
 document.getElementById("_dataset_link").onclick = function () {
     document.getElementById("_dataset_link").href = "dataset/en.html";

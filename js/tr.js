@@ -166,7 +166,7 @@ let _women_participation_1_title = "Veri Setini Aç";
 let _women_participation_1_text =
     "    <ol>\n" +
     "        <li>Veri Setleri sayfasında bulacağın <b>Araştırma Kurumlarındaki Kadın Katılımı</b> verisetinin linkini kopyala.</li>\n" +
-    "        <li>Bu sayfaya geri dön ve \"Link ile CSV dosyası aç\" programlama kartını kullanarak Tablo kısmında veri setini görüntüle.</li>\n" +
+    "        <li>Bu sayfaya geri dön ve 'Link ile CSV dosyası aç' programlama kartını kullanarak Tablo kısmında veri setini görüntüle.</li>\n" +
     "    </ol>"
 
 let _women_participation_2_title = "Veri Setini Filtrele";
@@ -180,3 +180,8 @@ let _women_participation_3_text =
     "<ol>\n" +
     "   <li>Filtrelediğin veri setini sütun grafiği olarak göster.</li>\n" +
     "</ol>";
+
+let _women_participation_4_title = "Tebrikler!";
+let _women_participation_4_text =
+    "<p>Verilen tüm görevleri tamamladın. <a href='./board/index.html'>Aktivite Sayfamızı</a> ziyaret ederek farklı verisetlerini kullanan farklı görevleri görebilirsin.</p>";
+

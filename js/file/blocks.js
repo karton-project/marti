@@ -57,7 +57,7 @@ function openCSVWithLink() {
         defineVariablesFromFileData(webLink);
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
         if (womenParticipationLevelMode && webLink.includes("/dataset/csv-tr/kadin-katilimi.csv") ){
-            openWomenParticipationFilter();
+            openWomenParticipationDialog(_women_participation_2_title, _women_participation_2_text);
         }
     });
 }

@@ -37,7 +37,7 @@ function appendToastText(text) {
 function appendExpandableSaveField(savediv, id, value) {
     savediv.append(
         '<div class="tooltip">\n' +
-        '        <div class="fa fa-save"</div>\n' +
+        '        <div>💾</div>\n' +
         '        <span class="savetext save-tooltip-container ">\n' +
         '           <input autoComplete="off" type="text" id="' + id + '_savevarname" name="savevarname" placeholder="' + _saveas_lang + '">\n' +
         '           <button id="' + id + '_savebutton"> OK </button>' +
@@ -186,7 +186,7 @@ function prepareBlocks(blockId) {
                 tableDiv = $(
                     '<div style="display: block" class="add-row-container">' +
                     '<input autoComplete="off" type="text" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
-                    '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
+                    '<b onclick="addRow()" style="color: whitesmoke; cursor: pointer">+</b>' +
                     '</div>');
                 blockDiv.append('<input autoComplete="off" type="text" id="headerinput" name="headerinput" placeholder="' + _add_headers_lang + '">');
                 blockDiv.append(tableDiv);
@@ -458,14 +458,12 @@ function prepareBlocks(blockId) {
         // Fill the title, background and collapsible areas
         if (!isTangibleInterface) {
             blockTitle = $("#right-copy-1tomany > ul > li > #" + blockId);
-            blockTitle.append('<div class="fa fa-chevron-up rotate"</div>');
             blockTitle.on('click', function () {
                 if (document.getElementById(blockId + "_modal").style.display === "none") {
                     document.getElementById(blockId + "_modal").style.display = "block";
                 } else {
                     document.getElementById(blockId + "_modal").style.display = "none";
                 }
-                blockTitle.find(".rotate").toggleClass("down");
             });
             blockDiv.css({
                 'background-color': rgbaTextToHslLightText(blockTitle.css("background-color")),
@@ -531,7 +529,7 @@ function addRow() {
         tableDiv.append(
             '<div style="display: block" class="add-row-container">' +
             '<input autoComplete="off" type="text" class="add-input" id="rowinput' + cntrow + '" name="rowinput" placeholder="' + _add_row_lang + " " + cntrow + '">' +
-            '<i onclick="addRow()" class="fas fa-plus add-button"></i>' +
+            '<b onclick="addRow()" style="color: whitesmoke; cursor: pointer">+</b>' +
             '</div>');
     }
 }

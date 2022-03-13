@@ -104,7 +104,6 @@ function appendNewTab(tabID, tabName, callback) {
     if ($("#" + tabID + "_tabcontent").length <= 0) {
         $("#tab_list").append(
             '<li id="' + tabID + '_key" class="tab-link" data-tab="' + tabID + '_tabcontent">' + tabName +
-            //'<i id="' + tabID + '_closebutton" class="fa fa-times" aria-hidden="true"></i>' +
             '</li>');
         $("#visualContainer").append(
             '<div id="' + tabID + '_tabcontent" class="tab-content">' +

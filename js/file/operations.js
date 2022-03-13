@@ -97,7 +97,7 @@ function filterTable(data, variableValue, comparedValue, operation) {
         return compare(d[variableValue], comparedValue, operation);
     });
     if (womenParticipationLevelMode && variableValue == "2021" && comparedValue == "50" && operation == _greater){
-        openWomenParticipationChart();
+        openWomenParticipationDialog(_women_participation_3_title, _women_participation_3_text);
     }
     return output;
 }
