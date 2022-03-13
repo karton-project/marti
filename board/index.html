@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EU Data Activities with Marti</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Science and Literacy Teaching with Board Game">
+    <meta name="keywords" content="Data Science, Board Game">
+    <meta name="author" content="Alpay Sabuncuoglu">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/language/en.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title">Tern</h1>
+        <h2 class="subtitle">Explore the Sustainability Data Around the World</h2>
+        <ul>
+            <li>Select a marker on the map.</li>
+            <li>Click on "Start the Activity" button of the pop-up box.</li>
+            <li>Use Martı app to explore the data and complete the given tasks.</li>
+            <li>Read the suggested articles.</li>
+        </ul>
+        <div id="main_map" style="width: auto; height: 60vh"></div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+        buildMap();
+    </script>
+</body>
+
+</html>

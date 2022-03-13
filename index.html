@@ -51,22 +51,8 @@
     <script defer src="libs/leaflet/shp.js"></script>
     <script defer src="libs/geocoder/Control.OSMGeocoder.js"></script>
     <script defer src="libs/geocoder/geocoder.js"></script>
-    <script defer src="js/level.js"></script>
+    <script src="js/level.js"></script>
     <title>Code Editor</title>
-    <script>
-        var head = document.getElementsByTagName('head')[0];
-        var js = document.createElement("script");
-        js.type = "text/javascript";
-        let queries = window.location.href.split("#");
-        if (queries !== undefined) {
-            console.log(queries);
-            if (queries[1] === "en") {
-                js.src = "js/en.js";
-                console.log("Loaded EN content");
-            }
-        }
-        head.appendChild(js);
-    </script>
 </head>
 
 <body style="margin: 0">
@@ -101,7 +87,7 @@
         <p id="_output" class="title">Çıktı</p>
         <span id="_output_tiptext" class="tooltiptext">
             Oluşturduğun her program bloğu, burada çıktıya dönüşür.
-             </span>
+        </span>
     </div>
 
 </div>
@@ -175,5 +161,20 @@
 
 <button id="_download_state_button" onclick="downloadStateFile()">Programı İndir</button>
 <button id="_load_state_button" onclick="loadSateFile()">Program Yükle</button>
-<button id="_start_level_mode" onclick="openWomenParticipationDialog()">Level Modu Çalıştır</button>
+<script>
+    var head = document.getElementsByTagName('head')[0];
+    var js = document.createElement("script");
+    js.type = "text/javascript";
+    let queries = window.location.href.split("#");
+    if (queries !== undefined) {
+        console.log(queries);
+        if (queries[1] === "en") {
+            js.src = "js/en.js";
+            console.log("Loaded EN content");
+        } else if (queries[1].includes("eu")) {
+            openWomenParticipationDialog();
+        }
+    }
+    head.appendChild(js);
+</script>
 </body>

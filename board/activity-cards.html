@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../libs/lightgallery/css/lightgallery.css">
+    <script src="../libs/lightgallery/js/lightgallery.min.js"></script>
+    <script src="../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <style>
+        body {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        let queries = window.location.href.split("#");
+        let currentDetail = queries[1].split("=");
+    </script>
+</head>
+<body>
+
+<h1 id="title">Transportation Questions</h1>
+
+<div id="animated-thumbnails">
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-1.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-1.png" />
+    </a>
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-2.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-2.png" />
+    </a>
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-3.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-3.png" />
+    </a>
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-4.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-4.png" />
+    </a>
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-5.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-5.png" />
+    </a>
+    <a href="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-6.png">
+        <img src="https://raw.githubusercontent.com/karton-project/marti/master/media/mission/transportation/transportation-6.png" />
+    </a>
+</div>
+
+<script>
+    lightGallery(document.getElementById('animated-thumbnails'), {
+        thumbnail: true,
+    });
+</script>
+</body>
+</html>
