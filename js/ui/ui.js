@@ -222,6 +222,12 @@ function fillHTML() {
     fillHTMLText('_download_state_button', _download_state);
     fillHTMLText('_load_state_button', _load_state);
 
+    fillHTMLText("_tt_category", _tt_category);
+    fillHTMLText("_tt_blocks", _tt_blocks);
+    fillHTMLText("_tt_coding", _tt_coding);
+    fillHTMLText("_tt_output", _tt_output);
+
+
     // Translate Block Titles
     fillHTMLText(_variable, _var_lang);
     fillHTMLText(_average, _average_lang);

@@ -19,6 +19,7 @@
     <script src="libs/jquery-ui-touch-punch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
     <script src="js/tr.js"></script>
+    <script src="js/en.js"></script>
     <script src="js/state.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/utils.js"></script>
@@ -66,26 +67,26 @@
 <div class="title-grid-container">
     <div class="tooltip">
         <p id="_cat" class="title">Kategori</p>
-        <span class="tooltiptext">
-            Kategori alanındaki kutuların üzerine basarak blokları görebilirsin.
+        <span id="_tt_category" class="tooltiptext">
+            Kategoriler arasında gezinmek için kutucuklara tıklayabilirsin.
         </span>
     </div>
     <div class="tooltip">
         <p id="_blocks" class="title">Bloklar</p>
-        <span class="tooltiptext">
-            Blokları kodlama üzerine sürükleyerek programlamaya başlayabilirsin.
+        <span id="_tt_blocks" class="tooltiptext">
+            Programlama kartlarını kodlama alanı üzerine sürükleyerek programlamaya başlayabilirsin.
         </span>
     </div>
     <div class="tooltip">
         <p id="_coding" class="title">Kodlama</p>
-        <span class="tooltiptext">
-            Kodlama alanındaki bloklara basınca, detaylar çıkacak.
+        <span id="_tt_coding" class="tooltiptext">
+            Programlama kartlarına gerekli girdileri vererek programlama görevlerini tamamlayabilirsin.
          </span>
     </div>
     <div class="tooltip">
         <p id="_output" class="title">Çıktı</p>
-        <span id="_output_tiptext" class="tooltiptext">
-            Oluşturduğun her program bloğu, burada çıktıya dönüşür.
+        <span id="_tt_output" class="tooltiptext">
+            Program sonucundaki çıktıyı burada görüntüleyebilirsin.
         </span>
     </div>
 
@@ -141,19 +142,14 @@
         }, 0);
     };
 
-    var head = document.getElementsByTagName('head')[0];
-    var js = document.createElement("script");
-    js.type = "text/javascript";
     let queries = window.location.href.split("#");
     if (queries !== undefined) {
-        console.log(queries);
         if (queries[1] === "en") {
-            js.src = "js/en.js";
-            console.log("Loaded EN content");
-        } else if (queries[1].includes("eu")) {
+            updateLang();
+        }
+        if (queries.includes("eu")) {
             openWomenParticipationDialog(_women_participation_1_title, _women_participation_1_text);
         }
     }
-    head.appendChild(js);
 </script>
 </body>

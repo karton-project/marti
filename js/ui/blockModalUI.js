@@ -207,7 +207,7 @@ function prepareBlocks(blockId) {
                     '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="drawChartWithXY(\'line\')">' + _applybutton_lang + '</button>');
+                    '<button onclick="drawChartWithXY("line")">' + _applybutton_lang + '</button>');
             })
         }
 
@@ -219,7 +219,7 @@ function prepareBlocks(blockId) {
                     '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="drawChartWithXY(\'pie\')">' + _applybutton_lang + '</button>');
+                    '<button onclick="drawChartWithXY("pie")">' + _applybutton_lang + '</button>');
                 autocomplete(document.getElementById("chooseYaxis"), listVariableKeys());
             })
         }
@@ -237,7 +237,7 @@ function prepareBlocks(blockId) {
                     '<input autoComplete="off" type="text" id="chooseYaxis" name="chooseYaxis" placeholder="' + _addYAxis_lang + '">' +
                     '<label for="setChartTitle">' + _add_title_text_lang + '</label>\n' +
                     '<input autoComplete="off" type="text" id="setChartTitle" name="setChartTitle" placeholder="' + _add_title_lang + '">' +
-                    '<button onclick="drawChartWithXY(\'bar\')">' + _applybutton_lang + '</button>');
+                    '<button onclick="drawChartWithXY("bar")">' + _applybutton_lang + '</button>');
             })
         }
 

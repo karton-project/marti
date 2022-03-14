@@ -45,7 +45,7 @@ function drawChartWithXY(chartType) {
     });
     chartisactive = true;
     transformChart(chartType);
-    if (womenParticipationLevelMode && !x_cats.includes("Denmark") && !x_cats.includes("Sweden") && chartType === "bar"){
+    if (womenParticipationLevelMode && !x_cats.includes("Denmark") && !x_cats.includes("Sweden") && chartType === _barchart){
         openWomenParticipationDialog(_women_participation_4_title, _women_participation_4_text);
     }
 }

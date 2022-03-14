@@ -10,6 +10,11 @@ let _piechart = "pasta";
 let _barchart = "cubuk";
 let _chartTypes = [_linechart, _piechart, _barchart];
 
+let _tt_category = "Kategoriler arasında gezinmek için kutucuklara tıklayabilirsin.";
+let _tt_blocks = "Programlama kartlarını kodlama alanı üzerine sürükleyerek programlamaya başlayabilirsin.";
+let _tt_coding = "Programlama kartlarına gerekli girdileri vererek programlama görevlerini tamamlayabilirsin.";
+let _tt_output = "Program sonucundaki çıktıyı burada görüntüleyebilirsin.";
+
 let _average_result_text= "Değerlerin ortalaması: ";
 let _max_result_text = 'Değişkenin en yüksek değeri: ';
 let _min_result_text = 'Değişkenin en düşük değeri: ';

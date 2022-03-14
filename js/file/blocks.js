@@ -56,7 +56,7 @@ function openCSVWithLink() {
         drawTable(data);
         defineVariablesFromFileData(webLink);
         appendOutputText(_open_link_output, "linkOpenTextDiv", "");
-        if (womenParticipationLevelMode && webLink.includes("/dataset/csv-tr/kadin-katilimi.csv") ){
+        if (womenParticipationLevelMode && (webLink.includes('kadin-katilimi.csv') || webLink.includes('women-participation.csv'))){
             openWomenParticipationDialog(_women_participation_2_title, _women_participation_2_text);
         }
     });
