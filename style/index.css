@@ -10,6 +10,7 @@
     --file-color: #598782;
     --visualization-color: #ad5252;
     --map-color: #638053;
+    --data-color: #7b1fa2;
 }
 
 body {
@@ -793,4 +794,41 @@ th.aes:after {
         color: #505050;
         background: #e08888;
     }
+}
+
+.ui-widget.data-dialog {
+    font-size: 0.9em;
+}
+
+.ui-widget-content.data-dialog {
+    background: #F9F9F9;
+    color: #222222;
+}
+
+.ui-dialog.data-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+.ui-dialog.data-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.ui-dialog.data-dialog .ui-widget-header {
+    background: var(--data-color);
+    border: 0;
+    color: #fff;
+}
+
+.ui-dialog.data-dialog .ui-dialog-titlebar {
+    padding: .5em;
+    position: relative;
 }

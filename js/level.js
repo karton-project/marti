@@ -15,6 +15,7 @@ function openWomenParticipationDialog(title, text) {
             OK: function() {
                 $( this ).dialog( "close" );
             }
-        }
+        },
+        dialogClass: 'no-close data-dialog'
     });
 }

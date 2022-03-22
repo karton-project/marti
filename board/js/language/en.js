@@ -20,7 +20,7 @@ const silicon_h2 = "Silicon Valley is a region in the southern part of the San F
     " California that serves as a global center for high technology, innovation, venture capital, and social media.";
 
 const eu_h1 = "Women Participation to Research Organizations";
-const eu_h2 = "";
+const eu_h2 = "Use EU Data to explore the gender ratio through years between different countries.";
 
 // ******** Detail File **********
 const ist_sub = "Railway transportation is one of the most important investment areas in crowded cities as it handles large numbers of people with ease, it is environmentally friendly and it reduces the traffic.";
