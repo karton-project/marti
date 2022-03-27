@@ -52,3 +52,13 @@ function buildMap() {
             .bindPopup(popupArr[i], customPop[mode]).addTo(mainMap);
     }
 }
+
+function fillHTMLText(){
+    document.getElementById("title").innerText = _title;
+    document.getElementById("subtitle").innerText = _subtitle;
+    document.getElementById("todo-1").innerText = _todo_1;
+    document.getElementById("todo-2").innerText = _todo_2;
+    document.getElementById("todo-3").innerText = _todo_3;
+    document.getElementById("todo-4").innerText = _todo_4;
+    document.getElementById("tutorial-link").innerHTML = _tutorial_link;
+}
